@@ -5,6 +5,7 @@ use	think\Request;
 use	think\Db;
 use app\port\model\LoginModel;
 use think\Session;
+use wxBizDataCrypt\wxBizDataCrypt;
 class Login extends	Controller	
 {	
 	public function index()
@@ -24,7 +25,6 @@ class Login extends	Controller
     	$url = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx0d74e7d7020142e0&secret=10b7720b73847774654a192d1e0aa9b5&js_code='.$code.'&grant_type=authorization_code';
     	$data = $this->post_data($url);
     	$arr = json_decode($data,true);
-    	// return $data;
     	//请求失败返回
     	if(isset($arr['errcode']) && (!isset($arr['openid']) || (!isset($arr['session_key'])))){
     		return (array('status'=>0,'msg'=>'获取信息失败'));
@@ -49,7 +49,57 @@ class Login extends	Controller
     	return (array('status'=>1, 'openid'=>$arr['openid'] , 'PHPSESSID'=>$PHPSESSID));			
 	}
 
-	 
+	 /**
+	  * 修改用户数据 保存用户数据
+	  * @return [type] [description]
+	  */
+    function saveUserInfo(){
+    	$encryptedData = input('param.encryptedData');
+    	$iv = input('param.iv');
+        // return $iv;
+    	if(empty($encryptedData) || empty($iv)){
+    		$this->ajaxReturn(array('status'=>0,'msg'=>'传递信息不全'));
+    	}
+
+    	// include_once "aes/wxBizDataCrypt.php";
+
+
+        $appid = 'wx0d74e7d7020142e0';  //这里配置你的小程序appid
+        $sessionKey = session('session_key');
+        return $sessionKey;
+        $result = import("wxBizDataCrypt",EXTEND_PATH.'wxBizDataCrypt'); 
+        $pc = new \wxBizDataCrypt($appid, $sessionKey);
+        $errCode = $pc->decryptData($encryptedData, $iv, $data );
+        return $errCode;
+        if ($errCode == 0) {
+            $data = json_decode($data, true);
+            session('myinfo', $data);
+
+            $save['nickname'] = $data['nickName'];
+            $save['sex'] = $data['gender'];
+            $save['city'] = $data['city'];
+            $save['province'] = $data['province'];
+            $save['country'] = $data['country'];
+            $save['headimgurl'] = $data['avatarUrl'];
+            !empty($data['unionId']) && $save['unionId'] = $data['unionId'];
+
+            $uid = session('mid');
+            if(empty($uid)){
+            	return (array('status'=>0,'msg'=>'用户ID异常'.$uid));
+            }
+            return $save;
+            $res = D('Common/User')->updateInfo($uid, $save);
+            if($res!==false){
+            	return (array('status'=>1));
+            }else{
+            	return (array('status'=>0,'msg'=>'用户信息保存失败'));
+            }
+
+        } else {
+            return (array('status'=>0,'msg'=>'错误编号：'.$errCode));
+        }
+    }
+
 
 	function post_data($url){
 		//模拟post请求 
