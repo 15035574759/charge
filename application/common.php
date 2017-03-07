@@ -14,7 +14,6 @@
 
 
 
-
 /**
  * 高端PHP - 自定义函数
  *
@@ -67,5 +66,4 @@ if (! function_exists('e'))
 		exit;
 	}
 }
-
 

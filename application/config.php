@@ -254,4 +254,5 @@ return [
         // 验证成功后是否重置        
         'reset'    => true
     ],
+    // 'SESSION_OPTIONS' => array('use_trans_sid'=>1,'use_only_cookies'=>0)
 ];

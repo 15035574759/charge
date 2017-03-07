@@ -9,9 +9,9 @@ header('content-type:text/html;charset=utf8');
 // +----------------------------------------------------------------------
 // | Author: liu21st <liu21st@gmail.com>
 // +----------------------------------------------------------------------
-
+// ini_set('session.cookie_domain', ".domain.com");//跨域访问Session
 // [ 应用入口文件 ]
-
+ini_set('session.cookie_domain',".domain.com");//跨域访问Session 
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
 // 加载框架引导文件

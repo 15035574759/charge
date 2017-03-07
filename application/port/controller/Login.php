@@ -1,15 +1,27 @@
 <?php
+/**
+ * 极客之家 高端PHP - 用户登录
+ *
+ * @copyright  Copyright (c) 2016 QIN TEAM (http://www.qlh.com)
+ * @license    GUN  General Public License 2.0
+ * @version    Id:  Type_model.php 2016-6-12 16:36:52
+ */
 namespace app\port\controller;
 use	think\Controller;
 use	think\Request;
 use	think\Db;
 use app\port\model\LoginModel;
 use think\Session;
+use think\Cookie;
+use think\Cache;
 use wxBizDataCrypt\wxBizDataCrypt;
 class Login extends	Controller	
 {	
 	public function index()
 	{
+        // session('session_key','555');
+        // $sessionKey = session('session_key');
+        // var_dump($sessionKey);die;
 		// $time = time();
 		return $this->fetch('login');
 	}
@@ -19,7 +31,13 @@ class Login extends	Controller
 	 * @return [type] [description]
 	 */
 	public	function sendCode()				
-	{			
+	{		
+        // session('session_key',"1111");
+        // Cache::set('name',"111",3600);
+        // $sessionKey = Cache::get('name');
+        // return  $sessionKey;
+        // $PHPSESSID = session_id();
+        // return $PHPSESSID;
 		$code = input("param.code");
 		//这里要配置你的小程序appid和secret
     	$url = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx0d74e7d7020142e0&secret=10b7720b73847774654a192d1e0aa9b5&js_code='.$code.'&grant_type=authorization_code';
@@ -31,9 +49,11 @@ class Login extends	Controller
     	}
 
         //存储session数据
-    	session('session_key', $arr['session_key']);
-    	session('openid', $arr['openid']);
-
+    	// session('session_key',$arr['session_key']);
+        Cache::set('session_key',$arr['session_key']);
+        Cache::set('openid', $arr['openid']);
+    	// session('openid', $arr['openid']);
+        // return $arr['session_key'];
     	$map['openid'] = $arr['openid'];
     	//判断当前系统是否存在该用户，用户自动注册
     	if(!DB::name('public_follow')->where($map)->find()){
@@ -42,12 +62,33 @@ class Login extends	Controller
     		$userId = DB::name('user')->getLastInsID();
     		DB::name('public_follow')->insert(array('openid'=>$arr['openid'], 'uid'=>$userId, 'token'=>'gh_6d3bf5d72981'));
 
-    		session('mid', $uid);
+    		// session('mid', $uid);
+            Cache::set('mid',$userId);
     	}
 
-    	$PHPSESSID = session_id();
+    	$PHPSESSID = $this->getRandomString(27);
+        // return $PHPSESSID;
     	return (array('status'=>1, 'openid'=>$arr['openid'] , 'PHPSESSID'=>$PHPSESSID));			
 	}
+
+    /**
+     * 生成随机session_id
+     * @param  [type] $len   [description]
+     * @param  [type] $chars [description]
+     * @return [type]        [description]
+     */
+    function getRandomString($len, $chars=null)
+    {
+        if (is_null($chars)){
+            $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        }  
+        mt_srand(10000000*(double)microtime());
+        for ($i = 0, $str = '', $lc = strlen($chars)-1; $i < $len; $i++){
+            $str .= $chars[mt_rand(0, $lc)];  
+        }
+        return $str;
+    }
+
 
 	 /**
 	  * 修改用户数据 保存用户数据
@@ -61,36 +102,34 @@ class Login extends	Controller
     		$this->ajaxReturn(array('status'=>0,'msg'=>'传递信息不全'));
     	}
 
-    	// include_once "aes/wxBizDataCrypt.php";
-
-
         $appid = 'wx0d74e7d7020142e0';  //这里配置你的小程序appid
-        $sessionKey = session('session_key');
-        return $sessionKey;
+        $sessionKey = Cache::get('session_key');
+
         $result = import("wxBizDataCrypt",EXTEND_PATH.'wxBizDataCrypt'); 
         $pc = new \wxBizDataCrypt($appid, $sessionKey);
         $errCode = $pc->decryptData($encryptedData, $iv, $data );
-        return $errCode;
+        // return $errCode;
         if ($errCode == 0) {
             $data = json_decode($data, true);
-            session('myinfo', $data);
+            // return $data;
+            // session('myinfo', $data);
+            Cache::set('myinfo',$data);
 
-            $save['nickname'] = $data['nickName'];
-            $save['sex'] = $data['gender'];
-            $save['city'] = $data['city'];
-            $save['province'] = $data['province'];
-            $save['country'] = $data['country'];
-            $save['headimgurl'] = $data['avatarUrl'];
-            !empty($data['unionId']) && $save['unionId'] = $data['unionId'];
+            $save = array(
+                    'nickname' => $data['nickName'],
+                    'sex' => $data['gender'],
+                    'city' => $data['city'],
+                    'province' => $data['province'],
+                    'country' => $data['country'],
+                    'headimgurl' => $data['avatarUrl']);
 
-            $uid = session('mid');
+            $uid =  Cache::get('mid');
             if(empty($uid)){
             	return (array('status'=>0,'msg'=>'用户ID异常'.$uid));
             }
-            return $save;
-            $res = D('Common/User')->updateInfo($uid, $save);
+            $res = DB::name('user')->where("uid",$uid)->update($save);
             if($res!==false){
-            	return (array('status'=>1));
+            	return (array('status'=>1,'msg'=>'用户信息修改成功'));
             }else{
             	return (array('status'=>0,'msg'=>'用户信息保存失败'));
             }
@@ -100,7 +139,11 @@ class Login extends	Controller
         }
     }
 
-
+    /**
+     * 模拟Popst提交
+     * @param  [type] $url [description]
+     * @return [type]      [description]
+     */
 	function post_data($url){
 		//模拟post请求 
 		$curl = curl_init(); // 启动一个CURL会话
