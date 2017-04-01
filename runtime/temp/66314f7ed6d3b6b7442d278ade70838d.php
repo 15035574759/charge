@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:62:"D:\WWW\charge\public/../application/admin\view\index\menu.html";i:1488189169;}*/ ?>
 <html>
 <head>
 <title>menu</title>
@@ -23,8 +24,8 @@
                 <div class='flrct'> <a href='archives.html' target='main'><img src='javascript/skin/images/frame/gtk-sadd.png' alt='创建栏目' title='创建栏目'/></a> </div>
               </div>
             </li> -->
-            <li><a href="{:url('Project/show')}" target='main' class="iii">项目列表</a> </li>
-            <li><a href="{:url('Project/add')}" target='main'>项目添加</a> </li>
+            <li><a href="<?php echo url('Project/show'); ?>" target='main' class="iii">项目列表</a> </li>
+            <li><a href="<?php echo url('Project/add'); ?>" target='main'>项目添加</a> </li>
             <!-- <li>
               <div class='items'>
                 <div class='fllct'><a href='archives.html' target='main'>回收站</a></div>
@@ -40,8 +41,8 @@
         <dt onClick='showHide("items2_1")'><b>用户管理</b></dt>
         <dd style='display:block' class='sitem' id='items2_1'>
           <ul class='sitemu'>
-            <li><a href="{:url('User/UserList')}" target='main'>用户列表</a></li>
-            <li><a href="{:url('User/UserAdd')}" target='main'>用户添加</a></li>
+            <li><a href="<?php echo url('User/UserList'); ?>" target='main'>用户列表</a></li>
+            <li><a href="<?php echo url('User/UserAdd'); ?>" target='main'>用户添加</a></li>
           </ul>
         </dd>
       </dl>
@@ -50,8 +51,8 @@
         <dt onClick='showHide("items3_1")'><b>经销商管理</b></dt>
         <dd style='display:block' class='sitem' id='items3_1'>
           <ul class='sitemu'>
-            <li><a href="{:url('Dealer/show')}" target='main'>经销商列表</a></li>
-            <li><a href="{:url('Dealer/add')}" target='main'>经销商添加</a></li>
+            <li><a href="<?php echo url('Dealer/show'); ?>" target='main'>经销商列表</a></li>
+            <li><a href="<?php echo url('Dealer/add'); ?>" target='main'>经销商添加</a></li>
           </ul>
         </dd>
       </dl>
@@ -60,8 +61,8 @@
         <dt onClick='showHide("items4_1")'><b>品牌管理</b></dt>
         <dd style='display:block' class='sitem' id='items4_1'>
           <ul class='sitemu'>
-            <li><a href="{:url('Brand/BrandAdd')}" target='main'>品牌添加</a></li>
-            <li><a href="{:url('Brand/BrandShow')}" target='main'>品牌列表</a></li>
+            <li><a href="<?php echo url('Brand/BrandAdd'); ?>" target='main'>品牌添加</a></li>
+            <li><a href="<?php echo url('Brand/BrandShow'); ?>" target='main'>品牌列表</a></li>
           </ul>
         </dd>
       </dl>
@@ -70,9 +71,9 @@
         <dt onClick='showHide("items5_1")'><b>权限管理</b></dt>
         <dd style='display:block' class='sitem' id='items5_1'>
           <ul class='sitemu'>
-            <li><a href="{:url('User/GetMenuList')}" target='main'>菜单管理</a></li>
-            <li><a href="{:url('User/GroupList')}" target='main'>角色管理</a></li>
-            <li><a href="{:url('User/UserList')}" target='main'>用户管理</a></li>
+            <li><a href="<?php echo url('User/GetMenuList'); ?>" target='main'>菜单管理</a></li>
+            <li><a href="<?php echo url('User/GroupList'); ?>" target='main'>角色管理</a></li>
+            <li><a href="<?php echo url('User/UserList'); ?>" target='main'>用户管理</a></li>
           </ul>
         </dd>
       </dl>

@@ -4,7 +4,7 @@ use	think\Controller;
 use	think\Request;
 use	think\Db;
 use think\Session;
-class Index extends	Base	
+class Index extends	Controller	
 {				
 	public	function index()				
 	{								

@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"D:\WWW\charge\public/../application/admin\view\index\index.html";i:1489112302;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

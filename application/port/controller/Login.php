@@ -99,7 +99,7 @@ class Login extends	Controller
     	$iv = input('param.iv');
         // return $iv;
     	if(empty($encryptedData) || empty($iv)){
-    		$this->ajaxReturn(array('status'=>0,'msg'=>'传递信息不全'));
+    		return array('status'=>0,'msg'=>'传递信息不全');
     	}
 
         $appid = 'wx0d74e7d7020142e0';  //这里配置你的小程序appid
@@ -125,17 +125,17 @@ class Login extends	Controller
 
             $uid =  Cache::get('mid');
             if(empty($uid)){
-            	return (array('status'=>0,'msg'=>'用户ID异常'.$uid));
+            	return array('status'=>0,'msg'=>'用户ID异常'.$uid);
             }
             $res = DB::name('user')->where("uid",$uid)->update($save);
             if($res!==false){
-            	return (array('status'=>1,'msg'=>'用户信息修改成功'));
+            	return array('status'=>1,'msg'=>'用户信息修改成功');
             }else{
-            	return (array('status'=>0,'msg'=>'用户信息保存失败'));
+            	return array('status'=>0,'msg'=>'用户信息保存失败');
             }
 
         } else {
-            return (array('status'=>0,'msg'=>'错误编号：'.$errCode));
+            return array('status'=>0,'msg'=>'错误编号：'.$errCode);
         }
     }
 

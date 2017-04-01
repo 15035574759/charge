@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:61:"D:\WWW\charge\public/../application/admin\view\index\top.html";i:1488158615;}*/ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -145,10 +146,10 @@ a:link,a:visited {
     	<table width="750" border="0" cellspacing="0" cellpadding="0">
       <tr>
       <td align="right" height="60" style="padding-right:10px;line-height:26px;">
-        	您好：<span class="username">{$UserName}</span>，欢迎使用专题管理系统！
+        	您好：<span class="username"><?php echo $UserName; ?></span>，欢迎使用专题管理系统！
         	[<a href="http://localhost/medium/public/" target="_blank">网站主页</a>]
-        	[<a href="{:url('login/UpdatePassword')}" target="_blank">修改密码</a>]
-        	[<a href="{:url('login/GetQuit')}" target="_top">注销退出</a>]&nbsp;
+        	[<a href="<?php echo url('login/UpdatePassword'); ?>" target="_blank">修改密码</a>]
+        	[<a href="<?php echo url('login/GetQuit'); ?>" target="_top">注销退出</a>]&nbsp;
       </td>
       </tr>
     <!-- <tr>
@@ -159,7 +160,7 @@ a:link,a:visited {
 		<dd class='img' style="margin-right:10px;"><a href="javascript:ChangeMenu(1);"><img vspace="5" src="javascript/skin/images/frame/arrr.gif" border="0" width="5" height="8" alt="增大左框架" title="增大左框架" /></a></dd>
 		<dd><div class='item' id='item1' onMouseMove="mv(this,'m',1);" onMouseOut="mv(this,'o',1);"><a href="main.html" onclick="changeSel(1)" target="main">主菜单</a></div></dd>
 		<dd><div class='item' id='item2' onMouseMove="mv(this,'m',2);" onMouseOut="mv(this,'o',2);"><a href="menu.html" onclick="changeSel(2)" target="main">内容发布</a></div></dd>
-		<dd><div class='item' id='item8' onMouseMove="mv(this,'m',8);" onMouseOut="mv(this,'o',8);"><a href="{:url('special/archives')}" onclick="changeSel(8)" target="main">插件模块</a></div></dd>
+		<dd><div class='item' id='item8' onMouseMove="mv(this,'m',8);" onMouseOut="mv(this,'o',8);"><a href="<?php echo url('special/archives'); ?>" onclick="changeSel(8)" target="main">插件模块</a></div></dd>
 		<dd><div class='item' id='item4' onMouseMove="mv(this,'m',4);" onMouseOut="mv(this,'o',4);"><a href="menu.html" onclick="changeSel(4)" target="main">HTML更新</a></div></dd>
 		<dd><div class='item' id='item5' onMouseMove="mv(this,'m',5);" onMouseOut="mv(this,'o',5);"><a href="menu.html" onclick="changeSel(5)" target="main">系统设置</a></div></dd>
 		<dd><div class='item' id='item9' onMouseMove="mv(this,'m',9);" onMouseOut="mv(this,'o',9);"><a href="main.html" onclick="changeSel(9)" target="main">后台主页</a></div></dd>
