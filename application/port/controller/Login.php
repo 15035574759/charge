@@ -60,8 +60,9 @@ class Login extends	Controller
             //注册
     		$uid = DB::name('user')->insert(array('reg_time'=>time()));
     		$userId = DB::name('user')->getLastInsID();
-    		DB::name('public_follow')->insert(array('openid'=>$arr['openid'], 'uid'=>$userId, 'token'=>'gh_6d3bf5d72981'));
 
+            DB::name("friend")->insert(array("uid"=>$userId,"start"=>1,"time"=>time()));//同时添加到好友数据表
+    		DB::name('public_follow')->insert(array('openid'=>$arr['openid'], 'uid'=>$userId, 'token'=>'gh_6d3bf5d72981'));
     		// session('mid', $uid);
             Cache::set('mid',$userId);
     	}
@@ -128,6 +129,16 @@ class Login extends	Controller
             	return array('status'=>0,'msg'=>'用户ID异常'.$uid);
             }
             $res = DB::name('user')->where("uid",$uid)->update($save);
+            $friend_id = DB::name('friend')->where("uid",$uid)->find();//修改当前用户好友表数据  为注册用户
+            if(isset($friend_id))
+            {
+                DB::name("friend")->where("uid",$uid)->update(array("start"=>1,"friend_name"=>$save['nickname'],"friend_imgurl"=>$save['headimgurl'],"time"=>time()));
+            }
+            else
+            {
+                DB::name("friend")->insert(array("uid"=>$uid,"start"=>1,"friend_name"=>$save['nickname'],"friend_imgurl"=>$save['headimgurl'],"time"=>time()));
+            }
+
             if($res!==false){
             	return array('status'=>1,'msg'=>'用户信息修改成功');
             }else{

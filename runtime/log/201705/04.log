@@ -1,0 +1,611 @@
+[ 2017-05-04T17:49:12+08:00 ] ::1 ::1 GET /charge/public/index.php/port/check/UserCheck?openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM&limit=3&lastid=0
+[ log ] localhost/charge/public/index.php/port/check/UserCheck?openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM&limit=3&lastid=0 [运行时间：0.361941s][吞吐率：2.76req/s] [内存消耗：1,490.74kb] [文件加载：39]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'check',
+    2 => 'UserCheck',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+  'limit' => '3',
+  'lastid' => '0',
+)
+[ info ] [ RUN ] app\port\controller\Check->UserCheck[ D:\WWW\charge\application\port\controller\Check.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.017473s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.034770s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1   [ RunTime:0.023075s ]
+[ sql ] [ SQL ] SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '1' AND `inout_start`=1 AND `time` >= unix_timestamp('2017-05-01 00:00:00') AND `time` <= unix_timestamp('2017-05-04 17:49:12') [ RunTime:0.038486s ]
+[ sql ] [ SQL ] SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '1' AND `inout_start`=2 AND `time` >= unix_timestamp('2017-05-01 00:00:00') AND `time` <= unix_timestamp('2017-05-04 17:49:12') [ RunTime:0.000290s ]
+[ sql ] [ SQL ] select time,a_id from bill_charge where a_id > 0 group by time order by a_id desc LIMIT 3 [ RunTime:0.001181s ]
+[ sql ] [ SQL ] select time,inout_start,sum(money) as money from bill_charge where inout_start=1 and time=1490976000 group by time [ RunTime:0.000428s ]
+[ sql ] [ SQL ] select time,inout_start,sum(money) as money from bill_charge where inout_start=2 and time=1490976000 group by time [ RunTime:0.000333s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.019748s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1490976000  [ RunTime:0.003411s ]
+[ sql ] [ SQL ] select time,inout_start,sum(money) as money from bill_charge where inout_start=1 and time=1488988800 group by time [ RunTime:0.000489s ]
+[ sql ] [ SQL ] select time,inout_start,sum(money) as money from bill_charge where inout_start=2 and time=1488988800 group by time [ RunTime:0.000484s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1488988800  [ RunTime:0.000712s ]
+[ sql ] [ SQL ] select time,inout_start,sum(money) as money from bill_charge where inout_start=1 and time=1483718400 group by time [ RunTime:0.000482s ]
+[ sql ] [ SQL ] select time,inout_start,sum(money) as money from bill_charge where inout_start=2 and time=1483718400 group by time [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1483718400  [ RunTime:0.000649s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:49:14+08:00 ] ::1 ::1 GET /charge/public/index.php/port/login/sendCode?code=001ZXjhL12tmX21WEFdL1NykhL1ZXjhB&PHPSESSID=jHpo3ZjpMM1m4Eq0haA8ST3ZzrP
+[ log ] localhost/charge/public/index.php/port/login/sendCode?code=001ZXjhL12tmX21WEFdL1NykhL1ZXjhB&PHPSESSID=jHpo3ZjpMM1m4Eq0haA8ST3ZzrP [运行时间：0.758312s][吞吐率：1.32req/s] [内存消耗：1,541.63kb] [文件加载：42]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'login',
+    2 => 'sendCode',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'code' => '001ZXjhL12tmX21WEFdL1NykhL1ZXjhB',
+  'PHPSESSID' => 'jHpo3ZjpMM1m4Eq0haA8ST3ZzrP',
+)
+[ info ] [ RUN ] app\port\controller\Login->sendCode[ D:\WWW\charge\application\port\controller\Login.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000958s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.015631s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000531s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:49:14+08:00 ] ::1 ::1 GET /charge/public/index.php/port/login/saveUserInfo?encryptedData=FMk4NyrRw1OFaTOYe0EO3rwKhIqcgWLiw%2BljBl4HJNFz%2Bouq9uerSB2%2B9qwDA11mc5ZtnCWP6%2B5ExOrwKA3z5kVohUIdvx25VueYn3OA7vntZFDFbikvMhFKI7GVlQ48Mj4fVjsMPtRM7BfsTJ52hlVerIeL3f2423v%2BK0VL6pyu%2FVoAtG%2FApBD7BIs1juRz0bBG6zee6Rcv1v%2BP8io0kJl4U6Y8SB0OtlkbVrUZmg1zOWQUz234VaMIMMHiIC322EfY7ORBnfdyMhtirzFPc9Sb%2BYNRTfxlmgqDal5pB5uFJscjw3r85AbLIZpc1xWMX3LG7e6YMbbnIEBY7o8bdUh3TlUiXNRWbqniVo%2BcrY4ZUnZpXQMJySRzChmsydJuyU72siG0RjbOkpIoyNSk6rQBvAXhakE6hzkI6uQBEKHSCkohpTaRt7o90PIZcHtevblQ2NBOQd3u75xMEEKOMrYG8kXRJsUXIe81OU6DyGskz%2FffKdh8XFHGMHB9CFyp&PHPSESSID=boYiozavqo0eejLOcXGHIk6cL8g&iv=vY8xe71gn1j92IHKnElQaA%3D%3D
+[ log ] localhost/charge/public/index.php/port/login/saveUserInfo?encryptedData=FMk4NyrRw1OFaTOYe0EO3rwKhIqcgWLiw%2BljBl4HJNFz%2Bouq9uerSB2%2B9qwDA11mc5ZtnCWP6%2B5ExOrwKA3z5kVohUIdvx25VueYn3OA7vntZFDFbikvMhFKI7GVlQ48Mj4fVjsMPtRM7BfsTJ52hlVerIeL3f2423v%2BK0VL6pyu%2FVoAtG%2FApBD7BIs1juRz0bBG6zee6Rcv1v%2BP8io0kJl4U6Y8SB0OtlkbVrUZmg1zOWQUz234VaMIMMHiIC322EfY7ORBnfdyMhtirzFPc9Sb%2BYNRTfxlmgqDal5pB5uFJscjw3r85AbLIZpc1xWMX3LG7e6YMbbnIEBY7o8bdUh3TlUiXNRWbqniVo%2BcrY4ZUnZpXQMJySRzChmsydJuyU72siG0RjbOkpIoyNSk6rQBvAXhakE6hzkI6uQBEKHSCkohpTaRt7o90PIZcHtevblQ2NBOQd3u75xMEEKOMrYG8kXRJsUXIe81OU6DyGskz%2FffKdh8XFHGMHB9CFyp&PHPSESSID=boYiozavqo0eejLOcXGHIk6cL8g&iv=vY8xe71gn1j92IHKnElQaA%3D%3D [运行时间：0.118040s][吞吐率：8.47req/s] [内存消耗：1,565.83kb] [文件加载：45]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'login',
+    2 => 'saveUserInfo',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'encryptedData' => 'FMk4NyrRw1OFaTOYe0EO3rwKhIqcgWLiw+ljBl4HJNFz+ouq9uerSB2+9qwDA11mc5ZtnCWP6+5ExOrwKA3z5kVohUIdvx25VueYn3OA7vntZFDFbikvMhFKI7GVlQ48Mj4fVjsMPtRM7BfsTJ52hlVerIeL3f2423v+K0VL6pyu/VoAtG/ApBD7BIs1juRz0bBG6zee6Rcv1v+P8io0kJl4U6Y8SB0OtlkbVrUZmg1zOWQUz234VaMIMMHiIC322EfY7ORBnfdyMhtirzFPc9Sb+YNRTfxlmgqDal5pB5uFJscjw3r85AbLIZpc1xWMX3LG7e6YMbbnIEBY7o8bdUh3TlUiXNRWbqniVo+crY4ZUnZpXQMJySRzChmsydJuyU72siG0RjbOkpIoyNSk6rQBvAXhakE6hzkI6uQBEKHSCkohpTaRt7o90PIZcHtevblQ2NBOQd3u75xMEEKOMrYG8kXRJsUXIe81OU6DyGskz/ffKdh8XFHGMHB9CFyp',
+  'PHPSESSID' => 'boYiozavqo0eejLOcXGHIk6cL8g',
+  'iv' => 'vY8xe71gn1j92IHKnElQaA==',
+)
+[ info ] [ RUN ] app\port\controller\Login->saveUserInfo[ D:\WWW\charge\application\port\controller\Login.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000766s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.018752s ]
+[ sql ] [ SQL ] UPDATE `bill_user`  SET `nickname`='伊人回眸泪倾城 ....จุ๊บ',`sex`=1,`city`='',`province`='Beijing',`country`='CN',`headimgurl`='http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK6zmnIDhZFZFHuBBTG0fkJ2fWjrXTpv7IiaM0miazveEWEib0FR8mSlRaqKgjg0GYelKOX0XDQGMCyg/0'  WHERE  `uid` = 1          [ RunTime:0.000853s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.021969s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `uid` = 1 LIMIT 1    [ RunTime:0.018621s ]
+[ sql ] [ SQL ] UPDATE `bill_friend`  SET `start`=1,`friend_name`='伊人回眸泪倾城 ....จุ๊บ',`friend_imgurl`='http://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTK6zmnIDhZFZFHuBBTG0fkJ2fWjrXTpv7IiaM0miazveEWEib0FR8mSlRaqKgjg0GYelKOX0XDQGMCyg/0',`time`=1493891354  WHERE  `uid` = 1        [ RunTime:0.000588s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:41+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/circleUser?openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM
+[ log ] localhost/charge/public/index.php/port/circle/circleUser?openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM [运行时间：0.160233s][吞吐率：6.24req/s] [内存消耗：1,667.91kb] [文件加载：41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'circleUser',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+)
+[ info ] [ RUN ] app\port\controller\Circle->circleUser[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000970s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.021819s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000436s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.042069s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_circle` `c` INNER JOIN `bill_inout_class` `bic` ON `c`.`class_id`=`bic`.`c_id`  [ RunTime:0.000713s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:43+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/circleName
+[ log ] localhost/charge/public/index.php/port/circle/circleName [运行时间：0.101768s][吞吐率：9.83req/s] [内存消耗：1,653.02kb] [文件加载：40]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'circleName',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleName[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000911s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.037131s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` IS NULL LIMIT 1   [ RunTime:0.000486s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.027745s ]
+[ sql ] [ SQL ] SELECT `circle_name`,`cir_id` FROM `bill_circle` WHERE  `cir_id` IS NULL  AND `user_id` IS NULL LIMIT 1   [ RunTime:0.000538s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:45+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/CircleFriend?cir_id=1&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM
+[ log ] localhost/charge/public/index.php/port/circle/CircleFriend?cir_id=1&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM [运行时间：0.123808s][吞吐率：8.08req/s] [内存消耗：1,668.43kb] [文件加载：41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'CircleFriend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'cir_id' => '1',
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleFriend[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000960s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.028123s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.021733s ]
+[ sql ] [ SQL ] SELECT `friend_id`,`cir_id` FROM `bill_circle` WHERE  `cir_id` = 1  AND `user_id` = 1    [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.017746s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `f_id` IN (1,2,3)     [ RunTime:0.025104s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:45+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/CircleName?cir_id=1&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM
+[ log ] localhost/charge/public/index.php/port/circle/CircleName?cir_id=1&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM [运行时间：0.129811s][吞吐率：7.70req/s] [内存消耗：1,661.73kb] [文件加载：41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'CircleName',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'cir_id' => '1',
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleName[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002685s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.042621s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000406s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.043488s ]
+[ sql ] [ SQL ] SELECT `circle_name`,`cir_id` FROM `bill_circle` WHERE  `cir_id` = 1  AND `user_id` = 1 LIMIT 1     [ RunTime:0.000511s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:45+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/CircleMyconsume?cir_id=1&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM
+[ log ] localhost/charge/public/index.php/port/circle/CircleMyconsume?cir_id=1&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM [运行时间：0.200407s][吞吐率：4.99req/s] [内存消耗：1,668.41kb] [文件加载：41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'CircleMyconsume',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'cir_id' => '1',
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleMyconsume[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004587s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.052514s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000462s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.043430s ]
+[ sql ] [ SQL ] SELECT `f_id` FROM `bill_friend` WHERE  `uid` = 1 LIMIT 1    [ RunTime:0.000524s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle_bill` [ RunTime:0.031354s ]
+[ sql ] [ SQL ] SELECT `cbl_id` FROM `bill_circle_bill` WHERE  `cir_id` = 1  AND `payer` = 1    [ RunTime:0.000717s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle_friend_assoct` [ RunTime:0.024685s ]
+[ sql ] [ SQL ] SELECT SUM(sum_money) AS tp_sum FROM `bill_circle_friend_assoct` WHERE  `cbl_id` IN (1,2)  AND `pay_start` = 0 LIMIT 1      [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT SUM(sum_money) AS tp_sum FROM `bill_circle_friend_assoct` WHERE  `cir_id` = 1  AND `friend_id` = 8  AND `pay_start` = 0 LIMIT 1      [ RunTime:0.000400s ]
+[ sql ] [ SQL ] SELECT SUM(sum_money) AS tp_sum FROM `bill_circle_friend_assoct` WHERE  `friend_id` = 8  AND `pay_start` = 1  AND `cir_id` = 1 LIMIT 1      [ RunTime:0.000292s ]
+[ sql ] [ SQL ] SELECT SUM(sum_money) AS tp_sum FROM `bill_circle_friend_assoct` WHERE  `pay_start` = 1  AND `cir_id` = 1 LIMIT 1     [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_circle_bill` `b` INNER JOIN `bill_friend` `f` ON `b`.`payer`=`f`.`f_id` INNER JOIN `bill_inout_class` `i` ON `b`.`class_id`=`i`.`c_id` WHERE  `b`.`cir_id` = '1'  [ RunTime:0.000709s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_circle_friend_assoct` WHERE  `cbl_id` = 1 LIMIT 1    [ RunTime:0.000255s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_circle_friend_assoct` WHERE  `cbl_id` = 2 LIMIT 1    [ RunTime:0.000219s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:50+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/CircleName?cir_id=2&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM
+[ log ] localhost/charge/public/index.php/port/circle/CircleName?cir_id=2&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM [运行时间：0.185482s][吞吐率：5.39req/s] [内存消耗：1,661.73kb] [文件加载：41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'CircleName',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'cir_id' => '2',
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleName[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001013s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.082341s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.066839s ]
+[ sql ] [ SQL ] SELECT `circle_name`,`cir_id` FROM `bill_circle` WHERE  `cir_id` = 2  AND `user_id` = 1 LIMIT 1     [ RunTime:0.000712s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:50+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/circleName
+[ log ] localhost/charge/public/index.php/port/circle/circleName [运行时间：0.208085s][吞吐率：4.81req/s] [内存消耗：1,653.02kb] [文件加载：40]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'circleName',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleName[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002088s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.099710s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` IS NULL LIMIT 1   [ RunTime:0.000943s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.069532s ]
+[ sql ] [ SQL ] SELECT `circle_name`,`cir_id` FROM `bill_circle` WHERE  `cir_id` IS NULL  AND `user_id` IS NULL LIMIT 1   [ RunTime:0.000864s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:50+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/CircleFriend?cir_id=2&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM
+[ log ] localhost/charge/public/index.php/port/circle/CircleFriend?cir_id=2&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM [运行时间：0.228388s][吞吐率：4.38req/s] [内存消耗：1,668.43kb] [文件加载：41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'CircleFriend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'cir_id' => '2',
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleFriend[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001125s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.070492s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000493s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.072316s ]
+[ sql ] [ SQL ] SELECT `friend_id`,`cir_id` FROM `bill_circle` WHERE  `cir_id` = 2  AND `user_id` = 1    [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.047849s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `f_id` IN (1,2,3)     [ RunTime:0.000713s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:51+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/CircleMyconsume?cir_id=2&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM
+[ log ] localhost/charge/public/index.php/port/circle/CircleMyconsume?cir_id=2&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM [运行时间：0.109853s][吞吐率：9.10req/s] [内存消耗：1,668.63kb] [文件加载：41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'CircleMyconsume',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'cir_id' => '2',
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleMyconsume[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000993s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.018692s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.016117s ]
+[ sql ] [ SQL ] SELECT `f_id` FROM `bill_friend` WHERE  `uid` = 1 LIMIT 1    [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle_bill` [ RunTime:0.018031s ]
+[ sql ] [ SQL ] SELECT `cbl_id` FROM `bill_circle_bill` WHERE  `cir_id` = 2  AND `payer` = 1    [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle_friend_assoct` [ RunTime:0.017620s ]
+[ sql ] [ SQL ] SELECT SUM(sum_money) AS tp_sum FROM `bill_circle_friend_assoct` WHERE  `cbl_id` IN (3)  AND `pay_start` = 0 LIMIT 1     [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT SUM(sum_money) AS tp_sum FROM `bill_circle_friend_assoct` WHERE  `cir_id` = 2  AND `friend_id` = 8  AND `pay_start` = 0 LIMIT 1      [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT SUM(sum_money) AS tp_sum FROM `bill_circle_friend_assoct` WHERE  `friend_id` = 8  AND `pay_start` = 1  AND `cir_id` = 2 LIMIT 1      [ RunTime:0.000543s ]
+[ sql ] [ SQL ] SELECT SUM(sum_money) AS tp_sum FROM `bill_circle_friend_assoct` WHERE  `pay_start` = 1  AND `cir_id` = 2 LIMIT 1     [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_circle_bill` `b` INNER JOIN `bill_friend` `f` ON `b`.`payer`=`f`.`f_id` INNER JOIN `bill_inout_class` `i` ON `b`.`class_id`=`i`.`c_id` WHERE  `b`.`cir_id` = '2'  [ RunTime:0.001005s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_circle_friend_assoct` WHERE  `cbl_id` = 3 LIMIT 1    [ RunTime:0.000586s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_circle_friend_assoct` WHERE  `cbl_id` = 4 LIMIT 1    [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_circle_friend_assoct` WHERE  `cbl_id` = 5 LIMIT 1    [ RunTime:0.000378s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:52+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/CircleFriendAll?cir_id=2&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM
+[ log ] localhost/charge/public/index.php/port/circle/CircleFriendAll?cir_id=2&openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM [运行时间：0.123835s][吞吐率：8.08req/s] [内存消耗：1,669.03kb] [文件加载：41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'CircleFriendAll',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'cir_id' => '2',
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleFriendAll[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001061s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.025315s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'onVsY0Z7hIknIoGK0kvfXMMp8wLM' LIMIT 1    [ RunTime:0.000545s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.019148s ]
+[ sql ] [ SQL ] SELECT `friend_id`,`cir_id` FROM `bill_circle` WHERE  `cir_id` = 2  AND `user_id` = 1 LIMIT 1     [ RunTime:0.000554s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.026857s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `f_id` IN (1,2,3,4,5,8)        [ RunTime:0.000619s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 1 AND friend_id = 1 [ RunTime:0.000457s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 0 AND friend_id = 1 [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 1 AND friend_id = 2 [ RunTime:0.000392s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 0 AND friend_id = 2 [ RunTime:0.000411s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 1 AND friend_id = 3 [ RunTime:0.000832s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 0 AND friend_id = 3 [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 1 AND friend_id = 4 [ RunTime:0.000501s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 0 AND friend_id = 4 [ RunTime:0.000735s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 1 AND friend_id = 5 [ RunTime:0.002414s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 0 AND friend_id = 5 [ RunTime:0.001015s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 1 AND friend_id = 8 [ RunTime:0.000777s ]
+[ sql ] [ SQL ] SELECT sum(sum_money) as sum_money,cir_id,pay_start,friend_id FROM bill_circle_friend_assoct WHERE cir_id = '2' AND pay_start = 0 AND friend_id = 8 [ RunTime:0.000636s ]
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:57+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/UserMyFriend?openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM&cir_id=2
+[ log ] localhost/charge/public/index.php/port/circle/UserMyFriend?openid=onVsY0Z7hIknIoGK0kvfXMMp8wLM&cir_id=2 [运行时间：0.028973s][吞吐率：34.52req/s] [内存消耗：1,493.70kb] [文件加载：37]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'UserMyFriend',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+  'openid' => 'onVsY0Z7hIknIoGK0kvfXMMp8wLM',
+  'cir_id' => '2',
+)
+[ info ] [ RUN ] app\port\controller\Circle->UserMyFriend[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-05-04T17:51:57+08:00 ] ::1 ::1 GET /charge/public/index.php/port/circle/circleName
+[ log ] localhost/charge/public/index.php/port/circle/circleName [运行时间：0.090583s][吞吐率：11.04req/s] [内存消耗：1,653.02kb] [文件加载：40]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'circle',
+    2 => 'circleName',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'https://servicewechat.com/wx0d74e7d7020142e0/devtools/page-frame.html',
+  'accept' => '*/*',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/53.0.2785.143 Safari/537.36 appservice webview/100000',
+  'x-requested-with' => 'XMLHttpRequest',
+  'cache-control' => 'no-cache',
+  'pragma' => 'no-cache',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\port\controller\Circle->CircleName[ D:\WWW\charge\application\port\controller\Circle.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001012s ] mysql:dbname=bill_charge;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.023897s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` IS NULL LIMIT 1   [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.029349s ]
+[ sql ] [ SQL ] SELECT `circle_name`,`cir_id` FROM `bill_circle` WHERE  `cir_id` IS NULL  AND `user_id` IS NULL LIMIT 1   [ RunTime:0.000657s ]
+
+---------------------------------------------------------------

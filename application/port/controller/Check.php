@@ -1,7 +1,6 @@
 <?php
 /**
  * 极客之家 高端PHP - 账单模块
- *
  * @copyright  Copyright (c) 2016 QIN TEAM (http://www.qlh.com)
  * @license    GUN  General Public License 2.0
  * @version    Id:  Type_model.php 2016-6-12 16:36:52
