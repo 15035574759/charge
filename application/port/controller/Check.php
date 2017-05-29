@@ -9,9 +9,9 @@ namespace app\port\controller;
 use	think\Controller;
 use	think\Request;
 use	think\Db;
-use app\port\model\LoginModel;
 use think\Session;
 use think\Cache;
+use app\port\model\CheckModel;
 class Check extends	Controller	
 {
 
@@ -106,85 +106,13 @@ class Check extends	Controller
 
 	/**
 	 * 查询当前用户所有账单
+	 * @return [type] openid [用户openid]
 	 */
 	public function UserCheck()
 	{
-
+		$check = new CheckModel();
 		$userOpenid = input("param.openid");//用户openid
-		$uid = $this->UserId($userOpenid);
-		$start = date('Y-m-01 00:00:00');
-		$end = date('Y-m-d H:i:s');
-
-
-		//本月总金额
-		// $MonthAmount = DB::query("SELECT sum(`money`) as `money`,`time`,`user_id` FROM `bill_charge` WHERE `user_id` = '$uid' AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end')");
-		// $MonthAmount = $MonthAmount[0]['money'];
-
-		//本月收入
-		$MonthIncome = DB::query("SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '$uid' AND `inout_start`=1 AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end')");
-		$MonthIncome = $MonthIncome[0]['money'];
-		if($MonthIncome == null){$MonthIncome = 0;}
-
-		//本月支出
-		$MonthExpend = DB::query("SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '$uid' AND `inout_start`=2 AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end')");
-		if(empty($MonthExpend) || !isset($MonthExpend)){$MonthExpend = 0;}
-		$MonthExpend = $MonthExpend[0]['money'];
-		if($MonthExpend == null){$MonthExpend = 0;}
-
-		//本月预算余额
-		$MonthBalance = $MonthIncome - $MonthExpend;
-		// echo $MonthBalance;die;
-		
-		$lastid = input("param.lastid");//分页数据ID
-		if($lastid == 1){exit;}//没有数据了
-		$where = "a_id > 0";
-		if($lastid > 0)
-		{
-			$where .= " and a_id < $lastid";
-		}
-
-		$limit = input("param.limit");//分页每页显示数据
-		// echo $lastid;die;
-		//支出与收入数据
-		$TimeDataArr = DB::query("select time,a_id from bill_charge where $where group by time order by a_id desc LIMIT $limit");
-		if(!isset($TimeDataArr))
-		{
-			return array("start"=>1,"data"=>$TimeDataArr,"MonthBalance"=>$MonthBalance,"MonthIncome"=>$MonthIncome,"MonthExpend"=>$MonthExpend);
-		}
-		//查询每日收入与支出总金额
-		foreach ($TimeDataArr as $key => $val) {
-			$TimeDataArr[$key]['time'] = date("Y-m-d",$val['time']);
-			//查询日收入总金额
-			$IncomeTimeDataArr = DB::query("select time,inout_start,sum(money) as money from bill_charge where inout_start=1 and time=".$val['time']." group by time");
-			foreach ($IncomeTimeDataArr as $kk => $vv) {
-				$TimeDataArr[$key]['IncomeTimeDataArrSum'] = $vv['money'];
-			}
-			//查出日支出总金额
-			$ExpendTimeDataArr = DB::query("select time,inout_start,sum(money) as money from bill_charge where inout_start=2 and time=".$val['time']." group by time");
-			foreach ($ExpendTimeDataArr as $kk => $vv) {
-				$TimeDataArr[$key]['ExpendTimeDataArrSum'] = $vv['money'];
-			}
-			$TimeDataArr[$key]['array'] = DB::name("charge")->alias("c")->join("bill_inout_class i","c.inout_class=i.c_id")->where("c.time",$val['time'])->select();
-		}
-		// print_r($TimeDataArr);die;
-		if(isset($TimeDataArr) || !empty($TimeDataArr))
-		{
-			return array("start"=>1,"data"=>$TimeDataArr,"MonthBalance"=>$MonthBalance,"MonthIncome"=>$MonthIncome,"MonthExpend"=>$MonthExpend);
-		}
-		else
-		{
-			return array("start"=>"0","msg"=>"获取数据失败","MonthBalance"=>0,"MonthIncome"=>0,"MonthExpend"=>0);
-		}
-	}
-
-	/**
-	 * 获取用户ID
-	 * @param [type] $openid [description]
-	 */
-	public function UserId($userOpenid)
-	{
-		$user_id = DB::name("public_follow")->alias("f")->field("f.uid")->join("bill_user u","f.uid=u.uid")->where("f.openid",$userOpenid)->find();
-		return $user_id['uid'];
+		return $check->UserCheck($userOpenid);
 	}
 
 	/**
@@ -200,6 +128,7 @@ class Check extends	Controller
 
 	/**
 	 * 删除账单
+	 * @return [type] a_id [数据ID]
 	 */
 	public function CheckDel()
 	{
@@ -213,5 +142,16 @@ class Check extends	Controller
 		{
 			return array("start"=>0,"msg"=>"删除数据失败");
 		}
+	}
+
+	/**
+	 * 本月收入与支出数据
+	 * @return [type] openid [用户openid]
+	 */
+	public function ThisIncomOut()
+	{
+		$check = new CheckModel();
+		$openid = input("param.openid");//用户openid
+		return $check->ThisIncomOut($openid);
 	}
 }

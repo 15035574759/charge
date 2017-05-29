@@ -1,4 +1,10 @@
 <?php
+/**
+ * 极客之家 高端PHP - 圈子账本 Model
+ * @copyright  Copyright (c) 2016 QIN TEAM (http://www.qlh.com)
+ * @license    GUN  General Public License 2.0
+ * @version    Id:  Type_model.php 2017-4-3 16:36:52
+ */
 namespace app\port\model;
 use think\Model;
 use think\Db;
