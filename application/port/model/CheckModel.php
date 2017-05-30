@@ -20,21 +20,22 @@ class CheckModel extends Model
 	public function UserCheck($userOpenid)
 	{
 		$uid = $this->UserOpenid($userOpenid);
-		$start = date('Y-m-01 00:00:00');
-		$end = date('Y-m-d H:i:s');
-
+		// $start = date('Y-m-01 00:00:00');
+		// $end = date('Y-m-d H:i:s');
+		$start = date('Y-m-01 H:i:s', strtotime(date("Y-m-d")));
+		$end = date('Y-m-d 23:29:59', strtotime("$start +1 month -1 day"));
 
 		//本月总金额
 		// $MonthAmount = DB::query("SELECT sum(`money`) as `money`,`time`,`user_id` FROM `bill_charge` WHERE `user_id` = '$uid' AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end')");
 		// $MonthAmount = $MonthAmount[0]['money'];
 
 		//本月收入
-		$MonthIncome = DB::query("SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '$uid' AND `inout_start`=1 AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end')");
+		$MonthIncome = DB::query("SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '$uid' AND `inout_start`=1 AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end') ORDER BY `a_id` DESC");
 		$MonthIncome = $MonthIncome[0]['money'];
 		if($MonthIncome == null){$MonthIncome = 0;}
 
 		//本月支出
-		$MonthExpend = DB::query("SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '$uid' AND `inout_start`=2 AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end')");
+		$MonthExpend = DB::query("SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '$uid' AND `inout_start`=2 AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end') ORDER BY `a_id` DESC");
 		if(empty($MonthExpend) || !isset($MonthExpend)){$MonthExpend = 0;}
 		$MonthExpend = $MonthExpend[0]['money'];
 		if($MonthExpend == null){$MonthExpend = 0;}
@@ -54,8 +55,8 @@ class CheckModel extends Model
 		$limit = input("param.limit");//分页每页显示数据
 		// echo $lastid;die;
 		//支出与收入数据
-		$TimeDataArr = DB::query("select time,a_id from bill_charge where $where group by time order by a_id desc LIMIT $limit");
-		// print_r($TimeDataArr);die;
+		$TimeDataArr = DB::query("select time,a_id from bill_charge where $where group by time order by time desc LIMIT $limit");
+		// print_r($TimeDataArr);die;		
 		if(!isset($TimeDataArr))
 		{
 			return array("start"=>1,"data"=>$TimeDataArr,"MonthBalance"=>$MonthBalance,"MonthIncome"=>$MonthIncome,"MonthExpend"=>$MonthExpend);
@@ -73,7 +74,7 @@ class CheckModel extends Model
 			foreach ($ExpendTimeDataArr as $kk => $vv) {
 				$TimeDataArr[$key]['ExpendTimeDataArrSum'] = $vv['money'];
 			}
-			$TimeDataArr[$key]['array'] = DB::name("charge")->alias("c")->join("bill_inout_class i","c.inout_class=i.c_id")->where("c.time",$val['time'])->order("a_id desc")->select();
+			$TimeDataArr[$key]['array'] = DB::name("charge")->alias("c")->join("bill_inout_class i","c.inout_class=i.c_id")->where("c.time",$val['time'])->order("c.a_id desc")->select();
 		}
 		// print_r($TimeDataArr);die;
 		if(isset($TimeDataArr) || !empty($TimeDataArr))
@@ -143,13 +144,15 @@ class CheckModel extends Model
 							ORDER BY
 							`a_id` DESC
 					");
-		//计算概率 保留两位小数
-		foreach ($IncomeData as $key => $val) {
-			$IncomeData[$key]['probability'] = ROUND($val['money'] / $IncomeTotalMoney[0]['money'] * 100,2)."%";
-			$IncomeMonerArray[] = $val['money'];//收入金额
-			$IncomeColorArray[] = $val['color'];//收入颜色
-		}
-
+			$IncomeMonerArray = [];
+			$IncomeColorArray = [];
+			//计算概率 保留两位小数
+			foreach ($IncomeData as $key => $val) {
+				$IncomeData[$key]['probability'] = ROUND($val['money'] / $IncomeTotalMoney[0]['money'] * 100,2)."%";
+				$IncomeMonerArray[] = $val['money'];//收入金额
+				$IncomeColorArray[] = $val['color'];//收入颜色
+			}
+	
 		//查询支出总金额 inout_start=2
 		$ExpendTotalMoney = DB::query("
 							SELECT
@@ -162,6 +165,7 @@ class CheckModel extends Model
 							AND `time` <= unix_timestamp('".$end."')
 							AND `user_id` = ".$uid."
 						");
+
 		// print_r($TotalMoney);die;
 		//查询支出数据 包括概率 inout_start=2
 		$ExpendData = DB::query("
@@ -185,12 +189,15 @@ class CheckModel extends Model
 						ORDER BY
 							`a_id` DESC
 					");
-		//计算概率 保留两位小数
-		foreach ($ExpendData as $key => $val) {
-			$ExpendData[$key]['probability'] = ROUND($val['money'] / $ExpendTotalMoney[0]['money'] * 100,2)."%";
-			$ExpendMonerArray[] = $val['money'];//支出金额
-			$ExpendColorArray[] = $val['color'];//支出颜色
-		}
+			$ExpendMonerArray = [];
+			$ExpendColorArray = [];
+			// print_r($ExpendData);die;
+			//计算概率 保留两位小数
+			foreach ($ExpendData as $key => $val) {
+				$ExpendData[$key]['probability'] = ROUND($val['money'] / $ExpendTotalMoney[0]['money'] * 100,2)."%";
+				$ExpendMonerArray[] = $val['money'];//支出金额
+				$ExpendColorArray[] = $val['color'];//支出颜色
+			}
 
 		$ExpendTotalMoney = $ExpendTotalMoney[0]['money'];//支出总金额
 		$IncomeTotalMoney = $IncomeTotalMoney[0]['money'];//收入总金额
@@ -208,6 +215,37 @@ class CheckModel extends Model
 				"ExpendTotalMoney" => $ExpendTotalMoney,//支出总金额
 				"IncomeTotalMoney" => $IncomeTotalMoney,//收入总金额
 			);
+	}
+
+	public function BudgetMoney($openid)
+	{
+		$BeginDate = date('Y-m-01 H:i:s', strtotime(date("Y-m-d")));
+		$end = date('Y-m-d 23:29:59', strtotime("$BeginDate +1 month -1 day"));
+
+		$uid = $this->UserOpenid($openid);
+		$res = DB::name("public_follow")->where("openid",$openid)->field("butged,butged_start")->find();
+		if($res['butged_start'] == 1)
+		{
+			//查询本月消费金额
+			$ResidueMoney = DB::query("
+							SELECT
+								sum(`money`) AS `money`
+							FROM
+								`bill_charge`
+							WHERE
+								`inout_start` = 2
+							AND `time` >= unix_timestamp('".$BeginDate."')
+							AND `time` <= unix_timestamp('".$end."')
+							AND `user_id` = ".$uid."
+						");
+			$ResidueMoney = $res['butged'] - $ResidueMoney[0]['money'];//计算最终预算支出余额
+			return array("code"=>1,"data"=>$ResidueMoney,"msg"=>"预算金额已开启");
+		}
+		else
+		{
+			return array("code"=>0,"data"=>"","msg"=>"预算金额已关闭");
+		}
+		
 	}
 
 }

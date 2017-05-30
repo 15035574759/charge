@@ -154,4 +154,12 @@ class Check extends	Controller
 		$openid = input("param.openid");//用户openid
 		return $check->ThisIncomOut($openid);
 	}
+
+	
+	public function BudgetMoney()
+	{
+		$check = new CheckModel();
+		$openid = input("param.openid");//用户openid
+		return $check->BudgetMoney($openid);
+	}
 }
