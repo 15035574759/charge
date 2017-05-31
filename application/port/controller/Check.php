@@ -112,7 +112,9 @@ class Check extends	Controller
 	{
 		$check = new CheckModel();
 		$userOpenid = input("param.openid");//用户openid
-		return $check->UserCheck($userOpenid);
+		$lastid = input("param.lastid");//分页ID
+		$limit = input("param.limit");//分页每页显示数据
+		return $check->UserCheck($userOpenid,$lastid,$limit);
 	}
 
 	/**

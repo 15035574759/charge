@@ -104,7 +104,7 @@ class FriendModel extends Model
 			}
 		}
 
-		print_r($data);die;
+		// print_r($data);die;
 		return $data;
 	}
 }

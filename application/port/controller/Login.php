@@ -40,12 +40,13 @@ class Login extends	Controller
         // return $PHPSESSID;
 		$code = input("param.code");
 		//这里要配置你的小程序appid和secret
-    	$url = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx0d74e7d7020142e0&secret=10b7720b73847774654a192d1e0aa9b5&js_code='.$code.'&grant_type=authorization_code';
+    	$url = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx14fd8a03c8bf2694&secret=eb7992eabb097c63f14e566cdea3837f&js_code='.$code.'&grant_type=authorization_code';
     	$data = $this->post_data($url);
     	$arr = json_decode($data,true);
+    
     	//请求失败返回
     	if(isset($arr['errcode']) && (!isset($arr['openid']) || (!isset($arr['session_key'])))){
-    		return (array('status'=>0,'msg'=>'获取信息失败'));
+    		return (array('code'=>-1,'msg'=>'获取信息失败'));
     	}
 
         //存储session数据
@@ -103,7 +104,7 @@ class Login extends	Controller
     		return array('status'=>0,'msg'=>'传递信息不全');
     	}
 
-        $appid = 'wx0d74e7d7020142e0';  //这里配置你的小程序appid
+        $appid = 'wx14fd8a03c8bf2694';  //这里配置你的小程序appid
         $sessionKey = Cache::get('session_key');
 
         $result = import("wxBizDataCrypt",EXTEND_PATH.'wxBizDataCrypt'); 

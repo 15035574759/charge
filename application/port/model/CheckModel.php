@@ -17,9 +17,14 @@ class CheckModel extends Model
 	 * 查询当前用户所有账单
 	 * @return [type] openid [用户openid]
 	 */
-	public function UserCheck($userOpenid)
+	public function UserCheck($userOpenid,$lastid,$limit)
 	{
 		$uid = $this->UserOpenid($userOpenid);
+		// $uid = 2;
+		if(!isset($uid) || empty($uid))
+		{
+			return array("code"=>-1,"data"=>"","msg"=>"获取用户ID失败");
+		}
 		// $start = date('Y-m-01 00:00:00');
 		// $end = date('Y-m-d H:i:s');
 		$start = date('Y-m-01 H:i:s', strtotime(date("Y-m-d")));
@@ -44,19 +49,18 @@ class CheckModel extends Model
 		$MonthBalance = $MonthIncome - $MonthExpend;
 		// echo $MonthBalance;die;
 		
-		$lastid = input("param.lastid");//分页数据ID
+
 		if($lastid == 1){exit;}//没有数据了
-		$where = "a_id > 0";
+		$where = "a_id > 0 and user_id = ".$uid."";
 		if($lastid > 0)
 		{
 			$where .= " and a_id < $lastid";
 		}
 
-		$limit = input("param.limit");//分页每页显示数据
+		
 		// echo $lastid;die;
 		//支出与收入数据
-		$TimeDataArr = DB::query("select time,a_id from bill_charge where $where group by time order by time desc LIMIT $limit");
-		// print_r($TimeDataArr);die;		
+		$TimeDataArr = DB::query("select time,a_id from bill_charge where $where group by time order by time desc");	
 		if(!isset($TimeDataArr))
 		{
 			return array("start"=>1,"data"=>$TimeDataArr,"MonthBalance"=>$MonthBalance,"MonthIncome"=>$MonthIncome,"MonthExpend"=>$MonthExpend);
@@ -77,13 +81,13 @@ class CheckModel extends Model
 			$TimeDataArr[$key]['array'] = DB::name("charge")->alias("c")->join("bill_inout_class i","c.inout_class=i.c_id")->where("c.time",$val['time'])->order("c.a_id desc")->select();
 		}
 		// print_r($TimeDataArr);die;
-		if(isset($TimeDataArr) || !empty($TimeDataArr))
+		if($TimeDataArr != array())
 		{
 			return array("start"=>1,"data"=>$TimeDataArr,"MonthBalance"=>$MonthBalance,"MonthIncome"=>$MonthIncome,"MonthExpend"=>$MonthExpend);
 		}
 		else
 		{
-			return array("start"=>"0","msg"=>"获取数据失败","MonthBalance"=>0,"MonthIncome"=>0,"MonthExpend"=>0);
+			return array("start"=>0,"msg"=>"获取数据失败","MonthBalance"=>0,"MonthIncome"=>0,"MonthExpend"=>0);
 		}
 	}
 
