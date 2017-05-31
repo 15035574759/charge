@@ -16856,3 +16856,63 @@
 [ sql ] [ SQL ] SELECT sum(`sum_money`) AS `total_money` FROM `bill_circle_friend_assoct` WHERE `friend_id` = 1 AND `pay_start` = 1 [ RunTime:0.000352s ]
 
 ---------------------------------------------------------------
+[ 2017-05-31T17:44:06+08:00 ] ::1 ::1 GET /charge/public/index.php/port/check/BudgetMoney
+[ log ] localhost/charge/public/index.php/port/check/BudgetMoney [è¿è¡Œæ—¶é—´ï¼š1.089676s][åžåçŽ‡ï¼š0.92req/s] [å†…å­˜æ¶ˆè€—ï¼š1,632.32kb] [æ–‡ä»¶åŠ è½½ï¼š41]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'check',
+    2 => 'BudgetMoney',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '_ga=GA1.1.1421445475.1495848716; _gid=GA1.1.578200299.1496194029',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\port\controller\Check->BudgetMoney[ D:\WWW\charge\application\port\controller\Check.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ error ] [2002]SQLSTATE[HY000] [2002] ÓÉÓÚÄ¿±ê¼ÆËã»ú»ý¼«¾Ü¾ø£¬ÎÞ·¨Á¬½Ó¡£
+[D:\WWW\charge\thinkphp\library\think\db\Connection.php:282]
+
+---------------------------------------------------------------
+[ 2017-05-31T17:44:38+08:00 ] ::1 ::1 GET /charge/public/index.php/port/check/BudgetMoney
+[ log ] localhost/charge/public/index.php/port/check/BudgetMoney [è¿è¡Œæ—¶é—´ï¼š0.015981s][åžåçŽ‡ï¼š62.57req/s] [å†…å­˜æ¶ˆè€—ï¼š893.78kb] [æ–‡ä»¶åŠ è½½ï¼š29]
+[ info ] [ LANG ] D:\WWW\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'port',
+    1 => 'check',
+    2 => 'BudgetMoney',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '_ga=GA1.1.1421445475.1495848716; _gid=GA1.1.578200299.1496194029',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'localhost',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\port\controller\Check->BudgetMoney[ D:\WWW\charge\application\port\controller\Check.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------

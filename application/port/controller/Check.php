@@ -160,6 +160,7 @@ class Check extends	Controller
 	
 	public function BudgetMoney()
 	{
+		echo 11;die;
 		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
 		return $check->BudgetMoney($openid);
