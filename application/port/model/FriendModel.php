@@ -85,7 +85,7 @@ class FriendModel extends Model
 	{
 		$uid = $this->UserOpenid($openid);
 		//查询我的好友
-		$data = DB::name("user_friend")->alias("uf")->join("bill_friend bf","uf.f_id=bf.f_id")->order("bf.f_id desc")->where("u_id",$uid)->select();
+		$data = DB::name("user_friend")->alias("uf")->join("bill_friend bf","uf.u_id=bf.f_id")->order("bf.f_id desc")->where("u_id",$uid)->select();
 		// print_r($data);die;
 		foreach ($data as $key => $val) {
 
@@ -104,7 +104,7 @@ class FriendModel extends Model
 			}
 		}
 
-		// print_r($data);die;
+		print_r($data);die;
 		return $data;
 	}
 }
