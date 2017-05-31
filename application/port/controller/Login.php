@@ -1,7 +1,6 @@
 <?php
 /**
  * 极客之家 高端PHP - 用户登录
- *
  * @copyright  Copyright (c) 2016 QIN TEAM (http://www.qlh.com)
  * @license    GUN  General Public License 2.0
  * @version    Id:  Type_model.php 2016-6-12 16:36:52
@@ -41,9 +40,9 @@ class Login extends	Controller
 		$code = input("param.code");
 		//这里要配置你的小程序appid和secret
     	$url = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx14fd8a03c8bf2694&secret=eb7992eabb097c63f14e566cdea3837f&js_code='.$code.'&grant_type=authorization_code';
-    	$data = $this->post_data($url);
+    	$data = file_get_contents($url);
     	$arr = json_decode($data,true);
-    
+        // print_r($arr);die;
     	//请求失败返回
     	if(isset($arr['errcode']) && (!isset($arr['openid']) || (!isset($arr['session_key'])))){
     		return (array('code'=>-1,'msg'=>'获取信息失败'));
@@ -56,8 +55,10 @@ class Login extends	Controller
     	// session('openid', $arr['openid']);
         // return $arr['session_key'];
     	$map['openid'] = $arr['openid'];
+        $res = DB::name('public_follow')->where($map)->find();
     	//判断当前系统是否存在该用户，用户自动注册
-    	if(!DB::name('public_follow')->where($map)->find()){
+    	if(empty($res)){
+            // echo 111;die;
             //注册
     		$uid = DB::name('user')->insert(array('reg_time'=>time()));
     		$userId = DB::name('user')->getLastInsID();
