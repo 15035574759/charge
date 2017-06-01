@@ -30,7 +30,10 @@ class CircleModel extends Model
 	public function circleUser($openid)
 	{
 		$uid = $this->UserOpenid($openid);
-		$res = DB::name("circle")->alias("c")->where("user_id",$uid)->join("bill_inout_class bic","c.class_id=bic.c_id")->order("cir_id desc")->select();
+		// $user_id = DB::name("friend")->where("uid",$uid)->field("f_id")->find();
+		// echo $uid;die;
+		$res = DB::name("circle")->alias("c")->where("c.user_id",$uid)->join("bill_inout_class bic","c.class_id=bic.c_id")->order("c.cir_id desc")->select();
+		// print_r($res);die;
 		foreach ($res as $key => $value) {
 			//$res[$key]['friend_length'] = strlen(str_replace(",","",$value['friend_id']));
 			$friendArr = explode(",",$value['friend_id']);//统计所有好友长度
@@ -40,7 +43,7 @@ class CircleModel extends Model
 	}
 
 	/**
-	 * 查询当前用户下所有圈子数据
+	 * 删除当前用户下圈子
 	 * @param  [type] $c_id [圈子ID]
 	 * @return [type] [description]
 	 */
@@ -87,12 +90,12 @@ class CircleModel extends Model
 	public function GetAddCircle($openid,$circle_name,$c_id)
 	{
 		$uid = $this->UserOpenid($openid);
-		//根据管理员ID 查询好友所属id
-		$FriendUId = DB::name("friend")->where("uid",$uid)->field("f_id")->find();
+		// 根据管理员ID 查询好友所属id
+		// $FriendUId = DB::name("friend")->where("uid",$uid)->field("f_id")->find();
 		$data = array(
 				'circle_name' =>  $circle_name,
 				'friend_id' =>  $uid,
-				'user_id' =>  $FriendUId['f_id'],
+				'user_id' =>  $uid,
 				'time' =>  time(),
 				'class_id' =>  $c_id
 			);
@@ -250,19 +253,41 @@ class CircleModel extends Model
 	public function UserMyFriend($cir_id,$openid)
 	{
 		$uid = $this->UserOpenid($openid);
+		//查询当前用户好友ID
+		$user_id = DB::name("friend")->where("uid",$uid)->field("f_id")->find();
+		// print_r($user_id);die;
+		// echo $uid;die;
+		//查询当前用户下所有好友
 		$res = DB::name("user_friend")->alias("uf")->join("bill_friend bf","uf.f_id=bf.f_id")->where("uf.u_id",$uid)->field("bf.f_id")->select();
+		//查询当前圈子下已添加的好友
 		$CircleFriend = DB::name("circle")->where("cir_id",$cir_id)->field("friend_id")->find();
 		$CircleFriend = explode(",",$CircleFriend['friend_id']);
 		// print_r($CircleFriend);
-		// print_r($res);die;
+		//删除管理员
+		foreach($CircleFriend as $key => $val){
+			if($val == $user_id['f_id']){
+				unset($CircleFriend[$key]);
+			}
+		}
+		
+		// print_r($CircleFriend);die;
 		foreach ($res as $key => $val) {
-			$arr[] = array_diff($val,$CircleFriend);
+			$arr[] = $val['f_id'];//去除已经添加的好友
 		}
-		$CircleFriend = array_filter($arr);
-		foreach ($CircleFriend as $key => $val) {
-			$num[] = $val['f_id'];
-			$CircleFriendstr = join(",",$num);
+		$arr = array_diff($CircleFriend,$arr);//去除已经添加的好友
+		$CircleFriend = array_filter($arr);//去除空数组
+		// print_r($CircleFriend);die;
+		if($CircleFriend == array()){
+			return array("code"=>-1,"data"=>"","msg"=>"当前没有好友,请到好友管理添加好友");
 		}
+		else
+		{
+			foreach ($CircleFriend as $key => $val){
+				$num[] = $val['f_id'];
+				$CircleFriendstr = join(",",$num);
+			}
+		}
+		
 		return DB::name("friend")->where("f_id","in",$CircleFriendstr)->select();
 	}	
 
@@ -442,7 +467,7 @@ class CircleModel extends Model
 	 */
 	public function CircleList($cir_id,$openid)
 	{
-		$data = DB::name("circle_bill")->alias("ab")->join("bill_inout_class ic","ab.class_id=ic.c_id")->where("cir_id",$cir_id)->select();//账单数据
+		$data = DB::name("circle_bill")->alias("ab")->join("bill_inout_class ic","ab.class_id=ic.c_id")->order("ab.cbl_id desc")->where("cir_id",$cir_id)->select();//账单数据
 		//查询几个人消费
 		$consume = DB::name("circle")->where("cir_id",$cir_id)->field("friend_id")->find();
 		$str = explode(",",$consume['friend_id']);
@@ -484,7 +509,7 @@ class CircleModel extends Model
 		//支付人数据
 		$CircleName['PayerData'] = DB::name("friend")->where("f_id","in",$CircleName['payer'])->field("friend_name,friend_imgurl,f_id")->select();
 		foreach ($CircleName['PayerData'] as $key => $val) {
-			$CircleName['PayerData'][$key]['payment'] = $CircleName['total'] / $CircleName['PayerNum'];
+			$CircleName['PayerData'][$key]['payment'] = round($CircleName['total'] / $CircleName['PayerNum'],2);
 			$CircleName['PayerData'][$key]['friend_name'] = mb_strlen($val['friend_name'], 'utf-8') > 5 ? mb_substr($val['friend_name'], 0, 5, 'utf-8').'....' : $val['friend_name'];
 		}
 		// print_r($CircleName);die;
@@ -503,7 +528,7 @@ class CircleModel extends Model
 		
 		//查询参与人消费金额
 		foreach ($CircleName['DataAllParticipant'] as $key => $val) {
-			$CircleName['DataAllParticipant'][$key]['payer'] = $CircleName['total'] / $FriendSum;
+			$CircleName['DataAllParticipant'][$key]['payer'] = round($CircleName['total'] / $FriendSum,2);
 			$CircleName['DataAllParticipant'][$key]['friend_name'] = mb_strlen($val['friend_name'], 'utf-8') > 5 ? mb_substr($val['friend_name'], 0, 5, 'utf-8').'....' : $val['friend_name'];
 			$CircleName['DataAllParticipant'][$key]['pay_start'] = DB::name("circle_friend_assoct")->where(["cbl_id"=>$cbl_id,"friend_id"=>$val['f_id']])->field("pay_start")->find()['pay_start'];//支付状态
 		}
@@ -511,8 +536,8 @@ class CircleModel extends Model
 		//查询记录人
 		$CircleName['UserName'] = DB::name("circle")->alias("c")->join("bill_friend b","c.user_id=b.f_id")->where("c.cir_id",$CircleName['cir_id'])->field("c.user_id,b.friend_name,c.time")->find();
 		$CircleName['UserName']['time'] = date("Y-m-d H:i:s",$CircleName['UserName']['time']);
-		return $CircleName;
 		// print_r($CircleName);die;
+		return $CircleName;
 	}
 
 	/**
