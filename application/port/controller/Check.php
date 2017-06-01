@@ -36,7 +36,7 @@ class Check extends	Controller
 		$data = input("param.formData");
 		$dataArr = json_decode($data,true);
 		$dataArr['time'] = strtotime($dataArr['time']);
-		// p($dataArr);
+		// p($data);
 		$user_id = DB::name("public_follow")->alias("f")->field("f.uid")->join("bill_user u","f.uid=u.uid")->where("f.openid",$openid)->find();
 		$dataArr['user_id'] = $user_id['uid'];
 		if(empty($openid)){
@@ -160,7 +160,6 @@ class Check extends	Controller
 	
 	public function BudgetMoney()
 	{
-		echo 11;die;
 		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
 		return $check->BudgetMoney($openid);
