@@ -35,12 +35,38 @@ class CheckModel extends Model
 		// $MonthAmount = $MonthAmount[0]['money'];
 
 		//本月收入
-		$MonthIncome = DB::query("SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '$uid' AND `inout_start`=1 AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end') ORDER BY `a_id` DESC");
+		$MonthIncome = DB::query("
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '$uid'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('".$start."')
+							AND `time` <= unix_timestamp('$end')
+							ORDER BY
+								`a_id` DESC
+						");
 		$MonthIncome = $MonthIncome[0]['money'];
 		if($MonthIncome == null){$MonthIncome = 0;}
 
 		//本月支出
-		$MonthExpend = DB::query("SELECT sum(`money`) as `money`,`time` FROM `bill_charge` WHERE `user_id` = '$uid' AND `inout_start`=2 AND `time` >= unix_timestamp('".$start."') AND `time` <= unix_timestamp('$end') ORDER BY `a_id` DESC");
+		$MonthExpend = DB::query("
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '$uid'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('".$start."')
+							AND `time` <= unix_timestamp('$end')
+							ORDER BY
+								`a_id` DESC
+						");
 		if(empty($MonthExpend) || !isset($MonthExpend)){$MonthExpend = 0;}
 		$MonthExpend = $MonthExpend[0]['money'];
 		if($MonthExpend == null){$MonthExpend = 0;}
@@ -60,34 +86,114 @@ class CheckModel extends Model
 		
 		// echo $lastid;die;
 		//支出与收入数据
-		$TimeDataArr = DB::query("select time,a_id from bill_charge where $where group by time order by time desc");	
+		$TimeDataArr = DB::query("
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							$where
+						GROUP BY
+							time
+						ORDER BY
+							a_id DESC
+						LIMIT $limit
+					");
+		// print_r($TimeDataArr);die;
 		if(!isset($TimeDataArr))
 		{
-			return array("start"=>1,"data"=>$TimeDataArr,"MonthBalance"=>$MonthBalance,"MonthIncome"=>$MonthIncome,"MonthExpend"=>$MonthExpend);
+			return array(
+					"start"=>1,
+					"data"=>$TimeDataArr,
+					"MonthBalance"=>$MonthBalance,
+					"MonthIncome"=>$MonthIncome,
+					"MonthExpend"=>$MonthExpend
+				);
 		}
+		
+		//查询当前用户收入与支出数据条数
+		$TimeDataArrCount = count(DB::query("
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							$where
+						GROUP BY
+							time
+						ORDER BY
+							time DESC
+					"));	 
 		//查询每日收入与支出总金额
 		foreach ($TimeDataArr as $key => $val) {
 			$TimeDataArr[$key]['time'] = date("Y-m-d",$val['time']);
 			//查询日收入总金额
-			$IncomeTimeDataArr = DB::query("select time,inout_start,sum(money) as money from bill_charge where inout_start=1 and time=".$val['time']." group by time");
-			foreach ($IncomeTimeDataArr as $kk => $vv) {
-				$TimeDataArr[$key]['IncomeTimeDataArrSum'] = $vv['money'];
+			$IncomeTimeDataArr = DB::query("
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = ".$uid."
+									AND inout_start = 1
+									AND time = ".$val['time']."
+									GROUP BY
+										time
+							");
+				foreach ($IncomeTimeDataArr as $kk => $vv) {
+					$TimeDataArr[$key]['IncomeTimeDataArrSum'] = $vv['money'];
+				}
+				//查出日支出总金额
+				$ExpendTimeDataArr = DB::query("
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = ".$uid."
+										AND inout_start = 2
+										AND time = ".$val['time']."
+										GROUP BY
+											time
+									");
+				foreach ($ExpendTimeDataArr as $kk => $vv) {
+					$TimeDataArr[$key]['ExpendTimeDataArrSum'] = $vv['money'];
+				}
+				$TimeDataArr[$key]['array'] = DB::name("charge")
+											->alias("c")
+											->join("bill_inout_class i","c.inout_class=i.c_id")
+											->where("c.time",$val['time'])
+											->where("c.user_id",$uid)
+											->order("c.a_id desc")
+											->select();
 			}
-			//查出日支出总金额
-			$ExpendTimeDataArr = DB::query("select time,inout_start,sum(money) as money from bill_charge where inout_start=2 and time=".$val['time']." group by time");
-			foreach ($ExpendTimeDataArr as $kk => $vv) {
-				$TimeDataArr[$key]['ExpendTimeDataArrSum'] = $vv['money'];
-			}
-			$TimeDataArr[$key]['array'] = DB::name("charge")->alias("c")->join("bill_inout_class i","c.inout_class=i.c_id")->where("c.time",$val['time'])->order("c.a_id desc")->select();
-		}
 		// print_r($TimeDataArr);die;
 		if($TimeDataArr != array())
 		{
-			return array("start"=>1,"data"=>$TimeDataArr,"MonthBalance"=>$MonthBalance,"MonthIncome"=>$MonthIncome,"MonthExpend"=>$MonthExpend);
+			return array(
+				"start"=>1,
+				"data"=>$TimeDataArr,
+				"MonthBalance"=>$MonthBalance,
+				"MonthIncome"=>$MonthIncome,
+				"MonthExpend"=>$MonthExpend,
+				"TimeDataArrCount"=>$TimeDataArrCount
+			);
 		}
 		else
 		{
-			return array("start"=>0,"msg"=>"获取数据失败","MonthBalance"=>0,"MonthIncome"=>0,"MonthExpend"=>0);
+			return array(
+				"start"=>0,
+				"msg"=>"获取数据失败",
+				"MonthBalance"=>0,
+				"MonthIncome"=>0,
+				"MonthExpend"=>0
+			);
 		}
 	}
 
@@ -97,7 +203,11 @@ class CheckModel extends Model
 	 */
 	public function UserOpenid($userOpenid)
 	{
-		$user_id = DB::name("public_follow")->alias("f")->field("f.uid")->join("bill_user u","f.uid=u.uid")->where("f.openid",$userOpenid)->find();
+		$user_id = DB::name("public_follow")
+							->alias("f")->field("f.uid")
+							->join("bill_user u","f.uid=u.uid")
+							->where("f.openid",$userOpenid)
+							->find();
 		return $user_id['uid'];
 	}
 
@@ -143,6 +253,7 @@ class CheckModel extends Model
 								`inout_start` = 1
 							AND `time` >= unix_timestamp('".$BeginDate."')
 							AND `time` <= unix_timestamp('".$end."')
+							AND `user_id` = ".$uid."
 							GROUP BY
 								`inout_class`
 							ORDER BY
@@ -151,7 +262,8 @@ class CheckModel extends Model
 			$IncomeMonerArray = [];
 			$IncomeColorArray = [];
 			//计算概率 保留两位小数
-			foreach ($IncomeData as $key => $val) {
+			foreach ($IncomeData as $key => $val) 
+			{
 				$IncomeData[$key]['probability'] = ROUND($val['money'] / $IncomeTotalMoney[0]['money'] * 100,2)."%";
 				$IncomeMonerArray[] = $val['money'];//收入金额
 				$IncomeColorArray[] = $val['color'];//收入颜色
@@ -188,6 +300,7 @@ class CheckModel extends Model
 							`inout_start` = 2
 						AND `time` >= unix_timestamp('".$BeginDate."')
 						AND `time` <= unix_timestamp('".$end."')
+						AND `user_id` = ".$uid."
 						GROUP BY
 							`inout_class`
 						ORDER BY
@@ -197,7 +310,8 @@ class CheckModel extends Model
 			$ExpendColorArray = [];
 			// print_r($ExpendData);die;
 			//计算概率 保留两位小数
-			foreach ($ExpendData as $key => $val) {
+			foreach ($ExpendData as $key => $val) 
+			{
 				$ExpendData[$key]['probability'] = ROUND($val['money'] / $ExpendTotalMoney[0]['money'] * 100,2)."%";
 				$ExpendMonerArray[] = $val['money'];//支出金额
 				$ExpendColorArray[] = $val['color'];//支出颜色
@@ -220,7 +334,11 @@ class CheckModel extends Model
 				"IncomeTotalMoney" => $IncomeTotalMoney,//收入总金额
 			);
 	}
-
+	
+	/**
+	 * 查询预算是否开启 
+	 * @return [type] openid [用户openid]
+	 */
 	public function BudgetMoney($openid)
 	{
 		$BeginDate = date('Y-m-01 H:i:s', strtotime(date("Y-m-d")));

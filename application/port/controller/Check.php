@@ -157,7 +157,10 @@ class Check extends	Controller
 		return $check->ThisIncomOut($openid);
 	}
 
-	
+	/**
+	 * 查询预算是否开启 
+	 * @return [type] $openid [用户openid]
+	 */
 	public function BudgetMoney()
 	{
 		$check = new CheckModel();

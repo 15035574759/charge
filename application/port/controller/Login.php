@@ -117,7 +117,7 @@ class Login extends Controller
             $data = json_decode($data, true);
             // return $data;
             // session('myinfo', $data);
-            Cache::set('myinfo',$data);
+            //Cache::set('myinfo',$data);
 
             $save = array(
                     'nickname' => $data['nickName'],
@@ -127,9 +127,11 @@ class Login extends Controller
                     'country' => $data['country'],
                     'headimgurl' => $data['avatarUrl']);
 
-            $uid =  Cache::get('mid');
+            //$uid =  Cache::get('mid');
+            //查询要修改的用户数据 id
+            $uid = DB::name("public_follow")->where("openid",$data['openid'])->field("uid")->find();
             if(empty($uid)){
-                return array('status'=>0,'msg'=>'用户ID异常'.$uid);
+                return array('status'=>0,'msg'=>'用户ID异常'.$uid );
             }
             $res = DB::name('user')->where("uid",$uid)->update($save);
             $friend_id = DB::name('friend')->where("uid",$uid)->find();//修改当前用户好友表数据  为注册用户
