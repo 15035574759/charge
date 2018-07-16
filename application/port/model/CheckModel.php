@@ -74,7 +74,13 @@ class CheckModel extends Model
 		//本月预算余额
 		$MonthBalance = $MonthIncome - $MonthExpend;
 		// echo $MonthBalance;die;
-		
+
+		//判断当前用户是否有记账记录
+		$UserRecord = DB::name("charge")->where("user_id",$uid)->count();
+		if($UserRecord == 0)
+		{
+			return ['start'=>1001,'msg'=>'当前用户没有记账记录'];
+		}
 
 		if($lastid == 1){exit;}//没有数据了
 		$where = "a_id > 0 and user_id = ".$uid."";
@@ -83,7 +89,7 @@ class CheckModel extends Model
 			$where .= " and a_id < $lastid";
 		}
 
-		
+
 		// echo $lastid;die;
 		//支出与收入数据
 		$TimeDataArr = DB::query("
@@ -111,7 +117,7 @@ class CheckModel extends Model
 					"MonthExpend"=>$MonthExpend
 				);
 		}
-		
+
 		//查询当前用户收入与支出数据条数
 		$TimeDataArrCount = count(DB::query("
 						SELECT
@@ -125,7 +131,7 @@ class CheckModel extends Model
 							time
 						ORDER BY
 							time DESC
-					"));	 
+					"));
 		//查询每日收入与支出总金额
 		foreach ($TimeDataArr as $key => $val) {
 			$TimeDataArr[$key]['time'] = date("Y-m-d",$val['time']);
@@ -174,7 +180,7 @@ class CheckModel extends Model
 											->select();
 			}
 		// print_r($TimeDataArr);die;
-		if($TimeDataArr != array())
+		if($TimeDataArr)
 		{
 			return array(
 				"start"=>1,
@@ -187,13 +193,13 @@ class CheckModel extends Model
 		}
 		else
 		{
-			return array(
+			return json(array(
 				"start"=>0,
 				"msg"=>"获取数据失败",
 				"MonthBalance"=>0,
 				"MonthIncome"=>0,
 				"MonthExpend"=>0
-			);
+			));
 		}
 	}
 
@@ -262,13 +268,13 @@ class CheckModel extends Model
 			$IncomeMonerArray = [];
 			$IncomeColorArray = [];
 			//计算概率 保留两位小数
-			foreach ($IncomeData as $key => $val) 
+			foreach ($IncomeData as $key => $val)
 			{
 				$IncomeData[$key]['probability'] = ROUND($val['money'] / $IncomeTotalMoney[0]['money'] * 100,2)."%";
 				$IncomeMonerArray[] = $val['money'];//收入金额
 				$IncomeColorArray[] = $val['color'];//收入颜色
 			}
-	
+
 		//查询支出总金额 inout_start=2
 		$ExpendTotalMoney = DB::query("
 							SELECT
@@ -310,7 +316,7 @@ class CheckModel extends Model
 			$ExpendColorArray = [];
 			// print_r($ExpendData);die;
 			//计算概率 保留两位小数
-			foreach ($ExpendData as $key => $val) 
+			foreach ($ExpendData as $key => $val)
 			{
 				$ExpendData[$key]['probability'] = ROUND($val['money'] / $ExpendTotalMoney[0]['money'] * 100,2)."%";
 				$ExpendMonerArray[] = $val['money'];//支出金额
@@ -319,9 +325,9 @@ class CheckModel extends Model
 
 		$ExpendTotalMoney = $ExpendTotalMoney[0]['money'];//支出总金额
 		$IncomeTotalMoney = $IncomeTotalMoney[0]['money'];//收入总金额
-		
+
 		// print_r($ExpendColorArray);die;
-		
+
 		//返回数据
 		return array(
 				"IncomeData" => $IncomeData,
@@ -334,9 +340,9 @@ class CheckModel extends Model
 				"IncomeTotalMoney" => $IncomeTotalMoney,//收入总金额
 			);
 	}
-	
+
 	/**
-	 * 查询预算是否开启 
+	 * 查询预算是否开启
 	 * @return [type] openid [用户openid]
 	 */
 	public function BudgetMoney($openid)
@@ -367,7 +373,7 @@ class CheckModel extends Model
 		{
 			return array("code"=>0,"data"=>"","msg"=>"预算金额已关闭");
 		}
-		
+
 	}
 
 }

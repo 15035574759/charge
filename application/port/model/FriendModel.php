@@ -27,30 +27,30 @@ class FriendModel extends Model
 		{
 			return array("code"=>-1,"data"=>"","msg"=>"获取用户信息失败");
 		}
-		
+
 			//判断手机号是否注册 首先获取单钱用户所有好友id  根据id查询好友手机号是否添加
 			$FriendPhoneId = DB::name("user_friend")->where("u_id",$uid)->select();
-			
+
 			if($FriendPhoneId != array())
-			{	
+			{
 				foreach ($FriendPhoneId as $key => $val) {//首先获取单钱用户所有好友id
 					$num[] = $val['f_id'];
 					$FriendPhoneId = implode(",",$num);
 				}
-			
+
 				// echo $FriendPhoneId;die;
 				$FriendPhoneAdd = DB::name("friend")->where("f_id","in",$FriendPhoneId)->where("friend_phone",$phone)->find();
-				
+
 				if($FriendPhoneAdd)
 				{
 					return array("code"=>3,"data"=>"","msg"=>"该手机号已经添加");
 				}
 			}
-			
+
 				$data = array(
 						"friend_name"=>$name,
 						"friend_phone"=>$phone,
-						"friend_imgurl"=>"/images/img/tx".rand(1,10).".jpg",
+						"friend_imgurl"=>"https://h5php.xingyuanauto.com/charge/public/uploads/images/img/tx".rand(1,10).".jpg",
 						"time"=>time(),
 						"uid"=> 0,
 						"start"=>"0"

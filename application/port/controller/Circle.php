@@ -12,8 +12,8 @@ use	think\Db;
 use app\port\model\CircleModel;
 use think\Session;
 use think\Cache;
-class Circle extends Controller	
-{	
+class Circle extends Controller
+{
 	/**
 	 * 查询圈子分类名称
 	 * @return [type] [description]
@@ -21,7 +21,7 @@ class Circle extends Controller
 	public function circleAdd_class()
 	{
 		$circle = new CircleModel();
-		return $circle->circleAdd_class();
+		return json($circle->circleAdd_class());
 	}
 
 	/**
@@ -32,7 +32,7 @@ class Circle extends Controller
 	{
 		$openid = input("param.openid");
 		$circle = new CircleModel();
-		return $circle->circleUser($openid);
+		return json($circle->circleUser($openid));
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Circle extends Controller
 	{
 		$cir_id = input("param.cir_id");
 		$circle = new CircleModel();
-		return $circle->circleDel($cir_id);
+		return json($circle->circleDel($cir_id));
 	}
 
 	/**
@@ -55,7 +55,7 @@ class Circle extends Controller
 		$circle = new CircleModel();
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
-		return $circle->CircleName($cir_id,$openid);
+		return json($circle->CircleName($cir_id,$openid));
 	}
 
 	/**
@@ -70,7 +70,7 @@ class Circle extends Controller
 		// echo $openid;die;
 		$circle_name = input("param.circle");
 		$c_id = input("param.c_id");
-		return $circle->GetAddCircle($openid,$circle_name,$c_id);
+		return json($circle->GetAddCircle($openid,$circle_name,$c_id));
 	}
 
 	/**
@@ -83,52 +83,52 @@ class Circle extends Controller
 		$circle = new CircleModel();
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
-		return $circle->CircleFriend($cir_id,$openid);
+		return json($circle->CircleFriend($cir_id,$openid));
 	}
 
 	/**
 	 * 获取当前圈子全部好友 包括好友消费信息
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid] 
+	 * @param [type] $openid [openid]
 	 */
 	public function CircleFriendAll()
 	{
 		$circle = new CircleModel();
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
-		return $circle->CircleFriendAll($cir_id,$openid);
+		return json($circle->CircleFriendAll($cir_id,$openid));
 	}
 
 	/**
 	 * 获取当前圈子下我的消费金额 以及圈子下账单列表
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid] 
+	 * @param [type] $openid [openid]
 	 */
 	public function CircleMyconsume()
 	{
 		$circle = new CircleModel();
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
-		return $circle->CircleMyconsume($cir_id,$openid);
+		return json($circle->CircleMyconsume($cir_id,$openid));
 	}
 
 	/**
 	 * 获取当前用户所有好友
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid] 
+	 * @param [type] $openid [openid]
 	 */
 	public function UserMyFriend()
 	{
 		$circle = new CircleModel();
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
-		return $circle->UserMyFriend($cir_id,$openid);
+		return json($circle->UserMyFriend($cir_id,$openid));
 	}
 
 	/**
 	 * 获取当前圈子下所有好友
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid] 
+	 * @param [type] $openid [openid]
 	 */
 	// public function CircleMyFriend()
 	// {
@@ -141,8 +141,8 @@ class Circle extends Controller
 	/**
 	 * 给当前圈子添加好友
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid] 
-	 * @param [type] $f_id   [好友id] 
+	 * @param [type] $openid [openid]
+	 * @param [type] $f_id   [好友id]
 	 */
 	function AddFriend()
 	{
@@ -153,11 +153,11 @@ class Circle extends Controller
 		$res = $circle->AddFriend($cir_id,$openid,$f_id);
 		if($res)
 		{
-			return array("msg"=>"1","data"=>"添加成功");
+			return json(array("msg"=>"1","data"=>"添加成功"));
 		}
 		else
 		{
-			return array("msg"=>"-1","data"=>"添加失败");
+			return json(array("msg"=>"-1","data"=>"添加失败"));
 		}
 	}
 
@@ -166,27 +166,27 @@ class Circle extends Controller
 	 */
 	public function ChargeGetimg()
 	{
-		return DB::name("inout_class")->where("start",4)->select();
+		return json(DB::name("inout_class")->where("start",4)->select());
 	}
 
 	/**
 	 * 选择付款人
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid]  
+	 * @param [type] $openid [openid]
 	 */
 	public function GetPayer()
 	{
 		$circle = new CircleModel();
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
-		return $circle->GetPayer($cir_id,$openid);
+		return json($circle->GetPayer($cir_id,$openid));
 	}
 
 	/**
 	 * 根据选择付款人 展示付款人信息
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid]  
-	 * @param [type] $f_id [用户选择的付款人id]  
+	 * @param [type] $openid [openid]
+	 * @param [type] $f_id [用户选择的付款人id]
 	 */
 	public function GetShowpayer()
 	{
@@ -194,29 +194,29 @@ class Circle extends Controller
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
 		$f_id = input("param.f_id");
-		return $circle->GetShowpayer($cir_id,$openid,$f_id);
+		return json($circle->GetShowpayer($cir_id,$openid,$f_id));
 	}
 
 	/**
 	 * 如果未选择付款人  默认选择管理员
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid]  
+	 * @param [type] $openid [openid]
 	 */
 	public function GetShowpayerEmpty()
 	{
 		$circle = new CircleModel();
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
-		return $circle->GetShowpayerEmpty($cir_id,$openid);
-	} 
+		return json($circle->GetShowpayerEmpty($cir_id,$openid));
+	}
 
 	/**
 	 * 开始账单  记账
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $c_id [记账分类]  
-	 * @param [type] $f_id [付款人]  
-	 * @param [type] $PayMoney [总支出]  
-	 * @param [type] $remark [备注]  
+	 * @param [type] $c_id [记账分类]
+	 * @param [type] $f_id [付款人]
+	 * @param [type] $PayMoney [总支出]
+	 * @param [type] $remark [备注]
 	 */
 	public function AddCircle()
 	{
@@ -242,60 +242,60 @@ class Circle extends Controller
 			);
 		$data1 = array(
 				"cir_id"=>$cir_id,
-				"friend_id"=>$friend_id,	
-				"sum_money"=>$sum_money,	
+				"friend_id"=>$friend_id,
+				"sum_money"=>$sum_money,
 			);
-		return $circle->AddCircle($data,$data1,$f_id,$PaySumMoney);
+		return json($circle->AddCircle($data,$data1,$f_id,$PaySumMoney));
 	}
 
 	/**
 	 * 获取当前圈子账单列表
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid]  
+	 * @param [type] $openid [openid]
 	 */
 	public function CircleList()
 	{
 		$circle = new CircleModel();
 		$cir_id = input("param.cir_id");
 		$openid = input("param.openid");
-		return $circle->CircleList($cir_id,$openid);
+		return json($circle->CircleList($cir_id,$openid));
 	}
 
 	/**
 	 * 获取当前圈子账单查询明细数据
 	 * @param [type] $cir_id [圈子ID]
-	 * @param [type] $openid [openid]  
+	 * @param [type] $openid [openid]
 	 */
 	public function CircleDetails()
 	{
 		$circle = new CircleModel();
 		$cbl_id = input("param.cbl_id");
 		$openid = input("param.openid");
-		return $circle->CircleDetails($cbl_id);
-	} 
+		return json($circle->CircleDetails($cbl_id));
+	}
 
 	/**
 	 * 修改用户账单支付状态
 	 * @param [type] $cbl_id [账单ID]
-	 * @param [type] $f_id [参与人ID]  
+	 * @param [type] $f_id [参与人ID]
 	 */
 	public function UpdateCirclePayment()
 	{
 		$circle = new CircleModel();
 		$cbl_id = input("param.cbl_id");
 		$f_id = input("param.f_id");
-		return $circle->UpdateCirclePayment($cbl_id,$f_id);
+		return json($circle->UpdateCirclePayment($cbl_id,$f_id));
 	}
 
 	/**
 	 * 删除用户账单数据
 	 * @param [type] $cbl_id [账单ID]
-	 * @param [type] $f_id [参与人ID]  
+	 * @param [type] $f_id [参与人ID]
 	 */
 	public function DeleteCirclePayment()
 	{
 		$circle = new CircleModel();
 		$cbl_id = input("param.cbl_id");
-		return $circle->DeleteCirclePayment($cbl_id);
+		return json($circle->DeleteCirclePayment($cbl_id));
 	}
 }

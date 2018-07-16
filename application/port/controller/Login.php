@@ -15,8 +15,8 @@ use think\Session;
 use think\Cookie;
 use think\Cache;
 use wxBizDataCrypt\wxBizDataCrypt;
-class Login extends Controller  
-{   
+class Login extends Controller
+{
     public function index()
     {
         // session('session_key','555');
@@ -30,8 +30,8 @@ class Login extends Controller
      * 调用接口获取登录凭证（code）进而换取用户登录态信息
      * @return [type] [description]
      */
-    public  function sendCode()             
-    {       
+    public  function sendCode()
+    {
         // session('session_key',"1111");
         // Cache::set('name',"111",3600);
         // $sessionKey = Cache::get('name');
@@ -42,8 +42,8 @@ class Login extends Controller
         //这里要配置你的小程序appid和secret
         $url = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx14fd8a03c8bf2694&secret=eb7992eabb097c63f14e566cdea3837f&js_code='.$code.'&grant_type=authorization_code';
         $data = file_get_contents($url);
+        // p($data);die;
         $arr = json_decode($data,true);
-        // print_r($arr);die;
         //请求失败返回
         if(isset($arr['errcode']) && (!isset($arr['openid']) || (!isset($arr['session_key'])))){
             return (array('code'=>-1,'msg'=>'获取信息失败'));
@@ -57,22 +57,28 @@ class Login extends Controller
         // return $arr['session_key'];
         $map['openid'] = $arr['openid'];
         $res = DB::name('public_follow')->where($map)->find();
+        // print_r($res);die;
         //判断当前系统是否存在该用户，用户自动注册
         if(empty($res)){
             // echo 111111;die;
             //注册
-            $uid = DB::name('user')->insert(array('reg_time'=>time()));
+            $uid = DB::name('user')->insert(array('headimgurl'=>'https://h5php.xingyuanauto.com/charge/public/uploads/images/头像.png','nickname'=>'未获取','reg_time'=>time()));
             $userId = DB::name('user')->getLastInsID();
 
-            DB::name("friend")->insert(array("uid"=>$userId,"start"=>1,"time"=>time()));//同时添加到好友数据表
+            DB::name("friend")->insert(array("uid"=>$userId,"friend_name"=>"未获取","friend_imgurl"=>"https://h5php.xingyuanauto.com/charge/public/uploads/images/头像.png","start"=>1,"time"=>time()));//同时添加到好友数据表
             DB::name('public_follow')->insert(array('openid'=>$arr['openid'], 'uid'=>$userId, 'token'=>'gh_6d3bf5d72981'));
             // session('mid', $uid);
             Cache::set('mid',$userId);
         }
+        else
+        {
+            //读取用户uid
+            Cache::set('mid',$res['uid']);
+        }
 
         $PHPSESSID = $this->getRandomString(27);
         // return $PHPSESSID;
-        return (array('status'=>1, 'openid'=>$arr['openid'] , 'PHPSESSID'=>$PHPSESSID));            
+        return json((array('status'=>1, 'openid'=>$arr['openid'] , 'PHPSESSID'=>$PHPSESSID)));
     }
 
     /**
@@ -85,10 +91,10 @@ class Login extends Controller
     {
         if (is_null($chars)){
             $chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        }  
+        }
         mt_srand(10000000*(double)microtime());
         for ($i = 0, $str = '', $lc = strlen($chars)-1; $i < $len; $i++){
-            $str .= $chars[mt_rand(0, $lc)];  
+            $str .= $chars[mt_rand(0, $lc)];
         }
         return $str;
     }
@@ -107,9 +113,9 @@ class Login extends Controller
         }
 
         $appid = 'wx14fd8a03c8bf2694';  //这里配置你的小程序appid
-        $sessionKey = Cache::get('session_key');
+        $sessionKey = Cache::get('session_key');//获取会话秘钥
 
-        $result = import("wxBizDataCrypt",EXTEND_PATH.'wxBizDataCrypt'); 
+        $result = import("wxBizDataCrypt",EXTEND_PATH.'wxBizDataCrypt');
         $pc = new \wxBizDataCrypt($appid, $sessionKey);
         $errCode = $pc->decryptData($encryptedData, $iv, $data );
         // return $errCode;
@@ -117,7 +123,7 @@ class Login extends Controller
             $data = json_decode($data, true);
             // return $data;
             // session('myinfo', $data);
-            //Cache::set('myinfo',$data);
+            Cache::set('myinfo',$data);
 
             $save = array(
                     'nickname' => $data['nickName'],
@@ -127,11 +133,9 @@ class Login extends Controller
                     'country' => $data['country'],
                     'headimgurl' => $data['avatarUrl']);
 
-            //$uid =  Cache::get('mid');
-            //查询要修改的用户数据 id
-            $uid = DB::name("public_follow")->where("openid",$data['openid'])->field("uid")->find();
+            $uid =  Cache::get('mid');
             if(empty($uid)){
-                return array('status'=>0,'msg'=>'用户ID异常'.$uid );
+                return json(array('status'=>0,'msg'=>'用户ID异常'.$uid));
             }
             $res = DB::name('user')->where("uid",$uid)->update($save);
             $friend_id = DB::name('friend')->where("uid",$uid)->find();//修改当前用户好友表数据  为注册用户
@@ -145,13 +149,13 @@ class Login extends Controller
             }
 
             if($res!==false){
-                return array('status'=>1,'msg'=>'用户信息修改成功');
+                return json(array('status'=>1,'msg'=>'用户信息修改成功'));
             }else{
-                return array('status'=>0,'msg'=>'用户信息保存失败');
+                return json(array('status'=>0,'msg'=>'用户信息保存失败'));
             }
 
         } else {
-            return array('status'=>0,'msg'=>'错误编号：'.$errCode);
+            return json(array('status'=>0,'msg'=>'错误编号：'.$errCode));
         }
     }
 
@@ -161,7 +165,7 @@ class Login extends Controller
      * @return [type]      [description]
      */
     function post_data($url){
-        //模拟post请求 
+        //模拟post请求
         $curl = curl_init(); // 启动一个CURL会话
         curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // 对认证证书来源的检查
@@ -175,7 +179,7 @@ class Login extends Controller
         curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
         $tmpInfo = curl_exec($curl); // 执行操作
-        
+
         curl_close($curl); // 关闭CURL会话
         return $tmpInfo; // 返回数据
     }

@@ -12,7 +12,7 @@ use	think\Db;
 use think\Session;
 use think\Cache;
 use app\port\model\CheckModel;
-class Check extends	Controller	
+class Check extends	Controller
 {
 
 	/**
@@ -23,7 +23,7 @@ class Check extends	Controller
 	{
 		$data['ExpendData'] = DB::name('inout_class')->where("start",1)->select();
 		$data['IncomeData'] = DB::name('inout_class')->where("start",2)->select();
-		return $data;
+		return json($data);
 	}
 
 	/**
@@ -49,11 +49,11 @@ class Check extends	Controller
 		$res = DB::name("charge")->insert($dataAdd);
 		if($res)
 		{
-			return array("status"=>1,"msg"=>"添加成功");
+			return json(array("status"=>1,"msg"=>"添加成功"));
 		}
 		else
 		{
-			return array("status"=>0,"msg"=>"添加失败");
+			return json(array("status"=>0,"msg"=>"添加失败"));
 		}
 	}
 
@@ -75,14 +75,14 @@ class Check extends	Controller
 		$getdate = strtotime(input("param.getdate"));//选择时间
 		if($getdate > $time)
 		{
-			return array("start"=>0,"date"=>$timeDate,"msg"=>"不能选择未来日期");
+			return json(array("start"=>0,"date"=>$timeDate,"msg"=>"不能选择未来日期"));
 		}
 		else
 		{
-			return array("start"=>1,"date"=>$timeDate);
+			return json(array("start"=>1,"date"=>$timeDate));
 		}
 	}
-	
+
 	/**
 	 * 字段过滤
 	 * @param  [type] $dataArr 需要添加的数据
@@ -112,9 +112,13 @@ class Check extends	Controller
 	{
 		$check = new CheckModel();
 		$userOpenid = input("param.openid");//用户openid
+		if(empty($userOpenid))
+		{
+				return json(['code'=>-1,'msg'=>'参数错误']);
+		}
 		$lastid = input("param.lastid");//分页ID
 		$limit = input("param.limit");//分页每页显示数据
-		return $check->UserCheck($userOpenid,$lastid,$limit);
+		return json($check->UserCheck($userOpenid,$lastid,$limit));
 	}
 
 	/**
@@ -125,7 +129,7 @@ class Check extends	Controller
 		$a_id = input("param.a_id");//用户openid
 		$data = DB::name("charge")->alias("c")->join("bill_inout_class i","c.inout_class=i.c_id")->where("a_id",$a_id)->find();
 		$data['time'] = date("Y-m-d H:i",$data['time']);
-		return $data;
+		return json($data);
 	}
 
 	/**
@@ -138,11 +142,11 @@ class Check extends	Controller
 		$res = DB::name("charge")->where("a_id",$a_id)->delete();
 		if($res)
 		{
-			return array("start"=>1,"msg"=>"删除数据成功");
+			return json(array("start"=>1,"msg"=>"删除数据成功"));
 		}
 		else
 		{
-			return array("start"=>0,"msg"=>"删除数据失败");
+			return json(array("start"=>0,"msg"=>"删除数据失败"));
 		}
 	}
 
@@ -154,17 +158,14 @@ class Check extends	Controller
 	{
 		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
-		return $check->ThisIncomOut($openid);
+		return json($check->ThisIncomOut($openid));
 	}
 
-	/**
-	 * 查询预算是否开启 
-	 * @return [type] $openid [用户openid]
-	 */
+
 	public function BudgetMoney()
 	{
 		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
-		return $check->BudgetMoney($openid);
+		return json($check->BudgetMoney($openid));
 	}
 }

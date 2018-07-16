@@ -12,8 +12,8 @@ use	think\Db;
 use app\port\model\FriendModel;
 use think\Session;
 use think\Cache;
-class Friend extends Controller	
-{	
+class Friend extends Controller
+{
 	/**
 	 * 添加好友
 	 * @return [name] [用户名]
@@ -26,7 +26,7 @@ class Friend extends Controller
 		$openid = input("param.openid");
 		$name = input("param.name");
 		$phone = input("param.phone");
-		return $friend->friend_add($name,$phone,$openid);
+		return json($friend->friend_add($name,$phone,$openid));
 	}
 
 	/**
@@ -37,7 +37,7 @@ class Friend extends Controller
 	{
 		$friend = new FriendModel();
 		$openid = input("param.openid");
-		return $friend->MyFriend($openid);
+		return json($friend->MyFriend($openid));
 	}
 
 }

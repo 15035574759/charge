@@ -30,7 +30,7 @@ return [
     // 扩展函数文件
     'extra_file_list'        => [THINK_PATH . 'helper' . EXT],
     // 默认输出类型
-    'default_return_type'    => 'json',
+    'default_return_type'    => 'html',
     // 默认AJAX 数据返回格式,可选json xml ...
     'default_ajax_return'    => 'json',
     // 默认JSONP格式返回的处理方法
@@ -195,7 +195,7 @@ return [
     'session'                => [
         'id'             => '',
         // SESSION_ID的提交变量,解决flash上传跨域
-        'var_session_id' => '',
+        'var_session_id' => '10',
         // SESSION 前缀
         'prefix'         => 'think',
         // 驱动方式 支持redis memcache memcached
@@ -235,24 +235,39 @@ return [
     // | 缓存设置
     // +----------------------------------------------------------------------
     'auth_key' => 'JUD6FCtZsqrmVXc2apev4TRn3O8gAhxbSlH9wfPN', //默认数据加密KEY
-    'salt'     => 'wZPb~yxvA!ir38&Z',//加密串 
+    'salt'     => 'wZPb~yxvA!ir38&Z',//加密串
 
     //验证码配置
     'captcha'  => [
         // 验证码字符集合
-        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY', 
+        'codeSet'  => '2345678abcdefhijkmnpqrstuvwxyzABCDEFGHJKLMNPQRTUVWXY',
         // 验证码字体大小(px)
-        'fontSize' => 20, 
+        'fontSize' => 20,
         // 是否画混淆曲线
-        'useCurve' => true, 
+        'useCurve' => true,
          // 验证码图片高度
         'imageH'   => 40,
         // 验证码图片宽度
-        'imageW'   => 130, 
+        'imageW'   => 130,
         // 验证码位数
-        'length'   => 4, 
-        // 验证成功后是否重置        
+        'length'   => 4,
+        // 验证成功后是否重置
         'reset'    => true
     ],
-    // 'SESSION_OPTIONS' => array('use_trans_sid'=>1,'use_only_cookies'=>0)
+    // 'SESSION_OPTIONS' => array('use_trans_sid'=>1,'use_only_cookies'=>0),
+
+    // +----------------------------------------------------------------------
+  // | 数据库设置
+  // +----------------------------------------------------------------------
+  'data_backup_path'     => '../data/',   //数据库备份路径必须以 / 结尾；
+  'data_backup_part_size' => '20971520',  //该值用于限制压缩后的分卷最大长度。单位：B；建议设置20M
+  'data_backup_compress' => '1',          //压缩备份文件需要PHP环境支持gzopen,gzwrite函数        0:不压缩 1:启用压缩
+  'data_backup_compress_level' => '9',    //压缩级别   1:普通   4:一般   9:最高
+
+   // +----------------------------------------------------------------------
+  // | 极验验证,请到官网申请ID和KEY，http://www.geetest.com/
+  // +----------------------------------------------------------------------
+  'verify_type' => '0',   //验证码类型：0极验验证， 1数字验证码
+  'gee_id'  => 'ca1219b1ba907a733eaadfc3f6595fad',
+  'gee_key' => '9977de876b194d227b2209df142c92a0',
 ];

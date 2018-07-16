@@ -1,5 +1,8 @@
 <?php
 header('content-type:text/html;charset=utf8');
+Header("Access-Control-Allow-Origin: * ");
+Header("Access-Control-Allow-Methods: POST, GET, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 // +----------------------------------------------------------------------
 // | ThinkPHP [ WE CAN DO IT JUST THINK ]
 // +----------------------------------------------------------------------
@@ -11,10 +14,10 @@ header('content-type:text/html;charset=utf8');
 // +----------------------------------------------------------------------
 // ini_set('session.cookie_domain', ".domain.com");//跨域访问Session
 // [ 应用入口文件 ]
-ini_set('session.cookie_domain',".domain.com");//跨域访问Session 
+// ini_set('session.cookie_domain',".domain.com");//跨域访问Session
 // 定义应用目录
 define('APP_PATH', __DIR__ . '/../application/');
 // 加载框架引导文件
 require __DIR__ . '/../thinkphp/start.php';
-// //	绑定当前访问到index模块 
+// //	绑定当前访问到index模块
 // define('BIND_MODULE','test');

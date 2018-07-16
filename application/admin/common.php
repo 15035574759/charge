@@ -30,9 +30,8 @@ function subTree($param, $pid = 0)
 }
 
 //记录日志
-function writelog($uid,$username,$description,$status)
+function writelog($uid='',$username,$description,$status)
 {
-
     $data['admin_id'] = $uid;
     $data['admin_name'] = $username;
     $data['description'] = $description;
@@ -40,7 +39,12 @@ function writelog($uid,$username,$description,$status)
     $data['ip'] = request()->ip();
     $data['add_time'] = time();
     $log = db('Log')->insert($data);
+    return;
+}
 
+function loges()
+{
+   return 111;
 }
 
 
@@ -76,6 +80,7 @@ function prepareMenu($param)
     unset($child);
     return $parent;
 }
+
 //获取菜单列表
 function getMenuList($param){
     $parent = []; //父类

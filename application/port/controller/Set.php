@@ -12,8 +12,8 @@ use	think\Db;
 use think\Session;
 use think\Cache;
 use app\port\model\SetModel;
-class Set extends Controller	
-{	
+class Set extends Controller
+{
 	/**
 	 * 查询用户预算是否开启
 	 */
@@ -21,7 +21,7 @@ class Set extends Controller
 	{
 		$set = new SetModel();
 		$userOpenid = input("param.openid");//用户openid
-		return $set->BudgetStart($userOpenid);
+		return json($set->BudgetStart($userOpenid));
 	}
 
 	/**
@@ -31,7 +31,7 @@ class Set extends Controller
 	{
 		$set = new SetModel();
 		$userOpenid = input("param.openid");//用户openid
-		return $set->BudgetOpen($userOpenid);
+		return json($set->BudgetOpen($userOpenid));
 	}
 
 	/**
@@ -41,7 +41,7 @@ class Set extends Controller
 	{
 		$set = new SetModel();
 		$userOpenid = input("param.openid");//用户openid
-		return $set->BudgetClose($userOpenid);
+		return json($set->BudgetClose($userOpenid));
 	}
 
 	/**
@@ -54,6 +54,6 @@ class Set extends Controller
 		$set = new SetModel();
 		$userOpenid = input("param.openid");//用户openid
 		$butgedMoney = input("param.butgedMoney");//用户预算金额
-		return $set->BudgetMoneyUpdate($userOpenid,$butgedMoney);
+		return json($set->BudgetMoneyUpdate($userOpenid,$butgedMoney));
 	}
 }

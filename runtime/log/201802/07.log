@@ -1,0 +1,1321 @@
+[ 2018-02-07T11:13:02+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowShow/FlowProject/charge/public/index.php/admin/login/index.html
+[ log ] localhost/FlowShow/FlowProject/charge/public/index.php/admin/login/index.html [运行时间：0.365686s][吞吐率：2.73req/s] [内存消耗：1,028.34kb] [文件加载：36]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'optimizelyEndUserId=oeu1506663637845r0.2817275719307284; _ga=GA1.1.251066124.1506503890; bdshare_firstime=1516957029768',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:02+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowShow/FlowProject/charge/public/index.php/admin/login/getverify/t/1517973182.html
+[ log ] localhost/FlowShow/FlowProject/charge/public/index.php/admin/login/getverify/t/1517973182.html [运行时间：0.239204s][吞吐率：4.18req/s] [内存消耗：1,022.29kb] [文件加载：35]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'getverify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'optimizelyEndUserId=oeu1506663637845r0.2817275719307284; _ga=GA1.1.251066124.1506503890; bdshare_firstime=1516957029768',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate, br',
+  'referer' => 'http://localhost/FlowShow/FlowProject/charge/public/index.php/admin/login/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'localhost',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1517973182',
+)
+[ info ] [ RUN ] app\admin\controller\Login->getVerify[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] www.charges.com/ [运行时间：0.096730s][吞吐率：10.34req/s] [内存消耗：1,036.13kb] [文件加载：38]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/login/index.html
+[ log ] www.charges.com/admin/login/index.html [运行时间：0.020622s][吞吐率：48.49req/s] [内存消耗：1,027.51kb] [文件加载：36]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/statisc/layui/css/layui.css
+[ log ] www.charges.com/FlowProject/charge/public/statisc/layui/css/layui.css [运行时间：0.188102s][吞吐率：5.32req/s] [内存消耗：759.55kb] [文件加载：27]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'FlowProject',
+    1 => 'charge',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.charges.com/admin/login/index.html',
+  'accept' => 'text/css,*/*;q=0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'statisc' => 'layui',
+  'css' => 'layui.css',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/statisc/css/login.css
+[ log ] www.charges.com/FlowProject/charge/public/statisc/css/login.css [运行时间：0.021559s][吞吐率：46.38req/s] [内存消耗：759.35kb] [文件加载：27]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'FlowProject',
+    1 => 'charge',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.charges.com/admin/login/index.html',
+  'accept' => 'text/css,*/*;q=0.1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'statisc' => 'css',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/statisc/layui/lay/dest/layui.all.js
+[ log ] www.charges.com/FlowProject/charge/public/statisc/layui/lay/dest/layui.all.js [运行时间：0.019231s][吞吐率：52.00req/s] [内存消耗：759.55kb] [文件加载：27]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'FlowProject',
+    1 => 'charge',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.charges.com/admin/login/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'statisc' => 'layui',
+  'lay' => 'dest',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/statisc/js/login.js
+[ log ] www.charges.com/FlowProject/charge/public/statisc/js/login.js [运行时间：0.017770s][吞吐率：56.27req/s] [内存消耗：759.23kb] [文件加载：27]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'FlowProject',
+    1 => 'charge',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.charges.com/admin/login/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'statisc' => 'js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/statisc/js/jquery.form.js
+[ log ] www.charges.com/FlowProject/charge/public/statisc/js/jquery.form.js [运行时间：0.019186s][吞吐率：52.12req/s] [内存消耗：759.39kb] [文件加载：27]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'FlowProject',
+    1 => 'charge',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.charges.com/admin/login/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'statisc' => 'js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/statisc/js/jparticle.jquery.js
+[ log ] www.charges.com/FlowProject/charge/public/statisc/js/jparticle.jquery.js [运行时间：0.026732s][吞吐率：37.41req/s] [内存消耗：759.36kb] [文件加载：27]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'FlowProject',
+    1 => 'charge',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.charges.com/admin/login/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'statisc' => 'js',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:28+08:00 ] 127.0.0.1 127.0.0.1 GET /admin/login/getverify/t/1517973208.html
+[ log ] www.charges.com/admin/login/getverify/t/1517973208.html [运行时间：0.095690s][吞吐率：10.45req/s] [内存消耗：1,021.79kb] [文件加载：35]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'getverify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.charges.com/admin/login/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1517973208',
+)
+[ info ] [ RUN ] app\admin\controller\Login->getVerify[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:13:29+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/statisc/img/titlg.png
+[ log ] www.charges.com/FlowProject/charge/public/statisc/img/titlg.png [运行时间：0.022312s][吞吐率：44.82req/s] [内存消耗：759.38kb] [文件加载：27]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'FlowProject',
+    1 => 'charge',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=5s3l1aersj77l76o6ug96rpq74',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.charges.com/admin/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.charges.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'statisc' => 'img',
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:15:43+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/
+[ log ] www.flowshow.com/FlowProject/charge/public/ [运行时间：0.025088s][吞吐率：39.86req/s] [内存消耗：1,036.34kb] [文件加载：38]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:15:55+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/login/index.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/login/index.html [运行时间：0.022505s][吞吐率：44.43req/s] [内存消耗：1,027.53kb] [文件加载：36]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:15:55+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/login/getverify/t/1517973355.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/login/getverify/t/1517973355.html [运行时间：0.118008s][吞吐率：8.47req/s] [内存消耗：1,021.98kb] [文件加载：35]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'getverify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/login/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1517973355',
+)
+[ info ] [ RUN ] app\admin\controller\Login->getVerify[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:15:59+08:00 ] 127.0.0.1 127.0.0.1 POST /FlowProject/charge/public/index.php/admin/login/dologin.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/login/dologin.html [运行时间：0.432241s][吞吐率：2.31req/s] [内存消耗：1,842.23kb] [文件加载：47]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/login/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.flowshow.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '195',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => 'qlh.947669',
+  'geetest_challenge' => '742e2e41c1b287829b48f7ac319c049865',
+  'geetest_validate' => 'a72f3f042a65f25afaf6af19d1636b71',
+  'geetest_seccode' => 'a72f3f042a65f25afaf6af19d1636b71|jordan',
+)
+[ info ] [ RUN ] app\admin\controller\Login->doLogin[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.035469s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_admin` [ RunTime:0.002834s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_admin` WHERE  `username` = 'admin' LIMIT 1    [ RunTime:0.018967s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_group` [ RunTime:0.002538s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_group` WHERE  `id` = 1 LIMIT 1    [ RunTime:0.002466s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.003314s ]
+[ sql ] [ SQL ] SELECT `name` FROM `bill_auth_rule`  [ RunTime:0.005955s ]
+[ sql ] [ SQL ] UPDATE `bill_admin`  SET `loginnum`=388,`last_login_ip`='127.0.0.1',`last_login_time`=1517973359  WHERE  `id` = 1       [ RunTime:0.002743s ]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004256s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_log` [ RunTime:0.003099s ]
+[ sql ] [ SQL ] INSERT INTO `bill_log` (`admin_id` , `admin_name` , `description` , `status` , `ip` , `add_time`) VALUES (1 , 'admin' , '用户【admin】登录成功' , 1 , '127.0.0.1' , 1517973359)        [ RunTime:0.009252s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:01+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/index/index.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html [运行时间：0.093540s][吞吐率：10.69req/s] [内存消耗：1,779.05kb] [文件加载：47]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\index\index.html [ array (
+  0 => 'username',
+  1 => 'rolename',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003304s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.003054s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002802s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:02+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/index/center.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/index/center.html [运行时间：0.048621s][吞吐率：20.57req/s] [内存消耗：1,779.15kb] [文件加载：47]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'center',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->center[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\index\center.html [ array (
+  0 => 'username',
+  1 => 'rolename',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002501s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.007023s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002692s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:02+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/ajax/getMenuList
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/ajax/getMenuList [运行时间：0.064223s][吞吐率：15.57req/s] [内存消耗：1,777.09kb] [文件加载：46]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'getMenuList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Ajax->getMenuList[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Ajax.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002777s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.002349s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002687s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002201s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:04+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/member/index.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/member/index.html [运行时间：0.131362s][吞吐率：7.61req/s] [内存消耗：1,830.54kb] [文件加载：48]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Member->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Member.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\member\index.html [ array (
+  0 => 'username',
+  1 => 'rolename',
+  2 => 'Nowpage',
+  3 => 'allpage',
+  4 => 'count',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.006455s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.004750s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.003567s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.016695s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_user` LIMIT 1   [ RunTime:0.005948s ]
+[ sql ] [ SQL ] SELECT `bill_user`.* FROM `bill_user` ORDER BY uid desc LIMIT 0,10   [ RunTime:0.032185s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:05+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/member/index.html?page=1
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/member/index.html?page=1 [运行时间：0.141361s][吞吐率：7.07req/s] [内存消耗：1,835.76kb] [文件加载：48]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/member/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Member->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Member.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008401s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.004537s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.006439s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.012077s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_user` LIMIT 1   [ RunTime:0.023718s ]
+[ sql ] [ SQL ] SELECT `bill_user`.* FROM `bill_user` ORDER BY uid desc LIMIT 0,10   [ RunTime:0.019049s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:12+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/log/operate_log.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/log/operate_log.html [运行时间：0.231035s][吞吐率：4.33req/s] [内存消耗：1,903.70kb] [文件加载：50]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'operate_log',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->operate_log[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Log.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\log\operate_log.html [ array (
+  0 => 'username',
+  1 => 'rolename',
+  2 => 'Nowpage',
+  3 => 'allpage',
+  4 => 'count',
+  5 => 'search_user',
+  6 => 'val',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003729s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.002327s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002444s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_admin` [ RunTime:0.002811s ]
+[ sql ] [ SQL ] SELECT `id`,`username` FROM `bill_admin`  [ RunTime:0.002070s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_log` [ RunTime:0.002060s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_log` LIMIT 1   [ RunTime:0.001338s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_log` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.008847s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:12+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/log/operate_log.html?page=1
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/log/operate_log.html?page=1 [运行时间：0.063148s][吞吐率：15.84req/s] [内存消耗：1,782.73kb] [文件加载：48]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'log',
+    2 => 'operate_log',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/log/operate_log.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'page' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Log->operate_log[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Log.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003480s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.006273s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002225s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_admin` [ RunTime:0.002137s ]
+[ sql ] [ SQL ] SELECT `id`,`username` FROM `bill_admin`  [ RunTime:0.001485s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_log` [ RunTime:0.002387s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_log` LIMIT 1   [ RunTime:0.001127s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_log` ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.001832s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:15+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/ad/add_focus.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/ad/add_focus.html [运行时间：0.127809s][吞吐率：7.82req/s] [内存消耗：1,918.02kb] [文件加载：49]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ad',
+    2 => 'add_focus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Ad->add_focus[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Ad.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\ad\add_focus.html [ array (
+  0 => 'username',
+  1 => 'rolename',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003642s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.003354s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002699s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:16+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/ad/focus_map.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/ad/focus_map.html [运行时间：0.108379s][吞吐率：9.23req/s] [内存消耗：1,844.25kb] [文件加载：49]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ad',
+    2 => 'focus_map',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Ad->focus_map[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Ad.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012153s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.003239s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002890s ]
+[ error ] [42S02]SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bill_charge.bill_focus' doesn't exist[D:\WWW\FlowShow\FlowProject\charge\thinkphp\library\think\db\connector\Mysql.php:60]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:26+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/menu/index.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/menu/index.html [运行时间：0.143756s][吞吐率：6.96req/s] [内存消耗：2,214.02kb] [文件加载：51]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Menu.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\menu\index.html [ array (
+  0 => 'username',
+  1 => 'rolename',
+  2 => 'admin_rule',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004386s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.003097s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002968s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` ORDER BY id asc  [ RunTime:0.002648s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:31+08:00 ] 127.0.0.1 127.0.0.1 POST /FlowProject/charge/public/index.php/admin/menu/rule_state.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/menu/rule_state.html [运行时间：0.131848s][吞吐率：7.58req/s] [内存消耗：1,814.80kb] [文件加载：50]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'menu',
+    2 => 'rule_state',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/menu/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.flowshow.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '6',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => '148',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Menu->rule_state[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Menu.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003353s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.003183s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.004782s ]
+[ sql ] [ SQL ] SELECT `status` FROM `bill_auth_rule` WHERE  `id` = 148 LIMIT 1    [ RunTime:0.002867s ]
+[ sql ] [ SQL ] UPDATE `bill_auth_rule`  SET `status`=0  WHERE  `id` = 148     [ RunTime:0.002773s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:33+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/index/index.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html [运行时间：0.074525s][吞吐率：13.42req/s] [内存消耗：1,778.80kb] [文件加载：47]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'cache-control' => 'max-age=0',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\index\index.html [ array (
+  0 => 'username',
+  1 => 'rolename',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012856s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.008888s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.003539s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:33+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/index/center.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/index/center.html [运行时间：0.046521s][吞吐率：21.50req/s] [内存消耗：1,778.68kb] [文件加载：47]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'center',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->center[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\index\center.html [ array (
+  0 => 'username',
+  1 => 'rolename',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003216s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.002386s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.003114s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:16:34+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/ajax/getMenuList
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/ajax/getMenuList [运行时间：0.074595s][吞吐率：13.41req/s] [内存消耗：1,776.59kb] [文件加载：46]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'getMenuList',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Ajax->getMenuList[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Ajax.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003230s ] mysql:dbname=bill_charge;host=192.168.30.33;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_auth_rule` [ RunTime:0.004833s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.002766s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_auth_rule` WHERE  (  status = 1 ) ORDER BY sort  [ RunTime:0.005873s ]
+
+---------------------------------------------------------------
+[ 2018-02-07T11:36:55+08:00 ] 127.0.0.1 127.0.0.1 POST /FlowProject/charge/public/index.php/admin/login/loginout.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/login/loginout.html [运行时间：0.023141s][吞吐率：43.21req/s] [内存消耗：990.13kb] [文件加载：35]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'loginout',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.flowshow.com',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '0',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->loginOut[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:36:55+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/login/index.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/login/index.html [运行时间：0.038234s][吞吐率：26.15req/s] [内存消耗：1,027.87kb] [文件加载：36]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\WWW\FlowShow\FlowProject\charge\public/../application/admin\view\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2018-02-07T11:36:55+08:00 ] 127.0.0.1 127.0.0.1 GET /FlowProject/charge/public/index.php/admin/login/getverify/t/1517974615.html
+[ log ] www.flowshow.com/FlowProject/charge/public/index.php/admin/login/getverify/t/1517974615.html [运行时间：0.209585s][吞吐率：4.77req/s] [内存消耗：1,021.98kb] [文件加载：35]
+[ info ] [ LANG ] D:\WWW\FlowShow\FlowProject\charge\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'getverify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=08hjaapuutr6b46md4hmkm38e6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.flowshow.com/FlowProject/charge/public/index.php/admin/login/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.108 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => 'www.flowshow.com',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  't' => '1517974615',
+)
+[ info ] [ RUN ] app\admin\controller\Login->getVerify[ D:\WWW\FlowShow\FlowProject\charge\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '10',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
