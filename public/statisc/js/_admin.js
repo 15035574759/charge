@@ -58,7 +58,7 @@ layui.use(['layer', 'element', 'util', 'common', 'navbar', 'tab'], function () {
             $(this).height($content.height());
         });
     }).resize();
-    $.getJSON('/FlowProject/charge/public/index.php/admin/ajax/getMenuList',{},function(data){
+    $.getJSON('/charge/public/index.php/admin/ajax/getMenuList',{},function(data){
         navbar.set({
             elem: '#admin-navbar-side',
             data: data

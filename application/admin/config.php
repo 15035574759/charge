@@ -7,15 +7,15 @@ return [
 
     //模板参数替换
     'view_replace_str' => array(
-        '__js__'   =>'/FlowProject/charge/public/statisc/js',
-        '__jss__'   =>'/FlowProject/charge/public/javascript/js',
-        '__css__'   =>'/FlowProject/charge/public/statisc/css',
-        '__img__'   =>'/FlowProject/charge/public/statisc/img',
-        '__lay__'   =>'/FlowProject/charge/public/statisc/layui',
-        '__font__'   =>'/FlowProject/charge/public/statisc/Font-Awesome/css',
-        '__common__'   =>'/FlowProject/charge/public/statisc/layui/lay/modules/extendplus',
-        '__PAY__'  =>   '/FlowProject/charge/public/javascript/alipay',
-        '__UPDATE__' => '/FlowProject/charge/public/javascript/update',
+        '__js__'   =>'/charge/public/statisc/js',
+        '__jss__'   =>'/charge/public/javascript/js',
+        '__css__'   =>'/charge/public/statisc/css',
+        '__img__'   =>'/charge/public/statisc/img',
+        '__lay__'   =>'/charge/public/statisc/layui',
+        '__font__'   =>'/charge/public/statisc/Font-Awesome/css',
+        '__common__'   =>'/charge/public/statisc/layui/lay/modules/extendplus',
+        '__PAY__'  =>   '/charge/public/javascript/alipay',
+        '__UPDATE__' => '/charge/public/javascript/update',
     ),
 
     //微信 开发配置
