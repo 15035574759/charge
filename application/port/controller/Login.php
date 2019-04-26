@@ -62,10 +62,10 @@ class Login extends Controller
         if(empty($res)){
             // echo 111111;die;
             //注册
-            $uid = DB::name('user')->insert(array('headimgurl'=>'https://h5php.xingyuanauto.com/charge/public/uploads/images/头像.png','nickname'=>'未获取','reg_time'=>time()));
+            $uid = DB::name('user')->insert(array('headimgurl'=>'https://www.qinlh.com/charge/public/uploads/images/头像.png','nickname'=>'未获取','reg_time'=>time()));
             $userId = DB::name('user')->getLastInsID();
 
-            DB::name("friend")->insert(array("uid"=>$userId,"friend_name"=>"未获取","friend_imgurl"=>"https://h5php.xingyuanauto.com/charge/public/uploads/images/头像.png","start"=>1,"time"=>time()));//同时添加到好友数据表
+            DB::name("friend")->insert(array("uid"=>$userId,"friend_name"=>"未获取","friend_imgurl"=>"https://www.qinlh.com/charge/public/uploads/images/头像.png","start"=>1,"time"=>time()));//同时添加到好友数据表
             DB::name('public_follow')->insert(array('openid'=>$arr['openid'], 'uid'=>$userId, 'token'=>'gh_6d3bf5d72981'));
             // session('mid', $uid);
             Cache::set('mid',$userId);

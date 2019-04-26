@@ -1,0 +1,1243 @@
+[ 2019-03-11T23:49:04+08:00 ] 172.24.117.196 112.224.21.44 GET /charge/public/index.php/port/login/sendCode?code=011EGwq70HSXeE1DOKp70nfrq70EGwqI&PHPSESSID=FGLkD1wRwFoWQJJXoJf6nHamf76
+[ log ] www.qinlh.com/charge/public/index.php/port/login/sendCode?code=011EGwq70HSXeE1DOKp70nfrq70EGwqI&PHPSESSID=FGLkD1wRwFoWQJJXoJf6nHamf76 [运行时间：0.336712s][吞吐率：2.97req/s] [内存消耗：2,533.01kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000922s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000845s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_public_follow` WHERE  `openid` = 'oOcH90L9CWk-k9SeFhn0WiT2NBIM' LIMIT 1    [ RunTime:0.000534s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:49:05+08:00 ] 172.24.117.196 112.224.21.44 GET /charge/public/index.php/port/login/saveUserInfo?encryptedData=CrQOlnJ8OfqYoRsf3dQoibXnPyrQkc%2Bdxdb%2FUoLGv0rzkJoM2Xh55Wgs4T3kgtPahAbTYL0VkxkGkpMuCN4qBFkKkmZZj1xE91HKQLOBtWoXqwpEWIfi788LwpAw7BSOwfb%2Fmn6MLOLfZO%2BZclL9GXg9l7xPKDHSSOkWaRS1mdy2DmFzJRuJFGP7fSDYDQYO338oANKcXiJFllBRTlyY7qw%2BnuVwxAGb3MdwbTz6rGXXfNTDDJusn9jOkKg94CubW6d1TJ2JDBfei2yjq0lmM2H2aHwkjsFcSNg7sRXX5pUPF32T5bi1i7%2F6thWuaD0yO1CUP%2B%2FdHHSgFwIfzAoEEj5GwgQ2ZMQBssBW0QjJQNxiWr7LYfKWofabiXL3Z0CG4lXu8LhdW7lXcSwOCErp7YM6oqE%2BKk8%2BZHRVCOkfuLmzSCHds7knuTzleiAPWaPbVqJli0eQfimHB6mgjEpuObH4aCa5r9AkbCdy%2Fgb0awo%3D&PHPSESSID=isP0zA4tyurG97s26UpC402s8NJ&iv=eDnGlOnPnN7mqj6mime07Q%3D%3D
+[ log ] www.qinlh.com/charge/public/index.php/port/login/saveUserInfo?encryptedData=CrQOlnJ8OfqYoRsf3dQoibXnPyrQkc%2Bdxdb%2FUoLGv0rzkJoM2Xh55Wgs4T3kgtPahAbTYL0VkxkGkpMuCN4qBFkKkmZZj1xE91HKQLOBtWoXqwpEWIfi788LwpAw7BSOwfb%2Fmn6MLOLfZO%2BZclL9GXg9l7xPKDHSSOkWaRS1mdy2DmFzJRuJFGP7fSDYDQYO338oANKcXiJFllBRTlyY7qw%2BnuVwxAGb3MdwbTz6rGXXfNTDDJusn9jOkKg94CubW6d1TJ2JDBfei2yjq0lmM2H2aHwkjsFcSNg7sRXX5pUPF32T5bi1i7%2F6thWuaD0yO1CUP%2B%2FdHHSgFwIfzAoEEj5GwgQ2ZMQBssBW0QjJQNxiWr7LYfKWofabiXL3Z0CG4lXu8LhdW7lXcSwOCErp7YM6oqE%2BKk8%2BZHRVCOkfuLmzSCHds7knuTzleiAPWaPbVqJli0eQfimHB6mgjEpuObH4aCa5r9AkbCdy%2Fgb0awo%3D&PHPSESSID=isP0zA4tyurG97s26UpC402s8NJ&iv=eDnGlOnPnN7mqj6mime07Q%3D%3D [运行时间：0.064744s][吞吐率：15.45req/s] [内存消耗：2,570.53kb] [文件加载：45]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000984s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.000953s ]
+[ sql ] [ SQL ] UPDATE `bill_user`  SET `nickname`='享受就瘦',`sex`=2,`city`='Handan',`province`='Hebei',`country`='China',`headimgurl`='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLxWhtkFhVKpUGDsJSjGOuGZaC0EiaeV1E00xsswr8kLpXdkGzTvyLfD1cYQqVy2tCR7UZAkyOPXNQ/132'  WHERE  `uid` = 24424          [ RunTime:0.000617s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `uid` = 24424 LIMIT 1    [ RunTime:0.005222s ]
+[ sql ] [ SQL ] UPDATE `bill_friend`  SET `start`=1,`friend_name`='享受就瘦',`friend_imgurl`='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLxWhtkFhVKpUGDsJSjGOuGZaC0EiaeV1E00xsswr8kLpXdkGzTvyLfD1cYQqVy2tCR7UZAkyOPXNQ/132',`time`=1552319345  WHERE  `uid` = 24424        [ RunTime:0.036895s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:53:56+08:00 ] 172.24.117.196 183.199.207.153 GET /charge/public/index.php/port/login/sendCode?code=061ED3kQ1EBfP11M3JkQ1cKhkQ1ED3kl&PHPSESSID=
+[ log ] www.qinlh.com/charge/public/index.php/port/login/sendCode?code=061ED3kQ1EBfP11M3JkQ1cKhkQ1ED3kl&PHPSESSID= [运行时间：0.369691s][吞吐率：2.70req/s] [内存消耗：2,548.84kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000939s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_public_follow` WHERE  `openid` = 'oOcH90Eb9AmUPszZic4n9wIgv0_Y' LIMIT 1    [ RunTime:0.000546s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.000808s ]
+[ sql ] [ SQL ] INSERT INTO `bill_user` (`headimgurl` , `nickname` , `reg_time`) VALUES ('https://h5php.xingyuanauto.com/charge/public/uploads/images/头像.png' , '未获取' , 1552319636)     [ RunTime:0.000459s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.000640s ]
+[ sql ] [ SQL ] INSERT INTO `bill_friend` (`uid` , `friend_name` , `friend_imgurl` , `start` , `time`) VALUES (39528 , '未获取' , 'https://h5php.xingyuanauto.com/charge/public/uploads/images/头像.png' , 1 , 1552319636)       [ RunTime:0.000408s ]
+[ sql ] [ SQL ] INSERT INTO `bill_public_follow` (`openid` , `uid` , `token`) VALUES ('oOcH90Eb9AmUPszZic4n9wIgv0_Y' , 39528 , 'gh_6d3bf5d72981')     [ RunTime:0.055028s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:53:57+08:00 ] 172.24.117.196 183.199.207.153 GET /charge/public/index.php/port/login/saveUserInfo?encryptedData=sK4QJNwbWi18yEMjeu0mbz0tOT9d2GwqRf922eyUngv3LeMM0YmkOZAye7kCVYyGW9yWo4Ez9VL1JstV%2FbTnmCbvK6I7D94c9naNU8Uxq56z2EqqRRafqgumhrLzEOzNKr%2Bc55e46SmS5Ks21k0gD8OBYnlUei%2BSVJFAB0Qox6IL6pGnlzEcDfulQhmoziGefj%2BM%2BncR%2FBfYAx8%2BHu%2F2eDJ%2FaGz3yUfjgTydYBKjTDY3r48%2Fvseq0QcCW06QIwH7C1P1JedbsFUDVz9Gw0cL%2FLaz1gJDHqreF7U4TfaznmaTm68hupG3KIcaQQ25zXcTVTbc9gt8ulVacaKmzxvEdftWTRoxEGbTPLdPATsT%2FKKyPyRvMerxlqHh4dinAVXhFeZQnLEWFXoHzJEkNCyCVpydvIZ3v2grMpc7ogcouhZCe%2Fg9ylXq%2BE9YErnrA%2B6M1L634d5yRipdIWD7%2B2LHcbYWcG%2BJmsvneFQ2brdxwYc%3D&PHPSESSID=93jArGraDGF6fkecIFLAch7v6tx&iv=LQYRd3Ki619UJ0iyTV9IDg%3D%3D
+[ log ] www.qinlh.com/charge/public/index.php/port/login/saveUserInfo?encryptedData=sK4QJNwbWi18yEMjeu0mbz0tOT9d2GwqRf922eyUngv3LeMM0YmkOZAye7kCVYyGW9yWo4Ez9VL1JstV%2FbTnmCbvK6I7D94c9naNU8Uxq56z2EqqRRafqgumhrLzEOzNKr%2Bc55e46SmS5Ks21k0gD8OBYnlUei%2BSVJFAB0Qox6IL6pGnlzEcDfulQhmoziGefj%2BM%2BncR%2FBfYAx8%2BHu%2F2eDJ%2FaGz3yUfjgTydYBKjTDY3r48%2Fvseq0QcCW06QIwH7C1P1JedbsFUDVz9Gw0cL%2FLaz1gJDHqreF7U4TfaznmaTm68hupG3KIcaQQ25zXcTVTbc9gt8ulVacaKmzxvEdftWTRoxEGbTPLdPATsT%2FKKyPyRvMerxlqHh4dinAVXhFeZQnLEWFXoHzJEkNCyCVpydvIZ3v2grMpc7ogcouhZCe%2Fg9ylXq%2BE9YErnrA%2B6M1L634d5yRipdIWD7%2B2LHcbYWcG%2BJmsvneFQ2brdxwYc%3D&PHPSESSID=93jArGraDGF6fkecIFLAch7v6tx&iv=LQYRd3Ki619UJ0iyTV9IDg%3D%3D [运行时间：0.066603s][吞吐率：15.01req/s] [内存消耗：2,570.39kb] [文件加载：45]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000924s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.000920s ]
+[ sql ] [ SQL ] UPDATE `bill_user`  SET `nickname`='70後大叔',`sex`=1,`city`='Xingtai',`province`='Hebei',`country`='China',`headimgurl`='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKAbaMQAYk7vGclmnibXDbO6L8cZEIPNV1z0IwuKO2TIaPAhtCyGTV0bYYGyQfrtqI2Q4mB2GUsxew/132'  WHERE  `uid` = 39528          [ RunTime:0.000570s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.000683s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `uid` = 39528 LIMIT 1    [ RunTime:0.008200s ]
+[ sql ] [ SQL ] UPDATE `bill_friend`  SET `start`=1,`friend_name`='70後大叔',`friend_imgurl`='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKAbaMQAYk7vGclmnibXDbO6L8cZEIPNV1z0IwuKO2TIaPAhtCyGTV0bYYGyQfrtqI2Q4mB2GUsxew/132',`time`=1552319637  WHERE  `uid` = 39528        [ RunTime:0.036739s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:53:57+08:00 ] 172.24.117.196 183.199.207.153 GET /charge/public/index.php/port/check/BudgetMoney?openid=oOcH90Eb9AmUPszZic4n9wIgv0_Y
+[ log ] www.qinlh.com/charge/public/index.php/port/check/BudgetMoney?openid=oOcH90Eb9AmUPszZic4n9wIgv0_Y [运行时间：0.047806s][吞吐率：20.92req/s] [内存消耗：2,733.02kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001643s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.001204s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90Eb9AmUPszZic4n9wIgv0_Y' LIMIT 1   [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90Eb9AmUPszZic4n9wIgv0_Y' LIMIT 1    [ RunTime:0.016580s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:53:57+08:00 ] 172.24.117.196 183.199.207.153 GET /charge/public/index.php/port/check/UserCheck?openid=oOcH90Eb9AmUPszZic4n9wIgv0_Y&limit=3&lastid=0
+[ log ] www.qinlh.com/charge/public/index.php/port/check/UserCheck?openid=oOcH90Eb9AmUPszZic4n9wIgv0_Y&limit=3&lastid=0 [运行时间：0.108325s][吞吐率：9.23req/s] [内存消耗：2,739.42kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001242s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.001849s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90Eb9AmUPszZic4n9wIgv0_Y' LIMIT 1   [ RunTime:0.000804s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39528'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.024533s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39528'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.022480s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000790s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_charge` WHERE  `user_id` = 39528 LIMIT 1    [ RunTime:0.019461s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:53:59+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/BudgetMoney?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU
+[ log ] www.qinlh.com/charge/public/index.php/port/check/BudgetMoney?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU [运行时间：0.046813s][吞吐率：21.36req/s] [内存消耗：2,733.02kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001193s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.014437s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1   [ RunTime:0.007710s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1    [ RunTime:0.004712s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:54:00+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/UserCheck?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&limit=3&lastid=0
+[ log ] www.qinlh.com/charge/public/index.php/port/check/UserCheck?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&limit=3&lastid=0 [运行时间：0.450611s][吞吐率：2.22req/s] [内存消耗：2,752.08kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000956s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.015070s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1   [ RunTime:0.002720s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39083'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.022991s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39083'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.025786s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000823s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_charge` WHERE  `user_id` = 39083 LIMIT 1    [ RunTime:0.019423s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 39083
+						GROUP BY
+							time
+						ORDER BY
+							a_id DESC
+						LIMIT 3
+					 [ RunTime:0.136276s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 39083
+						GROUP BY
+							time
+						ORDER BY
+							time DESC
+					 [ RunTime:0.020185s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1552147200
+									GROUP BY
+										time
+							 [ RunTime:0.021231s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1552147200
+										GROUP BY
+											time
+									 [ RunTime:0.020149s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1552147200  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.020963s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1552060800
+									GROUP BY
+										time
+							 [ RunTime:0.020223s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1552060800
+										GROUP BY
+											time
+									 [ RunTime:0.020375s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1552060800  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.020948s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1551974400
+									GROUP BY
+										time
+							 [ RunTime:0.020009s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1551974400
+										GROUP BY
+											time
+									 [ RunTime:0.020058s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1551974400  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.020826s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:54:00+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/login/sendCode?code=023azDFs1xX7Zl0zVtGs14avFs1azDF0&PHPSESSID=PO8Wvl3Utdy86DEI1h1irtxM9xN
+[ log ] www.qinlh.com/charge/public/index.php/port/login/sendCode?code=023azDFs1xX7Zl0zVtGs14avFs1azDF0&PHPSESSID=PO8Wvl3Utdy86DEI1h1irtxM9xN [运行时间：0.392374s][吞吐率：2.55req/s] [内存消耗：2,533.14kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000951s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_public_follow` WHERE  `openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1    [ RunTime:0.000572s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:54:01+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/login/saveUserInfo?encryptedData=Fkc3sZ1JS%2Fqlc1MH1%2FQvSgXNKP0UpbsPy4X0xKGxZt1wwvYgDKKvKSGEAahkbpTKYjEgs2xqKGUidq0cVn7iyNdEuBmCEQbfBuuAbpqt86oTwcE1Rel8QMzdzD0%2F6eOVQVug69%2BzyCUGxlSPKZwA6yF6COYlZOLTdOT9NeKxFED1NRYCLduUAJwnJj2%2Fex7sEOuCq7wWvvrcyIvtSRpiUye%2F4LUSPo6ug4U9C9UWjmNuFLOOWkbiTWcmHZMA7hDqDOkWS6%2BX1%2Bijf19GzFiLPJnQxA7GA8C3baOu%2BQYcJYjoyfpq51POA4PmC2kwBUiqYFn5OEMlY5mZCm0Biw25%2BxpQUwzEyseAGY0mVpkQp6QIL9C7XMPP3BRI0hkdN6Acmb33xZ%2FVbuRmQq7Sx%2F6TCXaF7IA6hVCJEjiSTyvb0sgdKvT4lOxre4yQLdWDToj46vNfMo12qc1WFHxJZAdiLg%3D%3D&PHPSESSID=sjCOtglW6OdDglgyZFQLTXOmdva&iv=S9BGDNyRPvIpDvbWK1NP8w%3D%3D
+[ log ] www.qinlh.com/charge/public/index.php/port/login/saveUserInfo?encryptedData=Fkc3sZ1JS%2Fqlc1MH1%2FQvSgXNKP0UpbsPy4X0xKGxZt1wwvYgDKKvKSGEAahkbpTKYjEgs2xqKGUidq0cVn7iyNdEuBmCEQbfBuuAbpqt86oTwcE1Rel8QMzdzD0%2F6eOVQVug69%2BzyCUGxlSPKZwA6yF6COYlZOLTdOT9NeKxFED1NRYCLduUAJwnJj2%2Fex7sEOuCq7wWvvrcyIvtSRpiUye%2F4LUSPo6ug4U9C9UWjmNuFLOOWkbiTWcmHZMA7hDqDOkWS6%2BX1%2Bijf19GzFiLPJnQxA7GA8C3baOu%2BQYcJYjoyfpq51POA4PmC2kwBUiqYFn5OEMlY5mZCm0Biw25%2BxpQUwzEyseAGY0mVpkQp6QIL9C7XMPP3BRI0hkdN6Acmb33xZ%2FVbuRmQq7Sx%2F6TCXaF7IA6hVCJEjiSTyvb0sgdKvT4lOxre4yQLdWDToj46vNfMo12qc1WFHxJZAdiLg%3D%3D&PHPSESSID=sjCOtglW6OdDglgyZFQLTXOmdva&iv=S9BGDNyRPvIpDvbWK1NP8w%3D%3D [运行时间：0.067054s][吞吐率：14.91req/s] [内存消耗：2,570.44kb] [文件加载：45]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000946s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.000928s ]
+[ sql ] [ SQL ] UPDATE `bill_user`  SET `nickname`='強仔',`sex`=1,`city`='Kwong',`province`='Sichuan',`country`='China',`headimgurl`='https://wx.qlogo.cn/mmopen/vi_32/tu2xYX9b8z2OQ0oIScWhvJA1Hib7QYHNjdiatVgel8XqQOZ7C5Al2ZK27MxysSBNumhMzU9CFerOuLBKxnA2XESA/132'  WHERE  `uid` = 39083          [ RunTime:0.000508s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.000662s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `uid` = 39083 LIMIT 1    [ RunTime:0.008259s ]
+[ sql ] [ SQL ] UPDATE `bill_friend`  SET `start`=1,`friend_name`='強仔',`friend_imgurl`='https://wx.qlogo.cn/mmopen/vi_32/tu2xYX9b8z2OQ0oIScWhvJA1Hib7QYHNjdiatVgel8XqQOZ7C5Al2ZK27MxysSBNumhMzU9CFerOuLBKxnA2XESA/132',`time`=1552319641  WHERE  `uid` = 39083        [ RunTime:0.036611s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:54:01+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/inoutClass
+[ log ] www.qinlh.com/charge/public/index.php/port/check/inoutClass [运行时间：0.031750s][吞吐率：31.50req/s] [内存消耗：2,421.70kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002034s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_inout_class` [ RunTime:0.001931s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 1   [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 2   [ RunTime:0.000407s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:54:03+08:00 ] 172.24.117.196 183.199.207.153 GET /charge/public/index.php/port/check/inoutClass
+[ log ] www.qinlh.com/charge/public/index.php/port/check/inoutClass [运行时间：0.030319s][吞吐率：32.98req/s] [内存消耗：2,421.70kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002515s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_inout_class` [ RunTime:0.000813s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 1   [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 2   [ RunTime:0.000356s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:54:33+08:00 ] 172.24.117.196 183.199.207.153 GET /charge/public/index.php/port/set/BudgetStart?openid=oOcH90Eb9AmUPszZic4n9wIgv0_Y
+[ log ] www.qinlh.com/charge/public/index.php/port/set/BudgetStart?openid=oOcH90Eb9AmUPszZic4n9wIgv0_Y [运行时间：0.019655s][吞吐率：50.88req/s] [内存消耗：2,679.27kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000954s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90Eb9AmUPszZic4n9wIgv0_Y' LIMIT 1    [ RunTime:0.000398s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:54:40+08:00 ] 172.24.117.196 183.199.207.153 GET /charge/public/index.php/port/check/ThisIncomOut?openid=oOcH90Eb9AmUPszZic4n9wIgv0_Y
+[ log ] www.qinlh.com/charge/public/index.php/port/check/ThisIncomOut?openid=oOcH90Eb9AmUPszZic4n9wIgv0_Y [运行时间：0.102083s][吞吐率：9.80req/s] [内存消耗：2,737.88kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000989s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000878s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90Eb9AmUPszZic4n9wIgv0_Y' LIMIT 1   [ RunTime:0.000398s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`
+							FROM
+								`bill_charge`
+							WHERE
+								`inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							AND `user_id` = 39528
+						 [ RunTime:0.020206s ]
+[ sql ] [ SQL ] 
+							SELECT
+								ic.`a_id`,
+								SUM(`money`) AS `money`,
+								ic.`inout_class`,
+								bc.`inout_url`,
+								bc.`describe`,
+								bc.`color`,
+								ic.`inout_start`
+							FROM
+								bill_charge AS ic
+							INNER JOIN `bill_inout_class` AS bc ON ic.inout_class = bc.c_id
+							WHERE
+								`inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							AND `user_id` = 39528
+							GROUP BY
+								`inout_class`
+							ORDER BY
+							`a_id` DESC
+					 [ RunTime:0.020171s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`
+							FROM
+								`bill_charge`
+							WHERE
+								`inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							AND `user_id` = 39528
+						 [ RunTime:0.019994s ]
+[ sql ] [ SQL ] 
+						SELECT
+							ic.`a_id`,
+							SUM(`money`) AS `money`,
+							ic.`inout_class`,
+							bc.`inout_url`,
+							bc.`describe`,
+							bc.`color`,
+							ic.`inout_start`
+						FROM
+							bill_charge AS ic
+						INNER JOIN `bill_inout_class` AS bc ON ic.inout_class = bc.c_id
+						WHERE
+							`inout_start` = 2
+						AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+						AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+						AND `user_id` = 39528
+						GROUP BY
+							`inout_class`
+						ORDER BY
+							`a_id` DESC
+					 [ RunTime:0.020233s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:55:50+08:00 ] 172.24.117.196 183.95.250.204 GET /charge/public/index.php/port/login/sendCode?code=061GgbXP00dzB42YlsZP0zgoXP0GgbX-&PHPSESSID=
+[ log ] www.qinlh.com/charge/public/index.php/port/login/sendCode?code=061GgbXP00dzB42YlsZP0zgoXP0GgbX-&PHPSESSID= [运行时间：0.300280s][吞吐率：3.33req/s] [内存消耗：2,533.07kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000948s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_public_follow` WHERE  `openid` = 'oOcH90Gr9ZCgxHck1TUbATnDCjqU' LIMIT 1    [ RunTime:0.000974s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:55:51+08:00 ] 172.24.117.196 183.95.250.204 GET /charge/public/index.php/port/login/saveUserInfo?encryptedData=yhLON5X2ocfdy2ZDW0HwXOqKh%2BvGvus%2FfvmmBp4Tib09KfWH5unCX%2FKpzS1FdsgUgc%2FvSUYdEDn9ccU58OZrtH98u1WhOd3rOARi3z%2B6RhRXsIj5bxeexPfKAdboI0Z4yGVvaqtx4dcm5xBpOxPrRNHptQVxUmM9hPMofF%2FuAFM%2BJHNnSyubZaCTnwBMLTGTdh374bYzZPxtI56HLyif3TE96QygUy99oywXV1JupNOdvPmpRaWLGpXkoJ2%2FtQzzIc6vVLVp15Uzgc7JHxY48jRitqnK7RAyponZhEIDysP4aqx7WUTdaCjn5uKx7JFcQ899N70dOsO4JQHPxOgaAlcCUJpcAsdd%2BD4uMBqZ5v4ULRKVX6OMmN9HQulZ8ku2SVJTp3FKNAHYCqES9srqtvVt6RNuPvK2tVl8JNMHjD%2FrKtKYct%2BC6FnI1qA7yYQ75MW%2FFbFhsMEqDyuscr9nUHBYETABFrych6x0JuAr8YNxDX3BG3eASJvIEq4gklSq&PHPSESSID=TaYTRtVq7rFFERsnau006ljAVAN&iv=4puzceqHtGyiU7v%2Fc1sDbA%3D%3D
+[ log ] www.qinlh.com/charge/public/index.php/port/login/saveUserInfo?encryptedData=yhLON5X2ocfdy2ZDW0HwXOqKh%2BvGvus%2FfvmmBp4Tib09KfWH5unCX%2FKpzS1FdsgUgc%2FvSUYdEDn9ccU58OZrtH98u1WhOd3rOARi3z%2B6RhRXsIj5bxeexPfKAdboI0Z4yGVvaqtx4dcm5xBpOxPrRNHptQVxUmM9hPMofF%2FuAFM%2BJHNnSyubZaCTnwBMLTGTdh374bYzZPxtI56HLyif3TE96QygUy99oywXV1JupNOdvPmpRaWLGpXkoJ2%2FtQzzIc6vVLVp15Uzgc7JHxY48jRitqnK7RAyponZhEIDysP4aqx7WUTdaCjn5uKx7JFcQ899N70dOsO4JQHPxOgaAlcCUJpcAsdd%2BD4uMBqZ5v4ULRKVX6OMmN9HQulZ8ku2SVJTp3FKNAHYCqES9srqtvVt6RNuPvK2tVl8JNMHjD%2FrKtKYct%2BC6FnI1qA7yYQ75MW%2FFbFhsMEqDyuscr9nUHBYETABFrych6x0JuAr8YNxDX3BG3eASJvIEq4gklSq&PHPSESSID=TaYTRtVq7rFFERsnau006ljAVAN&iv=4puzceqHtGyiU7v%2Fc1sDbA%3D%3D [运行时间：0.062333s][吞吐率：16.04req/s] [内存消耗：2,570.71kb] [文件加载：45]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000955s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.001018s ]
+[ sql ] [ SQL ] UPDATE `bill_user`  SET `nickname`='A武汉写字楼招商-梅 176 7172 8880',`sex`=1,`city`='Wuhan',`province`='Hubei',`country`='China',`headimgurl`='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI34wGCsR2gphfEFkjUia08eVtn6wgobMXXjAGbef9DTyM8B08W6RcVjtOhbIL075voOia4fshB1IPw/132'  WHERE  `uid` = 6813          [ RunTime:0.001207s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `uid` = 6813 LIMIT 1    [ RunTime:0.001925s ]
+[ sql ] [ SQL ] UPDATE `bill_friend`  SET `start`=1,`friend_name`='A武汉写字楼招商-梅 176 7172 8880',`friend_imgurl`='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTI34wGCsR2gphfEFkjUia08eVtn6wgobMXXjAGbef9DTyM8B08W6RcVjtOhbIL075voOia4fshB1IPw/132',`time`=1552319751  WHERE  `uid` = 6813        [ RunTime:0.037281s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:55:52+08:00 ] 172.24.117.196 183.95.250.204 GET /charge/public/index.php/port/check/BudgetMoney?openid=oOcH90Gr9ZCgxHck1TUbATnDCjqU
+[ log ] www.qinlh.com/charge/public/index.php/port/check/BudgetMoney?openid=oOcH90Gr9ZCgxHck1TUbATnDCjqU [运行时间：0.072118s][吞吐率：13.87req/s] [内存消耗：2,732.98kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012738s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.009984s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90Gr9ZCgxHck1TUbATnDCjqU' LIMIT 1   [ RunTime:0.011137s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90Gr9ZCgxHck1TUbATnDCjqU' LIMIT 1    [ RunTime:0.009412s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:55:53+08:00 ] 172.24.117.196 183.95.250.204 GET /charge/public/index.php/port/check/UserCheck?openid=oOcH90Gr9ZCgxHck1TUbATnDCjqU&limit=3&lastid=0
+[ log ] www.qinlh.com/charge/public/index.php/port/check/UserCheck?openid=oOcH90Gr9ZCgxHck1TUbATnDCjqU&limit=3&lastid=0 [运行时间：0.436181s][吞吐率：2.29req/s] [内存消耗：2,752.78kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000917s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90Gr9ZCgxHck1TUbATnDCjqU' LIMIT 1   [ RunTime:0.000639s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '6813'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.022804s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '6813'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.023036s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000884s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_charge` WHERE  `user_id` = 6813 LIMIT 1    [ RunTime:0.019691s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 6813
+						GROUP BY
+							time
+						ORDER BY
+							a_id DESC
+						LIMIT 3
+					 [ RunTime:0.135692s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 6813
+						GROUP BY
+							time
+						ORDER BY
+							time DESC
+					 [ RunTime:0.022509s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 6813
+									AND inout_start = 1
+									AND time = 1538150400
+									GROUP BY
+										time
+							 [ RunTime:0.023561s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 6813
+										AND inout_start = 2
+										AND time = 1538150400
+										GROUP BY
+											time
+									 [ RunTime:0.020230s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1538150400  AND `c`.`user_id` = 6813 ORDER BY c.a_id desc  [ RunTime:0.021148s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 6813
+									AND inout_start = 1
+									AND time = 1514217600
+									GROUP BY
+										time
+							 [ RunTime:0.020183s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 6813
+										AND inout_start = 2
+										AND time = 1514217600
+										GROUP BY
+											time
+									 [ RunTime:0.020290s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1514217600  AND `c`.`user_id` = 6813 ORDER BY c.a_id desc  [ RunTime:0.021154s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 6813
+									AND inout_start = 1
+									AND time = 1504195200
+									GROUP BY
+										time
+							 [ RunTime:0.020160s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 6813
+										AND inout_start = 2
+										AND time = 1504195200
+										GROUP BY
+											time
+									 [ RunTime:0.020381s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1504195200  AND `c`.`user_id` = 6813 ORDER BY c.a_id desc  [ RunTime:0.021187s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:56:03+08:00 ] 172.24.117.196 183.95.250.204 GET /charge/public/index.php/port/check/UserCheck?openid=oOcH90Gr9ZCgxHck1TUbATnDCjqU&limit=3&lastid=20396
+[ log ] www.qinlh.com/charge/public/index.php/port/check/UserCheck?openid=oOcH90Gr9ZCgxHck1TUbATnDCjqU&limit=3&lastid=20396 [运行时间：0.126131s][吞吐率：7.93req/s] [内存消耗：2,752.30kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000991s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000888s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90Gr9ZCgxHck1TUbATnDCjqU' LIMIT 1   [ RunTime:0.000412s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '6813'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.000399s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '6813'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.000382s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_charge` WHERE  `user_id` = 6813 LIMIT 1    [ RunTime:0.000386s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 6813 and a_id < 20396
+						GROUP BY
+							time
+						ORDER BY
+							a_id DESC
+						LIMIT 3
+					 [ RunTime:0.018912s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 6813 and a_id < 20396
+						GROUP BY
+							time
+						ORDER BY
+							time DESC
+					 [ RunTime:0.020325s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 6813
+									AND inout_start = 1
+									AND time = 1513094400
+									GROUP BY
+										time
+							 [ RunTime:0.020392s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 6813
+										AND inout_start = 2
+										AND time = 1513094400
+										GROUP BY
+											time
+									 [ RunTime:0.021276s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1513094400  AND `c`.`user_id` = 6813 ORDER BY c.a_id desc  [ RunTime:0.021514s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:56:03+08:00 ] 172.24.117.196 183.95.250.204 GET /charge/public/index.php/port/check/BudgetMoney?openid=oOcH90Gr9ZCgxHck1TUbATnDCjqU
+[ log ] www.qinlh.com/charge/public/index.php/port/check/BudgetMoney?openid=oOcH90Gr9ZCgxHck1TUbATnDCjqU [运行时间：0.021118s][吞吐率：47.35req/s] [内存消耗：2,732.98kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000965s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000871s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90Gr9ZCgxHck1TUbATnDCjqU' LIMIT 1   [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90Gr9ZCgxHck1TUbATnDCjqU' LIMIT 1    [ RunTime:0.000379s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:56:41+08:00 ] 172.24.117.196 183.95.250.204 GET /charge/public/index.php/port/check/CheckFind?a_id=96553
+[ log ] www.qinlh.com/charge/public/index.php/port/check/CheckFind?a_id=96553 [运行时间：0.019094s][吞吐率：52.37req/s] [内存消耗：2,426.12kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001005s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000861s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `a_id` = 96553 LIMIT 1    [ RunTime:0.000578s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:56:54+08:00 ] 172.24.117.196 183.95.250.204 GET /charge/public/index.php/port/check/CheckFind?a_id=96553
+[ log ] www.qinlh.com/charge/public/index.php/port/check/CheckFind?a_id=96553 [运行时间：0.019274s][吞吐率：51.88req/s] [内存消耗：2,426.12kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000916s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000896s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `a_id` = 96553 LIMIT 1    [ RunTime:0.000464s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:57:33+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/login/sendCode?code=023Lgrjk1SoyOn0564jk1ajfjk1Lgrj-&PHPSESSID=
+[ log ] www.qinlh.com/charge/public/index.php/port/login/sendCode?code=023Lgrjk1SoyOn0564jk1ajfjk1Lgrj-&PHPSESSID= [运行时间：0.339674s][吞吐率：2.94req/s] [内存消耗：2,548.84kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000977s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000865s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_public_follow` WHERE  `openid` = 'oOcH90OWu1hN-kfzsY3wwnjW5DDI' LIMIT 1    [ RunTime:0.000567s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.000839s ]
+[ sql ] [ SQL ] INSERT INTO `bill_user` (`headimgurl` , `nickname` , `reg_time`) VALUES ('https://h5php.xingyuanauto.com/charge/public/uploads/images/头像.png' , '未获取' , 1552319853)     [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.000656s ]
+[ sql ] [ SQL ] INSERT INTO `bill_friend` (`uid` , `friend_name` , `friend_imgurl` , `start` , `time`) VALUES (39529 , '未获取' , 'https://h5php.xingyuanauto.com/charge/public/uploads/images/头像.png' , 1 , 1552319853)       [ RunTime:0.000421s ]
+[ sql ] [ SQL ] INSERT INTO `bill_public_follow` (`openid` , `uid` , `token`) VALUES ('oOcH90OWu1hN-kfzsY3wwnjW5DDI' , 39529 , 'gh_6d3bf5d72981')     [ RunTime:0.000629s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:57:34+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/login/saveUserInfo?encryptedData=Hh0AXsTqSoidk1cCPeVBLzKT3e%2B8Su%2Fi5O2bQmmVCSg0l%2FhmbGGAIX%2FcVP2UKhDJIu%2FExWzABNdmmqJ6L1WmwjJ4jNU0l13xuubaoV2VYPGSMP05SfVdtE3GjgZWw3sbH0d%2BHqf6eIluRjO%2B0Rr4dp4gzp%2FBNP2MGFEDcUIhVHUddDrshvJSBl3Wf%2BL74%2FHl7GS%2FIUdnC7%2BF%2FVlsuFJk4gvrwVStgIfwpWuEAWhH0ZxOm2B%2FxdYv3nGL%2BAeRSlb917qwczbGyKeMZ5l1TQUgB7OduntWaI6ECygGPjSjgHik1fxYrXxNFj6E9J2biGikmsovaBF3287hjzob7B9Ge5j3TL25KMd69ib1joLezbG41%2FPcNZ85iZO3xNfdyp2TugSPMsU0q8lyMQ9prK2uaG1VPH64yp9ecZj7Nq13VOhYRJ%2B0AH9L91uC2X7naVRKlgJSTQJXq6cugdzVOYDe1g%3D%3D&PHPSESSID=WXE08hKirf8fmncuSZMxVDK3MJe&iv=S0yVEUA3IFJaJTutC9l2bQ%3D%3D
+[ log ] www.qinlh.com/charge/public/index.php/port/login/saveUserInfo?encryptedData=Hh0AXsTqSoidk1cCPeVBLzKT3e%2B8Su%2Fi5O2bQmmVCSg0l%2FhmbGGAIX%2FcVP2UKhDJIu%2FExWzABNdmmqJ6L1WmwjJ4jNU0l13xuubaoV2VYPGSMP05SfVdtE3GjgZWw3sbH0d%2BHqf6eIluRjO%2B0Rr4dp4gzp%2FBNP2MGFEDcUIhVHUddDrshvJSBl3Wf%2BL74%2FHl7GS%2FIUdnC7%2BF%2FVlsuFJk4gvrwVStgIfwpWuEAWhH0ZxOm2B%2FxdYv3nGL%2BAeRSlb917qwczbGyKeMZ5l1TQUgB7OduntWaI6ECygGPjSjgHik1fxYrXxNFj6E9J2biGikmsovaBF3287hjzob7B9Ge5j3TL25KMd69ib1joLezbG41%2FPcNZ85iZO3xNfdyp2TugSPMsU0q8lyMQ9prK2uaG1VPH64yp9ecZj7Nq13VOhYRJ%2B0AH9L91uC2X7naVRKlgJSTQJXq6cugdzVOYDe1g%3D%3D&PHPSESSID=WXE08hKirf8fmncuSZMxVDK3MJe&iv=S0yVEUA3IFJaJTutC9l2bQ%3D%3D [运行时间：0.102269s][吞吐率：9.78req/s] [内存消耗：2,570.61kb] [文件加载：45]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000917s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.000934s ]
+[ sql ] [ SQL ] UPDATE `bill_user`  SET `nickname`='🐠 鱼鱼🐠 ',`sex`=0,`city`='',`province`='',`country`='',`headimgurl`='https://wx.qlogo.cn/mmopen/vi_32/Olw9taW3mXRicRTODtnSeK7jvzhnA6oHpQb5QN8nicBVL5euqSC11s07M11e8j2PUNRUHuNe61IXiaUAWQWuPiapHg/132'  WHERE  `uid` = 39529          [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `uid` = 39529 LIMIT 1    [ RunTime:0.008510s ]
+[ sql ] [ SQL ] UPDATE `bill_friend`  SET `start`=1,`friend_name`='🐠 鱼鱼🐠 ',`friend_imgurl`='https://wx.qlogo.cn/mmopen/vi_32/Olw9taW3mXRicRTODtnSeK7jvzhnA6oHpQb5QN8nicBVL5euqSC11s07M11e8j2PUNRUHuNe61IXiaUAWQWuPiapHg/132',`time`=1552319854  WHERE  `uid` = 39529        [ RunTime:0.070941s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:57:34+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/check/BudgetMoney?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI
+[ log ] www.qinlh.com/charge/public/index.php/port/check/BudgetMoney?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI [运行时间：0.061956s][吞吐率：16.14req/s] [内存消耗：2,733.02kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011518s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.002963s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90OWu1hN-kfzsY3wwnjW5DDI' LIMIT 1   [ RunTime:0.001465s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90OWu1hN-kfzsY3wwnjW5DDI' LIMIT 1    [ RunTime:0.000803s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:57:34+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/check/UserCheck?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI&limit=3&lastid=0
+[ log ] www.qinlh.com/charge/public/index.php/port/check/UserCheck?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI&limit=3&lastid=0 [运行时间：0.110291s][吞吐率：9.07req/s] [内存消耗：2,739.42kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.007938s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.001112s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90OWu1hN-kfzsY3wwnjW5DDI' LIMIT 1   [ RunTime:0.000408s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39529'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.023945s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39529'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.022363s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000809s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_charge` WHERE  `user_id` = 39529 LIMIT 1    [ RunTime:0.019610s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:57:38+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/circle/circleUser?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI
+[ log ] www.qinlh.com/charge/public/index.php/port/circle/circleUser?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI [运行时间：0.023860s][吞吐率：41.91req/s] [内存消耗：2,870.83kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001012s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000850s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90OWu1hN-kfzsY3wwnjW5DDI' LIMIT 1    [ RunTime:0.000507s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_circle` [ RunTime:0.000699s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_circle` `c` INNER JOIN `bill_inout_class` `bic` ON `c`.`class_id`=`bic`.`c_id` WHERE  `c`.`user_id` = 39529 ORDER BY c.cir_id desc  [ RunTime:0.000837s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:57:41+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/Circle/circleAdd_class
+[ log ] www.qinlh.com/charge/public/index.php/port/Circle/circleAdd_class [运行时间：0.020953s][吞吐率：47.73req/s] [内存消耗：2,857.55kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000890s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_inout_class` [ RunTime:0.000820s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 3   [ RunTime:0.000424s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:00+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/friend/MyFriend?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI
+[ log ] www.qinlh.com/charge/public/index.php/port/friend/MyFriend?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI [运行时间：0.022139s][吞吐率：45.17req/s] [内存消耗：2,693.20kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000931s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SELECT `uid` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90OWu1hN-kfzsY3wwnjW5DDI' LIMIT 1    [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user_friend` [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_user_friend` `uf` INNER JOIN `bill_friend` `bf` ON `uf`.`f_id`=`bf`.`f_id` WHERE  `u_id` = 39529 ORDER BY bf.f_id desc   [ RunTime:0.000559s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:21+08:00 ] 172.24.117.196 27.203.115.154 GET /charge/public/index.php/port/check/BudgetMoney?openid=oOcH90P5ohvvC71TVMlluuIkLW4M
+[ log ] www.qinlh.com/charge/public/index.php/port/check/BudgetMoney?openid=oOcH90P5ohvvC71TVMlluuIkLW4M [运行时间：0.043904s][吞吐率：22.78req/s] [内存消耗：2,733.02kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001991s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.001176s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90P5ohvvC71TVMlluuIkLW4M' LIMIT 1   [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90P5ohvvC71TVMlluuIkLW4M' LIMIT 1    [ RunTime:0.019149s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:21+08:00 ] 172.24.117.196 27.203.115.154 GET /charge/public/index.php/port/check/UserCheck?openid=oOcH90P5ohvvC71TVMlluuIkLW4M&limit=3&lastid=0
+[ log ] www.qinlh.com/charge/public/index.php/port/check/UserCheck?openid=oOcH90P5ohvvC71TVMlluuIkLW4M&limit=3&lastid=0 [运行时间：0.107370s][吞吐率：9.31req/s] [内存消耗：2,739.42kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013487s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.001455s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90P5ohvvC71TVMlluuIkLW4M' LIMIT 1   [ RunTime:0.001286s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '34473'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.024821s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '34473'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.022821s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000846s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_charge` WHERE  `user_id` = 34473 LIMIT 1    [ RunTime:0.019623s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:22+08:00 ] 172.24.117.196 27.203.115.154 GET /charge/public/index.php/port/login/sendCode?code=061uDTFN0d6yqb2cItIN0NmjGN0uDTFb&PHPSESSID=ydWx0hNyYOBOzVgk4vu40SevRe3
+[ log ] www.qinlh.com/charge/public/index.php/port/login/sendCode?code=061uDTFN0d6yqb2cItIN0NmjGN0uDTFb&PHPSESSID=ydWx0hNyYOBOzVgk4vu40SevRe3 [运行时间：0.283519s][吞吐率：3.53req/s] [内存消耗：2,533.14kb] [文件加载：42]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000940s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_public_follow` WHERE  `openid` = 'oOcH90P5ohvvC71TVMlluuIkLW4M' LIMIT 1    [ RunTime:0.000560s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:23+08:00 ] 172.24.117.196 27.203.115.154 GET /charge/public/index.php/port/login/saveUserInfo?encryptedData=VihXLPwGcx4JTi1wJDtEOrB4JCaS%2ByIolnVYf09C8M1oMFfBg7lv02TigPqdNfY0wXwu0DB0YTIUoDF5aNaGge%2FLt8EcENF1tclJMenD%2BJ7Znfb4osE6dWz1YPfEonBkqTLzhY0tkl0G2a196al5rUzEA74p%2FelhErTNE0CRdd3%2FhP4vjeYFQMTOhe6DI9Q9tjPZtQ3q%2F7Oac6Vjft57KjDDHtuf7f2GPI%2FatHQ17sNwQwaJC%2FbZp75UlkQmymz1Tvo8w%2BKq8%2FLHB4XVYKk68F5tbBTLZ87EWuTF30tQEGYNdUWLux5q7aw6Zjhc%2FdcGwqmSwoU9I9WmGGz0QtXxjdiPhym%2Bp3tL1EkW%2FU%2BzaQ%2BWR44xJ6XzMEp9MkBpzMew2xNyqGVrdw%2BRKw78jz68VTnmh3wCiAJVC4WVvSA7Nwe4UrQ6nPbrMUsCSP1i0bvIgcl7DhmX1iB%2FMpF94l3boWF8aYTsSig%2BxUfoc8CrUTs%3D&PHPSESSID=3PckxoYm5MNYXLtGULQ12iw6nSD&iv=vAz7%2Fh1B8S0aRdxHREq2DQ%3D%3D
+[ log ] www.qinlh.com/charge/public/index.php/port/login/saveUserInfo?encryptedData=VihXLPwGcx4JTi1wJDtEOrB4JCaS%2ByIolnVYf09C8M1oMFfBg7lv02TigPqdNfY0wXwu0DB0YTIUoDF5aNaGge%2FLt8EcENF1tclJMenD%2BJ7Znfb4osE6dWz1YPfEonBkqTLzhY0tkl0G2a196al5rUzEA74p%2FelhErTNE0CRdd3%2FhP4vjeYFQMTOhe6DI9Q9tjPZtQ3q%2F7Oac6Vjft57KjDDHtuf7f2GPI%2FatHQ17sNwQwaJC%2FbZp75UlkQmymz1Tvo8w%2BKq8%2FLHB4XVYKk68F5tbBTLZ87EWuTF30tQEGYNdUWLux5q7aw6Zjhc%2FdcGwqmSwoU9I9WmGGz0QtXxjdiPhym%2Bp3tL1EkW%2FU%2BzaQ%2BWR44xJ6XzMEp9MkBpzMew2xNyqGVrdw%2BRKw78jz68VTnmh3wCiAJVC4WVvSA7Nwe4UrQ6nPbrMUsCSP1i0bvIgcl7DhmX1iB%2FMpF94l3boWF8aYTsSig%2BxUfoc8CrUTs%3D&PHPSESSID=3PckxoYm5MNYXLtGULQ12iw6nSD&iv=vAz7%2Fh1B8S0aRdxHREq2DQ%3D%3D [运行时间：0.065948s][吞吐率：15.16req/s] [内存消耗：2,570.38kb] [文件加载：45]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000909s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_user` [ RunTime:0.000933s ]
+[ sql ] [ SQL ] UPDATE `bill_user`  SET `nickname`='走在阳光中',`sex`=2,`city`='Weihai',`province`='Shandong',`country`='China',`headimgurl`='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIaMCyTyib0Ubl5hqZ8ib4VeXKwrcFNkaiaZACbvNyK7QtOZXcWkye2tm1gSVNc8hSqicjkClIicHs7NAg/132'  WHERE  `uid` = 34473          [ RunTime:0.000741s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_friend` [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_friend` WHERE  `uid` = 34473 LIMIT 1    [ RunTime:0.007233s ]
+[ sql ] [ SQL ] UPDATE `bill_friend`  SET `start`=1,`friend_name`='走在阳光中',`friend_imgurl`='https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTIaMCyTyib0Ubl5hqZ8ib4VeXKwrcFNkaiaZACbvNyK7QtOZXcWkye2tm1gSVNc8hSqicjkClIicHs7NAg/132',`time`=1552319903  WHERE  `uid` = 34473        [ RunTime:0.036638s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:30+08:00 ] 172.24.117.196 27.203.115.154 GET /charge/public/index.php/port/check/inoutClass
+[ log ] www.qinlh.com/charge/public/index.php/port/check/inoutClass [运行时间：0.031103s][吞吐率：32.15req/s] [内存消耗：2,421.70kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000881s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_inout_class` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 1   [ RunTime:0.000434s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 2   [ RunTime:0.000394s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:31+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/charge?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&formData=%7B%22money%22%3A%22600%22%2C%22date%22%3A%222019-03-11%22%2C%22remark%22%3A%22%E8%BF%9B%E8%B4%A7%E5%8A%A0%E6%B2%B9%22%2C%22inout_start%22%3A2%2C%22inout_class%22%3A1%2C%22time%22%3A%222019-03-11%22%7D
+[ log ] www.qinlh.com/charge/public/index.php/port/check/charge?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&formData=%7B%22money%22%3A%22600%22%2C%22date%22%3A%222019-03-11%22%2C%22remark%22%3A%22%E8%BF%9B%E8%B4%A7%E5%8A%A0%E6%B2%B9%22%2C%22inout_start%22%3A2%2C%22inout_class%22%3A1%2C%22time%22%3A%222019-03-11%22%7D [运行时间：0.021352s][吞吐率：46.83req/s] [内存消耗：2,425.16kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000905s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000838s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1   [ RunTime:0.000559s ]
+[ sql ] [ SQL ] select COLUMN_NAME from information_schema.COLUMNS where table_name = 'bill_charge' [ RunTime:0.000926s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000653s ]
+[ sql ] [ SQL ] INSERT INTO `bill_charge` (`money` , `remark` , `inout_start` , `inout_class` , `time` , `user_id`) VALUES ('600' , '进货加油' , 2 , 1 , 1552233600 , 39083)        [ RunTime:0.000987s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:31+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/BudgetMoney?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU
+[ log ] www.qinlh.com/charge/public/index.php/port/check/BudgetMoney?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU [运行时间：0.045973s][吞吐率：21.75req/s] [内存消耗：2,733.02kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001890s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.001180s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1   [ RunTime:0.008189s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1    [ RunTime:0.013687s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:32+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/UserCheck?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&limit=3&lastid=0
+[ log ] www.qinlh.com/charge/public/index.php/port/check/UserCheck?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&limit=3&lastid=0 [运行时间：0.432933s][吞吐率：2.31req/s] [内存消耗：2,753.01kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013635s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.001389s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1   [ RunTime:0.000727s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39083'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.022216s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39083'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.025651s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_charge` WHERE  `user_id` = 39083 LIMIT 1    [ RunTime:0.019550s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 39083
+						GROUP BY
+							time
+						ORDER BY
+							a_id DESC
+						LIMIT 3
+					 [ RunTime:0.118484s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 39083
+						GROUP BY
+							time
+						ORDER BY
+							time DESC
+					 [ RunTime:0.020378s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1552233600
+									GROUP BY
+										time
+							 [ RunTime:0.020177s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1552233600
+										GROUP BY
+											time
+									 [ RunTime:0.020212s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1552233600  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.021100s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1552147200
+									GROUP BY
+										time
+							 [ RunTime:0.020130s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1552147200
+										GROUP BY
+											time
+									 [ RunTime:0.020205s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1552147200  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.020950s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1552060800
+									GROUP BY
+										time
+							 [ RunTime:0.020198s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1552060800
+										GROUP BY
+											time
+									 [ RunTime:0.020306s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1552060800  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.020928s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:34+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/check/inoutClass
+[ log ] www.qinlh.com/charge/public/index.php/port/check/inoutClass [运行时间：0.027107s][吞吐率：36.89req/s] [内存消耗：2,421.70kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002075s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_inout_class` [ RunTime:0.000826s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 1   [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 2   [ RunTime:0.000385s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:39+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/inoutClass
+[ log ] www.qinlh.com/charge/public/index.php/port/check/inoutClass [运行时间：0.018411s][吞吐率：54.31req/s] [内存消耗：2,421.70kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000905s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_inout_class` [ RunTime:0.000851s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 1   [ RunTime:0.000430s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_inout_class` WHERE  `start` = 2   [ RunTime:0.000378s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:50+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/check/ThisIncomOut?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI
+[ log ] www.qinlh.com/charge/public/index.php/port/check/ThisIncomOut?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI [运行时间：0.102205s][吞吐率：9.78req/s] [内存消耗：2,737.88kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000949s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90OWu1hN-kfzsY3wwnjW5DDI' LIMIT 1   [ RunTime:0.000554s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`
+							FROM
+								`bill_charge`
+							WHERE
+								`inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							AND `user_id` = 39529
+						 [ RunTime:0.020344s ]
+[ sql ] [ SQL ] 
+							SELECT
+								ic.`a_id`,
+								SUM(`money`) AS `money`,
+								ic.`inout_class`,
+								bc.`inout_url`,
+								bc.`describe`,
+								bc.`color`,
+								ic.`inout_start`
+							FROM
+								bill_charge AS ic
+							INNER JOIN `bill_inout_class` AS bc ON ic.inout_class = bc.c_id
+							WHERE
+								`inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							AND `user_id` = 39529
+							GROUP BY
+								`inout_class`
+							ORDER BY
+							`a_id` DESC
+					 [ RunTime:0.020285s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`
+							FROM
+								`bill_charge`
+							WHERE
+								`inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							AND `user_id` = 39529
+						 [ RunTime:0.020278s ]
+[ sql ] [ SQL ] 
+						SELECT
+							ic.`a_id`,
+							SUM(`money`) AS `money`,
+							ic.`inout_class`,
+							bc.`inout_url`,
+							bc.`describe`,
+							bc.`color`,
+							ic.`inout_start`
+						FROM
+							bill_charge AS ic
+						INNER JOIN `bill_inout_class` AS bc ON ic.inout_class = bc.c_id
+						WHERE
+							`inout_start` = 2
+						AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+						AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+						AND `user_id` = 39529
+						GROUP BY
+							`inout_class`
+						ORDER BY
+							`a_id` DESC
+					 [ RunTime:0.020261s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:52+08:00 ] 172.24.117.196 111.127.185.185 GET /charge/public/index.php/port/set/BudgetStart?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI
+[ log ] www.qinlh.com/charge/public/index.php/port/set/BudgetStart?openid=oOcH90OWu1hN-kfzsY3wwnjW5DDI [运行时间：0.020343s][吞吐率：49.16req/s] [内存消耗：2,679.27kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000920s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000827s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90OWu1hN-kfzsY3wwnjW5DDI' LIMIT 1    [ RunTime:0.000422s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:59+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/charge?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&formData=%7B%22money%22%3A%22300%22%2C%22date%22%3A%222019-03-11%22%2C%22remark%22%3A%22%E5%8D%96%E7%83%A7%E7%83%A4%22%2C%22inout_start%22%3A1%2C%22inout_class%22%3A34%2C%22time%22%3A%222019-03-11%22%7D
+[ log ] www.qinlh.com/charge/public/index.php/port/check/charge?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&formData=%7B%22money%22%3A%22300%22%2C%22date%22%3A%222019-03-11%22%2C%22remark%22%3A%22%E5%8D%96%E7%83%A7%E7%83%A4%22%2C%22inout_start%22%3A1%2C%22inout_class%22%3A34%2C%22time%22%3A%222019-03-11%22%7D [运行时间：0.021544s][吞吐率：46.42req/s] [内存消耗：2,425.13kb] [文件加载：39]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000995s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000882s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1   [ RunTime:0.000419s ]
+[ sql ] [ SQL ] select COLUMN_NAME from information_schema.COLUMNS where table_name = 'bill_charge' [ RunTime:0.000870s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000685s ]
+[ sql ] [ SQL ] INSERT INTO `bill_charge` (`money` , `remark` , `inout_start` , `inout_class` , `time` , `user_id`) VALUES ('300' , '卖烧烤' , 1 , 34 , 1552233600 , 39083)        [ RunTime:0.000589s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:58:59+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/BudgetMoney?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU
+[ log ] www.qinlh.com/charge/public/index.php/port/check/BudgetMoney?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU [运行时间：0.022209s][吞吐率：45.03req/s] [内存消耗：2,733.02kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000998s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1   [ RunTime:0.000410s ]
+[ sql ] [ SQL ] SELECT `butged`,`butged_start` FROM `bill_public_follow` WHERE  `openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1    [ RunTime:0.000392s ]
+
+---------------------------------------------------------------
+[ 2019-03-11T23:59:00+08:00 ] 172.24.117.196 171.209.165.78 GET /charge/public/index.php/port/check/UserCheck?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&limit=3&lastid=0
+[ log ] www.qinlh.com/charge/public/index.php/port/check/UserCheck?openid=oOcH90I2MZuFas5xmNaeJtPAXuRU&limit=3&lastid=0 [运行时间：0.410922s][吞吐率：2.43req/s] [内存消耗：2,753.03kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000964s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000877s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90I2MZuFas5xmNaeJtPAXuRU' LIMIT 1   [ RunTime:0.000402s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39083'
+							AND `inout_start` = 1
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.021542s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`,
+								`time`
+							FROM
+								`bill_charge`
+							WHERE
+								`user_id` = '39083'
+							AND `inout_start` = 2
+							AND `time` >= unix_timestamp('2019-03-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-03-31 23:29:59')
+							ORDER BY
+								`a_id` DESC
+						 [ RunTime:0.022735s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_charge` [ RunTime:0.000907s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `bill_charge` WHERE  `user_id` = 39083 LIMIT 1    [ RunTime:0.019547s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 39083
+						GROUP BY
+							time
+						ORDER BY
+							a_id DESC
+						LIMIT 3
+					 [ RunTime:0.118003s ]
+[ sql ] [ SQL ] 
+						SELECT
+							time,
+							a_id
+						FROM
+							bill_charge
+						WHERE
+							a_id > 0 and user_id = 39083
+						GROUP BY
+							time
+						ORDER BY
+							time DESC
+					 [ RunTime:0.020173s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1552233600
+									GROUP BY
+										time
+							 [ RunTime:0.020290s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1552233600
+										GROUP BY
+											time
+									 [ RunTime:0.020264s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1552233600  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.021094s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1552147200
+									GROUP BY
+										time
+							 [ RunTime:0.020215s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1552147200
+										GROUP BY
+											time
+									 [ RunTime:0.020140s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1552147200  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.021197s ]
+[ sql ] [ SQL ] 
+									SELECT
+										time,
+										inout_start,
+										sum(money) AS money
+									FROM
+										bill_charge
+									WHERE
+										user_id = 39083
+									AND inout_start = 1
+									AND time = 1552060800
+									GROUP BY
+										time
+							 [ RunTime:0.020233s ]
+[ sql ] [ SQL ] 
+										SELECT
+											time,
+											inout_start,
+											sum(money) AS money
+										FROM
+											bill_charge
+										WHERE
+											user_id = 39083
+										AND inout_start = 2
+										AND time = 1552060800
+										GROUP BY
+											time
+									 [ RunTime:0.020183s ]
+[ sql ] [ SQL ] SELECT * FROM `bill_charge` `c` INNER JOIN `bill_inout_class` `i` ON `c`.`inout_class`=`i`.`c_id` WHERE  `c`.`time` = 1552060800  AND `c`.`user_id` = 39083 ORDER BY c.a_id desc  [ RunTime:0.021061s ]
+
+---------------------------------------------------------------

@@ -50,7 +50,7 @@ class FriendModel extends Model
 				$data = array(
 						"friend_name"=>$name,
 						"friend_phone"=>$phone,
-						"friend_imgurl"=>"https://h5php.xingyuanauto.com/charge/public/uploads/images/img/tx".rand(1,10).".jpg",
+						"friend_imgurl"=>"https://www.qinlh.com/charge/public/uploads/images/img/tx".rand(1,10).".jpg",
 						"time"=>time(),
 						"uid"=> 0,
 						"start"=>"0"

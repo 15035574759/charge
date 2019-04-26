@@ -1,0 +1,73 @@
+[ 2019-02-10T23:23:07+08:00 ] 172.24.117.196 223.104.1.127 GET /charge/public/index.php/port/check/ThisIncomOut?openid=oOcH90K6IZULTbPazZLzPRPth5kc
+[ log ] www.qinlh.com/charge/public/index.php/port/check/ThisIncomOut?openid=oOcH90K6IZULTbPazZLzPRPth5kc [运行时间：0.022616s][吞吐率：44.22req/s] [内存消耗：2,738.93kb] [文件加载：41]
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001046s ] mysql:dbname=bill_charge;host=39.104.52.159;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `bill_public_follow` [ RunTime:0.000851s ]
+[ sql ] [ SQL ] SELECT `f`.`uid` FROM `bill_public_follow` `f` INNER JOIN `bill_user` `u` ON `f`.`uid`=`u`.`uid` WHERE  `f`.`openid` = 'oOcH90K6IZULTbPazZLzPRPth5kc' LIMIT 1   [ RunTime:0.000412s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`
+							FROM
+								`bill_charge`
+							WHERE
+								`inout_start` = 1
+							AND `time` >= unix_timestamp('2019-02-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-02-28 23:29:59')
+							AND `user_id` = 37228
+						 [ RunTime:0.000376s ]
+[ sql ] [ SQL ] 
+							SELECT
+								ic.`a_id`,
+								SUM(`money`) AS `money`,
+								ic.`inout_class`,
+								bc.`inout_url`,
+								bc.`describe`,
+								bc.`color`,
+								ic.`inout_start`
+							FROM
+								bill_charge AS ic
+							INNER JOIN `bill_inout_class` AS bc ON ic.inout_class = bc.c_id
+							WHERE
+								`inout_start` = 1
+							AND `time` >= unix_timestamp('2019-02-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-02-28 23:29:59')
+							AND `user_id` = 37228
+							GROUP BY
+								`inout_class`
+							ORDER BY
+							`a_id` DESC
+					 [ RunTime:0.000513s ]
+[ sql ] [ SQL ] 
+							SELECT
+								sum(`money`) AS `money`
+							FROM
+								`bill_charge`
+							WHERE
+								`inout_start` = 2
+							AND `time` >= unix_timestamp('2019-02-01 00:00:00')
+							AND `time` <= unix_timestamp('2019-02-28 23:29:59')
+							AND `user_id` = 37228
+						 [ RunTime:0.000357s ]
+[ sql ] [ SQL ] 
+						SELECT
+							ic.`a_id`,
+							SUM(`money`) AS `money`,
+							ic.`inout_class`,
+							bc.`inout_url`,
+							bc.`describe`,
+							bc.`color`,
+							ic.`inout_start`
+						FROM
+							bill_charge AS ic
+						INNER JOIN `bill_inout_class` AS bc ON ic.inout_class = bc.c_id
+						WHERE
+							`inout_start` = 2
+						AND `time` >= unix_timestamp('2019-02-01 00:00:00')
+						AND `time` <= unix_timestamp('2019-02-28 23:29:59')
+						AND `user_id` = 37228
+						GROUP BY
+							`inout_class`
+						ORDER BY
+							`a_id` DESC
+					 [ RunTime:0.000400s ]
+
+---------------------------------------------------------------
