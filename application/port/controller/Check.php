@@ -158,7 +158,8 @@ class Check extends	Controller
 	{
 		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
-		return json($check->ThisIncomOut($openid));
+		$time = input("param.time") ? input("param.time") : date('Y年m月');
+		return json($check->ThisIncomOut($openid, $time));
 	}
 
 

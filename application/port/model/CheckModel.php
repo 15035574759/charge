@@ -221,13 +221,16 @@ class CheckModel extends Model
 	/**
 	 * 本月收入与支出数据
 	 * @return [type] openid [用户openid]
+	 * @return [type] time [查询时间]
 	 * @return [type] inout_start [1收入   2支出]
 	 */
-	public function ThisIncomOut($openid)
+	public function ThisIncomOut($openid, $time='')
 	{
 		$uid = $this->UserOpenid($openid);
-		$BeginDate = date('Y-m-01 H:i:s', strtotime(date("Y-m-d")));
-		$end = date('Y-m-d 23:29:59', strtotime("$BeginDate +1 month -1 day"));
+		$arr = date_parse_from_format('Y年m月d日',$time);
+		$times = $arr['year'].'-'.$arr['month'];
+		$StartDate = date('Y-m-01 H:i:s', strtotime($times));
+		$EndDate = date('Y-m-d 23:29:59', strtotime("$StartDate +1 month -1 day"));
 
 		//查询收入总金额 inout_start=1
 		$IncomeTotalMoney = DB::query("
@@ -237,8 +240,8 @@ class CheckModel extends Model
 								`bill_charge`
 							WHERE
 								`inout_start` = 1
-							AND `time` >= unix_timestamp('".$BeginDate."')
-							AND `time` <= unix_timestamp('".$end."')
+							AND `time` >= unix_timestamp('".$StartDate."')
+							AND `time` <= unix_timestamp('".$EndDate."')
 							AND `user_id` = ".$uid."
 						");
 		// print_r($TotalMoney);die;
@@ -257,8 +260,8 @@ class CheckModel extends Model
 							INNER JOIN `bill_inout_class` AS bc ON ic.inout_class = bc.c_id
 							WHERE
 								`inout_start` = 1
-							AND `time` >= unix_timestamp('".$BeginDate."')
-							AND `time` <= unix_timestamp('".$end."')
+							AND `time` >= unix_timestamp('".$StartDate."')
+							AND `time` <= unix_timestamp('".$EndDate."')
 							AND `user_id` = ".$uid."
 							GROUP BY
 								`inout_class`
@@ -283,8 +286,8 @@ class CheckModel extends Model
 								`bill_charge`
 							WHERE
 								`inout_start` = 2
-							AND `time` >= unix_timestamp('".$BeginDate."')
-							AND `time` <= unix_timestamp('".$end."')
+							AND `time` >= unix_timestamp('".$StartDate."')
+							AND `time` <= unix_timestamp('".$EndDate."')
 							AND `user_id` = ".$uid."
 						");
 
@@ -304,8 +307,8 @@ class CheckModel extends Model
 						INNER JOIN `bill_inout_class` AS bc ON ic.inout_class = bc.c_id
 						WHERE
 							`inout_start` = 2
-						AND `time` >= unix_timestamp('".$BeginDate."')
-						AND `time` <= unix_timestamp('".$end."')
+						AND `time` >= unix_timestamp('".$StartDate."')
+						AND `time` <= unix_timestamp('".$EndDate."')
 						AND `user_id` = ".$uid."
 						GROUP BY
 							`inout_class`

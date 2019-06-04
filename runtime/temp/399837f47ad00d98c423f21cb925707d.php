@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"D:\WWW\charge\public/../application/admin\view\login\login.html";i:1506393303;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:63:"D:\WWW\charge\public/../application/admin\view\login\login.html";i:1556434365;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,7 +35,7 @@
 <form id="doLogin" name="doLogin" method="post" action="<?php echo url('doLogin'); ?>">
     <div class="layui-layout layui-layout-login">
         <h1>
-            <strong>FlowAdmin后台管理系统</strong>
+            <strong>账本小精灵-后台管理系统</strong>
             <em>为你所爱，是你想要</em>
         </h1>
         <div class="layui-user-icon larry-login">
@@ -59,10 +59,10 @@
             <input type="submit" class="btn" value="立即登录"/>
             <!--<button type="submit" class="btn btn-primary btn-block">登　录</button>-->
         </div>
-        <div class="layui-login-text">
+        <!-- <div class="layui-login-text">
 
-            <p>赞助作者30即可获得整套源码，支付宝微信：15035574759 <a href="http://www.qinlinhui.cn" title="">welcome you</a></p>
-        </div>
+            <p>赞助作者500即可获得整套源码，支付宝微信：15035574759 <a href="http://www.qinlinhui.cn" title="">welcome you</a></p>
+        </div> -->
     </div>
 </form>
 <script src="__lay__/lay/dest/layui.all.js"></script>
