@@ -379,4 +379,78 @@ class CheckModel extends Model
 
 	}
 
+	/**
+	* 查询本年度每个月的数据
+	* @param  [post] [description]
+	* @return [type] [description]
+	* @author [qinlh] [WeChat QinLinHui0706]
+	*/
+	public function ShowYearMoneyData($openid) {
+		if($openid) {
+			$uid = $this->UserOpenid($openid);
+			$Year = date("Y");
+			$Month = intval(date("m"));
+
+			//查询每个月支出总金额 inout_start=2
+			$ExpendTotalMoney = DB::query("
+				SELECT
+					FROM_UNIXTIME(time, '%m') months,
+					sum(`money`) AS `money`
+				FROM
+					bill_charge
+				WHERE
+					DATE_FORMAT(FROM_UNIXTIME(time), '%Y') = $Year
+				AND `inout_start` = 2
+				AND user_id = $uid
+				GROUP BY
+					months;
+			");
+			if(false == $ExpendTotalMoney) return ['code'=>0, 'msg'=>'查询每个月支出数据失败'];
+			// p($ExpendTotalMoney);
+			$ExpendTotalMoneyArray = [];
+			for ($i=1; $i <= $Month; $i++) { 
+				$ExpendTotalMoneyArray[$i]['months'] = $i."月";
+				$ExpendTotalMoneyArray[$i]['money'] = 0;
+				foreach ($ExpendTotalMoney as $key => $val) {
+					$months = intval($val['months']);
+					if($months == $i) {
+						$ExpendTotalMoneyArray[$months]['months'] = $months."月";
+						$ExpendTotalMoneyArray[$months]['money'] = $val['money'];
+					}
+				}
+			}
+
+			//查询每个月收入总金额 inout_start=1
+			$IncomeTotalMoney = DB::query("
+				SELECT
+					FROM_UNIXTIME(time, '%m') months,
+					sum(`money`) AS `money`
+				FROM
+					bill_charge
+				WHERE
+					DATE_FORMAT(FROM_UNIXTIME(time), '%Y') = $Year
+				AND `inout_start` = 1
+				AND user_id = $uid
+				GROUP BY
+					months;
+			");
+			if(false == $IncomeTotalMoney) return ['code'=>0, 'msg'=>'查询每个月收入数据失败'];
+			// p($IncomeTotalMoney);
+			$IncomeTotalMoneyArray = [];
+			for ($i=1; $i <= $Month; $i++) { 
+				$IncomeTotalMoneyArray[$i]['months'] = $i."月";
+				$IncomeTotalMoneyArray[$i]['money'] = 0;
+				foreach ($IncomeTotalMoney as $key => $val) {
+					$months = intval($val['months']);
+					if($months == $i) {
+						$IncomeTotalMoneyArray[$months]['months'] = $months."月";
+						$IncomeTotalMoneyArray[$months]['money'] = $val['money'];
+					}
+				}
+			}
+			// p($IncomeTotalMoneyArray);
+			return array('code'=>1001,'data'=>array('ExpendTotalMoneyArray'=>$ExpendTotalMoneyArray,'IncomeTotalMoneyArray'=>$IncomeTotalMoneyArray),'msg'=>'查询数据成功');
+		}
+	}
+
 }

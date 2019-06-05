@@ -163,10 +163,28 @@ class Check extends	Controller
 	}
 
 
+	/**
+	* 查询预算是否开启
+	* @param  [post] [description]
+	* @return [type] [description]
+	* @author [qinlh] [WeChat QinLinHui0706]
+	*/
 	public function BudgetMoney()
 	{
 		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
 		return json($check->BudgetMoney($openid));
+	}
+
+	/**
+	* 查询本年度每个月的数据
+	* @param  [post] [description]
+	* @return [type] [description]
+	* @author [qinlh] [WeChat QinLinHui0706]
+	*/
+	public function ShowYearMoneyData() {
+		$check = new CheckModel();
+		$openid = input("param.openid");//用户openid
+		return json_encode($check->ShowYearMoneyData($openid));
 	}
 }
