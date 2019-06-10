@@ -321,7 +321,9 @@ class CheckModel extends Model
 			//计算概率 保留两位小数
 			foreach ($ExpendData as $key => $val)
 			{
-				$ExpendData[$key]['probability'] = ROUND($val['money'] / $ExpendTotalMoney[0]['money'] * 100,2)."%";
+				if($ExpendTotalMoney[0]['money'] !== 0) {
+					$ExpendData[$key]['probability'] = ROUND($val['money'] / $ExpendTotalMoney[0]['money'] * 100,2)."%";
+				}
 				$ExpendMonerArray[] = $val['money'];//支出金额
 				$ExpendColorArray[] = $val['color'];//支出颜色
 			}
