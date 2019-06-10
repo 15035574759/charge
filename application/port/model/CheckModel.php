@@ -89,7 +89,7 @@ class CheckModel extends Model
 			$where .= " and a_id < $lastid";
 		}
 
-
+		$TimeDataArr = [];
 		// echo $lastid;die;
 		//支出与收入数据
 		$TimeDataArr = DB::query("
@@ -106,7 +106,7 @@ class CheckModel extends Model
 							a_id DESC
 						LIMIT $limit
 					");
-		// print_r($TimeDataArr);die;
+		// p($TimeDataArr);die;
 		if(!isset($TimeDataArr))
 		{
 			return array(
@@ -179,7 +179,7 @@ class CheckModel extends Model
 											->order("c.a_id desc")
 											->select();
 			}
-		// print_r($TimeDataArr);die;
+		// p($TimeDataArr);
 		if($TimeDataArr)
 		{
 			return array(
