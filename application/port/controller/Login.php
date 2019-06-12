@@ -160,6 +160,16 @@ class Login extends Controller
     }
 
     /**
+    * 测试调试使用
+    * @param  [post] [description]
+    * @return [type] [description]
+    * @author [qinlh] [WeChat QinLinHui0706]
+    */
+    public function test() {
+        return json(array('status'=>1,'msg'=>'OK'));
+    }
+
+    /**
      * 模拟Popst提交
      * @param  [type] $url [description]
      * @return [type]      [description]
