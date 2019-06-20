@@ -1,21 +1,20 @@
 <?php
 return [
-
     //路由接口状态
     'url_route_on' => true,
     'url_route_must'  =>  false,
 
     //模板参数替换
     'view_replace_str' => array(
-        '__js__'   =>'/charge/public/statisc/js',
-        '__jss__'   =>'/charge/public/javascript/js',
-        '__css__'   =>'/charge/public/statisc/css',
-        '__img__'   =>'/charge/public/statisc/img',
-        '__lay__'   =>'/charge/public/statisc/layui',
-        '__font__'   =>'/charge/public/statisc/Font-Awesome/css',
-        '__common__'   =>'/charge/public/statisc/layui/lay/modules/extendplus',
-        '__PAY__'  =>   '/charge/public/javascript/alipay',
-        '__UPDATE__' => '/charge/public/javascript/update',
+        '__js__'   =>'/statisc/js',
+        '__jss__'   =>'/javascript/js',
+        '__css__'   =>'/statisc/css',
+        '__img__'   =>'/statisc/img',
+        '__lay__'   =>'/statisc/layui',
+        '__font__'   =>'/statisc/Font-Awesome/css',
+        '__common__'   =>'/statisc/layui/lay/modules/extendplus',
+        '__PAY__'  =>   '/javascript/alipay',
+        '__UPDATE__' => '/javascript/update',
     ),
 
     //微信 开发配置
@@ -42,4 +41,5 @@ return [
         'charset' => 'UTF-8',//编码格式
         'sign_type' => 'RSA2' //签名方式
     ),
+    'PAGE_COUNT' => 30, //分页配置 每页显示条数
 ];

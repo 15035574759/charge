@@ -31,6 +31,7 @@ class CheckModel extends Model
 		$user_id = DB::name("public_follow")->alias("f")->field("f.uid")->join("bill_user u","f.uid=u.uid")->where("f.openid",$openid)->find();
 		if(false == $user_id) return ['status'=>0,'msg'=>'获取用户信息失败'];
 		$dataArr['user_id'] = $user_id['uid'];
+		$dataArr['keep_time'] = time();
 		if(empty($openid)) return array('start'=>0,'msg'=>'获取用户openid失败');
 		$table = "bill_charge";
 		$dataAdd = $this->filter($dataArr,$table);

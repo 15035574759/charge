@@ -1,0 +1,170 @@
+{include file="public/header"/}
+<style>
+    .layui-form-switch {
+        padding-left: 0px;
+        transition: .1s linear;
+    }
+    .layui-table tr th{text-align: center;}
+    .layui-table tr td{text-align: center;}
+</style>
+<div class="main-wrap">
+    <blockquote class="layui-elem-quote fhui-admin-main_hd">
+        <h2>账单列表</h2>
+    </blockquote>
+    <div class="y-role">
+        <!--工具栏-->
+        <div id="floatHead" class="toolbar-wrap">
+            <div class="toolbar">
+                <div class="box-wrap">
+                    <a class="menu-btn"></a>
+                    <div class="l-list">
+                        <a class="layui-btn layui-btn-small do-action" data-type="doRefresh" data-href=""><i class="fa fa-refresh fa-spin"></i>刷新</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--筛选栏-->
+        <div class="SearchData" style="width:70%;">
+            <div class="layui-form" style="width:300px;margin-top:20px;margin-bottom:-10px;float:left;">
+                <div class="layui-form-item">
+                <label class="layui-form-label">用户名</label>
+                <div class="layui-input-block">
+                    <input class="layui-input" type="text" name="nickname" placeholder="请输入用户名"  lay-verify="name" id="nickname" value="{$nickname}">
+                </div>
+                </div>
+            </div>
+
+            <div class="layui-form" style="width:300px;margin-top:20px;margin-bottom:-10px;float:left;">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">收入/支出</label>
+                    <div class="layui-input-block">
+                        <select name="inout_start" lay-filter="inout_start" id="inout_start">
+                            <option value="" selected="selected">请选择收入/支出</option>
+                            <option value="1" {if $inout_start==1} selected {/if}>收入</option>
+                            <option value="2" {if $inout_start==2} selected {/if}>支出</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form" style="margin:20px 0 -10px 20px;float:left;">
+            <div class="layui-form-item">
+                <div class="layui-form-item" style="float:left;">
+                    <button class="layui-btn" id="GetScreen">搜索</button>
+                    <button id="GetEmpty" class="layui-btn layui-btn-danger layui-btn-normal" style="height:38px;line-height:38px;"><i class="layui-icon"></i> 清空条件</button>
+                </div>
+            </div>
+        </div>
+        <!--/工具栏-->
+
+        <!--文字列表-->
+        <div class="fhui-admin-table-container">
+
+            <table class="layui-table">
+                  <!-- <colgroup>
+                      <col width="5%">
+                      <col width="5%">
+                      <col width="8%">
+                      <col width="8%">
+                      <col width="10%">
+                      <col width="5%">
+                      <col width="5%">
+                      <col width="5%">
+                      <col width="15%">
+                      <col width="8%">
+                      <col width="20%">
+
+                  </colgroup> -->
+                <thead>
+                <tr>
+                    <!-- <th>
+                        <input type="checkbox" class="selected-all i-checks" id="selected-all">
+                    </th> -->
+                    <th>ID</th>
+                    <th>用户</th>
+                    <th>头像</th>
+                    <th>收入/支出</th>
+                    <th>类型</th>
+                    <th>金额</th>
+                    <th>备注</th>
+                    <th>选择时间</th>
+                    <th>记账时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <script id="arlist" type="text/html">
+                    {{# for(var i=0;i<d.length;i++){  }}
+                    <tr class="long-td">
+                        <!-- <td>
+                            <input class="ids i-checks" checked="chedked" type="checkbox" name="ids[]" value="0">
+                        </td> -->
+                        <td>{{d[i].a_id}}</td>
+                        <td>{{d[i].nickname}}</td>
+                        <td><img src="{{d[i].headimgurl}}" width="50" alt=""></td>
+                        <td>
+                            {{# if(d[i].inout_start==1){ }}
+                            <button class="layui-btn layui-btn-danger layui-btn-mini">收入</button>
+                            {{# }else{ }}
+                            <button class="layui-btn layui-btn-mini">支出</button>
+                            {{# } }}
+                        </td>
+                        <td><button class="layui-btn layui-btn-primary layui-btn-mini">{{d[i].describe}}</button></td>
+                        <td><span style="color:red;font-weight:bold">￥{{d[i].money}}</span></td>
+                        <td>{{d[i].remark}}</td>
+                        <td class="text-navy">{{d[i].time}}</td>
+                        <td class="text-warning">{{d[i].keep_time}}</td>
+                        <td>
+                            <!-- <a  class="layui-btn layui-btn-small do-action" data-type="doEdit" data-href="#" data-id="{{d[i].uid}}">
+                                <i class="icon-edit  fa fa-pencil-square-o"></i>编辑
+                            </a> -->
+                            <a class="layui-btn layui-btn-small do-action" data-type="doDelOne" data-href="{:url('del_check')}" data-id="{{d[i].a_id}}">
+                                <i class="icon-edit  fa fa-pencil-square-o"></i>删除
+                            </a>
+                        </td>
+                    </tr>
+                    {{# } }}
+                </script>
+                <tbody id="article_list"></tbody>
+                </tbody>
+            </table>
+
+        </div>
+        <div id="AjaxPage" style="margin-top: -57px;float: right;"></div>
+        <div style="float: right;margin-top: -9px;margin-right: 13px;">
+            共{$count}条数据，<span id="allpage"></span>
+        </div>
+    </div>
+</div>
+
+{include file="public/footer"}
+<script>
+    var nickname = '{$nickname}'; //用户名
+    var inout_start = '{$inout_start}'; //收入支出
+    var laytpl,laypage;
+    var url='{:url("check/check_list")}?sign=code';
+    if(nickname != '') url += "&nickname=" + nickname;
+    if(inout_start != '') url += "&inout_start=" + inout_start;
+    var allpages='{$allpage}';
+    layui.use(['form','layer', 'laypage','common', 'icheck','laytpl'], function () {
+        var $ = layui.jquery
+                , layer = layui.layer
+                , common = layui.common;
+        laytpl =layui.laytpl;
+        laypage = layui.laypage;
+
+        common.Ajaxpage();
+
+        /** 开始搜索数据 **/
+        $("#GetScreen").click(function(){
+            var nickname = $(":input[name='nickname']").val(); //用户名
+            var inout_start = $("#inout_start").val(); //收入/支出
+            window.location.href = "{:url('check_list')}?nickname=" + nickname + "&inout_start=" + inout_start;
+        })
+        /** 清空所有筛选条件 **/
+        $("#GetEmpty").click(function(){
+          window.location.href="{:url('check_list')}?sign=code";
+        })
+
+    });
+</script>
