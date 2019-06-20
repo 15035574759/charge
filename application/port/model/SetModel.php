@@ -92,7 +92,6 @@ class SetModel extends Model
 				return array("code"=>$ReturnArray['errcode'], "msg"=>$ReturnArray['errmsg']);
 			}
 			Cache::set('AccessToken', $ReturnArray['access_token'], 6000); //缓存小于两个小时
-			$AccessToken = $ReturnArray['access_token'];
 			return ['code'=>1, 'access_token'=>$ReturnArray['access_token']];
 		} else {
 			return ['code'=>1, 'access_token'=>$AccessToken];
