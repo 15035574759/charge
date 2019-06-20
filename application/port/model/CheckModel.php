@@ -85,7 +85,7 @@ class CheckModel extends Model
 			'keyword3' => array('value' => '￥'.$dataArr['money']), //金额
 			'keyword4' => array('value' => $dataArr['remark']), //描述
 			'keyword5' => array('value' => $UserInfo), //创建人
-			'keyword6' => array('value' => $dataArr['time']), //日期
+			'keyword6' => array('value' => date("Y-m-d", $dataArr['time'])), //日期
 			'keyword7' => array('value' => date("Y-m-d H:i:s")), //记账时间
 		);
 		if($AccessToken['code'] !== 1) return json_encode($AccessToken);

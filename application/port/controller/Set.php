@@ -62,4 +62,8 @@ class Set extends Controller
 		$butgedMoney = input("param.butgedMoney");//用户预算金额
 		return json($this->set->BudgetMoneyUpdate($userOpenid,$butgedMoney));
 	}
+
+	public function test() {
+		
+	} 
 }
