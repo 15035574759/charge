@@ -39,7 +39,8 @@ class CheckModel extends Model
 		$chargeId = DB::name('charge')->getLastInsID();
 		if($chargeId >= 1) {
 			//开始发送模板消息通知用户记账成功
-			@$this->SendTemplateMessage($openid,$dataArr);
+			$res = $this->SendTemplateMessage($openid,$dataArr);
+			if($res['errcode'] !== 0) logger("R \r\n" . json_encode($res));
 			return array("status"=>1,"msg"=>"记账成功");
 		} else {
 			return array("status"=>0,"msg"=>"记账失败");
