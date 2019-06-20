@@ -84,7 +84,7 @@ class SetModel extends Model
 	*/
 	public function getAccessToken() {
 		$AccessToken = Cache::get('AccessToken');
-		if(false == $AccessToken) {
+		if($AccessToken == false) {
 			$url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid='.Config('APPID').'&secret='.Config('APPSECRET');
 			$ReturnJson = file_get_contents($url);
 			$ReturnArray = json_decode($ReturnJson, true);
@@ -93,8 +93,10 @@ class SetModel extends Model
 			}
 			Cache::set('AccessToken', $ReturnArray['access_token'], 6000); //缓存小于两个小时
 			$AccessToken = $ReturnArray['access_token'];
-		} 
-		return ['code'=>1, 'access_token'=>$AccessToken];
+			return ['code'=>1, 'access_token'=>$ReturnArray['access_token']];
+		} else {
+			return ['code'=>1, 'access_token'=>$AccessToken];
+		}
 	}
 
 	/**
