@@ -193,7 +193,7 @@ class CheckModel extends Model
 						GROUP BY
 							time
 						ORDER BY
-							a_id DESC
+							time DESC
 						LIMIT $limit
 					");
 		// p($TimeDataArr);die;
