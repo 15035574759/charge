@@ -82,7 +82,7 @@ class CheckModel extends Model
 		$TemplateData = array(
 			'keyword1' => array('value' => $dataArr['inout_class'] == 1 ? '收入' : '支出'), //记账类型
 			'keyword2' => array('value' => $dataArr['inout_class_name']), //项目
-			'keyword3' => array('value' => $dataArr['money']), //金额
+			'keyword3' => array('value' => '￥'.$dataArr['money']), //金额
 			'keyword4' => array('value' => $dataArr['remark']), //描述
 			'keyword5' => array('value' => $UserInfo), //创建人
 			'keyword6' => array('value' => $dataArr['time']), //日期
