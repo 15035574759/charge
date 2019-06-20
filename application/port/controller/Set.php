@@ -11,17 +11,26 @@ use	think\Request;
 use	think\Db;
 use think\Session;
 use think\Cache;
+use think\Config;
 use app\port\model\SetModel;
+use app\port\model\UserModel;
 class Set extends Controller
 {
+    public $set;
+    public $user;
+    public function __construct()
+    {
+        $this->set = new SetModel();
+        $this->user = new UserModel();
+	}
+	
 	/**
 	 * 查询用户预算是否开启
 	 */
 	public function BudgetStart()
 	{
-		$set = new SetModel();
 		$userOpenid = input("param.openid");//用户openid
-		return json($set->BudgetStart($userOpenid));
+		return json($this->set->BudgetStart($userOpenid));
 	}
 
 	/**
@@ -29,9 +38,8 @@ class Set extends Controller
 	 */
 	public function BudgetOpen()
 	{
-		$set = new SetModel();
 		$userOpenid = input("param.openid");//用户openid
-		return json($set->BudgetOpen($userOpenid));
+		return json($this->set->BudgetOpen($userOpenid));
 	}
 
 	/**
@@ -39,9 +47,8 @@ class Set extends Controller
 	 */
 	public function BudgetClose()
 	{
-		$set = new SetModel();
 		$userOpenid = input("param.openid");//用户openid
-		return json($set->BudgetClose($userOpenid));
+		return json($this->set->BudgetClose($userOpenid));
 	}
 
 	/**
@@ -51,9 +58,8 @@ class Set extends Controller
 	 */
 	public function BudgetMoneyUpdate()
 	{
-		$set = new SetModel();
 		$userOpenid = input("param.openid");//用户openid
 		$butgedMoney = input("param.butgedMoney");//用户预算金额
-		return json($set->BudgetMoneyUpdate($userOpenid,$butgedMoney));
+		return json($this->set->BudgetMoneyUpdate($userOpenid,$butgedMoney));
 	}
 }

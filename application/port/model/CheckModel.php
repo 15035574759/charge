@@ -12,6 +12,95 @@ use think\Db;
 class CheckModel extends Model
 {
 	protected $name = '';
+	protected $user;
+	protected $set;
+    public function __construct()
+    {
+        $this->user = new UserModel();
+        $this->set = new SetModel();
+	}
+
+	/**
+	* 开始记账
+	* @param  [dataArr] [数据]
+	* @param  [openid] [用户openid]
+	* @return [type] [description]
+	* @author [qinlh] [WeChat QinLinHui0706]
+	*/
+	public function setCharge($dataArr=[], $openid='') {
+		$user_id = DB::name("public_follow")->alias("f")->field("f.uid")->join("bill_user u","f.uid=u.uid")->where("f.openid",$openid)->find();
+		if(false == $user_id) return ['status'=>0,'msg'=>'获取用户信息失败'];
+		$dataArr['user_id'] = $user_id['uid'];
+		if(empty($openid)) return array('start'=>0,'msg'=>'获取用户openid失败');
+		$table = "bill_charge";
+		$dataAdd = $this->filter($dataArr,$table);
+		//入库操作
+		DB::name("charge")->insert($dataAdd);
+		$chargeId = DB::name('charge')->getLastInsID();
+		if($chargeId >= 1) {
+			//开始发送模板消息通知用户记账成功
+			@$this->SendTemplateMessage($openid,$dataArr);
+			return array("status"=>1,"msg"=>"记账成功");
+		} else {
+			return array("status"=>0,"msg"=>"记账失败");
+		}
+	}
+
+	/**
+	 * 字段过滤
+	 * @param  [type] $dataArr 需要添加的数据
+	 * @param  [type] $table   表
+	 * @return [type] array    数组
+	 */
+	public function filter($dataArr,$table)
+	{
+		$res = Db::query("select COLUMN_NAME from information_schema.COLUMNS where table_name = '$table'");
+		foreach ($res as $key => $value) {
+			$fields[$value['COLUMN_NAME']] = $value['COLUMN_NAME'];
+		}
+		foreach ($dataArr as $key => $val) {
+              if(!in_array($key,$fields)){
+                  unset($dataArr[$key]);
+              }
+          }
+          return $dataArr;
+	}
+
+	/**
+	* 发送账单模板消息
+	* @param  [post] [description]
+	* @return [type] [description]
+	* @author [qinlh] [WeChat QinLinHui0706]
+	*/
+	public function SendTemplateMessage($openid, $dataArr) {
+		$AccessToken = $this->set->getAccessToken();
+		$UserInfoArr = $this->user->UidUserInfo($dataArr['user_id']);
+		$UserInfo = '';
+		if($UserInfoArr['code'] == 1) {
+			$UserInfo = $UserInfoArr['data']['nickname'];
+		}
+		$TemplateData = array(
+			'keyword1' => array('value' => $dataArr['inout_class'] == 1 ? '收入' : '支出'), //记账类型
+			'keyword2' => array('value' => $dataArr['inout_class_name']), //项目
+			'keyword3' => array('value' => $dataArr['money']), //金额
+			'keyword4' => array('value' => $dataArr['remark']), //描述
+			'keyword5' => array('value' => $UserInfo), //创建人
+			'keyword6' => array('value' => $dataArr['time']), //日期
+			'keyword7' => array('value' => date("Y-m-d H:i:s")), //记账时间
+		);
+		if($AccessToken['code'] !== 1) return json_encode($AccessToken);
+		$url = 'https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token='.$AccessToken['access_token'];
+		$JsonData = json_encode(array(
+			 'touser' => $openid //接收者（用户）的 openid
+			,'template_id' => Config('TemplateId.SuccessfulBookkeeping') //模板ID
+			,'page' => 'pages/show/show'
+			,'form_id' => $dataArr['formId'] ? $dataArr['formId'] : '' //formID
+			,'data' => $TemplateData //数据
+		));
+		$ResData = $this->set->setPostData($url, $JsonData);
+		$ReturnCode = json_decode($ResData, true);
+		return $ReturnCode;
+	}
 
 	/**
 	 * 查询当前用户所有账单

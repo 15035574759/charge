@@ -14,6 +14,7 @@ use app\port\model\LoginModel;
 use think\Session;
 use think\Cookie;
 use think\Cache;
+use think\Config;
 use wxBizDataCrypt\wxBizDataCrypt;
 class Login extends Controller
 {
@@ -40,7 +41,7 @@ class Login extends Controller
         // return $PHPSESSID;
         $code = input("param.code");
         //这里要配置你的小程序appid和secret
-        $url = 'https://api.weixin.qq.com/sns/jscode2session?appid=wx14fd8a03c8bf2694&secret=eb7992eabb097c63f14e566cdea3837f&js_code='.$code.'&grant_type=authorization_code';
+        $url = 'https://api.weixin.qq.com/sns/jscode2session?appid='.Config('APPID').'&secret='.Config('APPSECRET').'&js_code='.$code.'&grant_type=authorization_code';
         $data = file_get_contents($url);
         // p($data);die;
         $arr = json_decode($data,true);
@@ -112,7 +113,7 @@ class Login extends Controller
             return array('status'=>0,'msg'=>'传递信息不全');
         }
 
-        $appid = 'wx14fd8a03c8bf2694';  //这里配置你的小程序appid
+        $appid = Config('APPID');  //这里配置你的小程序appid
         $sessionKey = Cache::get('session_key');//获取会话秘钥
 
         $result = import("wxBizDataCrypt",EXTEND_PATH.'wxBizDataCrypt');
@@ -167,30 +168,5 @@ class Login extends Controller
     */
     public function test() {
         return json(array('status'=>1,'msg'=>'OK'));
-    }
-
-    /**
-     * 模拟Popst提交
-     * @param  [type] $url [description]
-     * @return [type]      [description]
-     */
-    function post_data($url){
-        //模拟post请求
-        $curl = curl_init(); // 启动一个CURL会话
-        curl_setopt($curl, CURLOPT_URL, $url); // 要访问的地址
-        curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0); // 对认证证书来源的检查
-        //curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 1); // 从证书中检查SSL加密算法是否存在
-        curl_setopt($curl, CURLOPT_USERAGENT, $_SERVER['HTTP_USER_AGENT']); // 模拟用户使用的浏览器
-        curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1); // 使用自动跳转
-        curl_setopt($curl, CURLOPT_AUTOREFERER, 1); // 自动设置Referer
-        curl_setopt($curl, CURLOPT_POST, 1); // 发送一个常规的Post请求
-        // curl_setopt($curl, CURLOPT_POSTFIELDS, $data); // Post提交的数据包
-        curl_setopt($curl, CURLOPT_TIMEOUT, 30); // 设置超时限制防止死循环
-        curl_setopt($curl, CURLOPT_HEADER, 0); // 显示返回的Header区域内容
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); // 获取的信息以文件流的形式返回
-        $tmpInfo = curl_exec($curl); // 执行操作
-
-        curl_close($curl); // 关闭CURL会话
-        return $tmpInfo; // 返回数据
     }
 }

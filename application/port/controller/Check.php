@@ -12,8 +12,17 @@ use	think\Db;
 use think\Session;
 use think\Cache;
 use app\port\model\CheckModel;
+use app\port\model\SetModel;
 class Check extends	Controller
 {
+
+	public $set;
+	public $check;
+    public function __construct()
+    {
+		$this->set = new SetModel();
+		$this->check = new CheckModel();
+	}
 
 	/**
 	 * 查询账单分类
@@ -36,25 +45,8 @@ class Check extends	Controller
 		$data = input("param.formData");
 		$dataArr = json_decode($data,true);
 		$dataArr['time'] = strtotime($dataArr['time']);
-		// p($data);
-		$user_id = DB::name("public_follow")->alias("f")->field("f.uid")->join("bill_user u","f.uid=u.uid")->where("f.openid",$openid)->find();
-		$dataArr['user_id'] = $user_id['uid'];
-		if(empty($openid)){
-			return array('start'=>0,'msg'=>'获取用户openid失败');
-		}
-		$table = "bill_charge";
-		$dataAdd = $this->filter($dataArr,$table);
-
-		//入库操作
-		$res = DB::name("charge")->insert($dataAdd);
-		if($res)
-		{
-			return json(array("status"=>1,"msg"=>"添加成功"));
-		}
-		else
-		{
-			return json(array("status"=>0,"msg"=>"添加失败"));
-		}
+		$res = $this->check->setCharge($dataArr, $openid);
+		return json($res);
 	}
 
 	/**
@@ -84,33 +76,11 @@ class Check extends	Controller
 	}
 
 	/**
-	 * 字段过滤
-	 * @param  [type] $dataArr 需要添加的数据
-	 * @param  [type] $table   表
-	 * @return [type] array    数组
-	 */
-	public function filter($dataArr,$table)
-	{
-		$res = Db::query("select COLUMN_NAME from information_schema.COLUMNS where table_name = '$table'");
-		foreach ($res as $key => $value) {
-			$fields[$value['COLUMN_NAME']] = $value['COLUMN_NAME'];
-		}
-		foreach ($dataArr as $key => $val) {
-              if(!in_array($key,$fields)){
-                  unset($dataArr[$key]);
-              }
-          }
-
-          return $dataArr;
-	}
-
-	/**
 	 * 查询当前用户所有账单
 	 * @return [type] openid [用户openid]
 	 */
 	public function UserCheck()
 	{
-		$check = new CheckModel();
 		$userOpenid = input("param.openid");//用户openid
 		if(empty($userOpenid))
 		{
@@ -118,7 +88,7 @@ class Check extends	Controller
 		}
 		$lastid = input("param.lastid");//分页ID
 		$limit = input("param.limit");//分页每页显示数据
-		return json($check->UserCheck($userOpenid,$lastid,$limit));
+		return json($this->check->UserCheck($userOpenid,$lastid,$limit));
 	}
 
 	/**
@@ -156,10 +126,9 @@ class Check extends	Controller
 	 */
 	public function ThisIncomOut()
 	{
-		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
 		$time = input("param.time") ? input("param.time") : date('Y年m月');
-		return json($check->ThisIncomOut($openid, $time));
+		return json($this->check->ThisIncomOut($openid, $time));
 	}
 
 
@@ -171,9 +140,8 @@ class Check extends	Controller
 	*/
 	public function BudgetMoney()
 	{
-		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
-		return json($check->BudgetMoney($openid));
+		return json($this->check->BudgetMoney($openid));
 	}
 
 	/**
@@ -183,8 +151,7 @@ class Check extends	Controller
 	* @author [qinlh] [WeChat QinLinHui0706]
 	*/
 	public function ShowYearMoneyData() {
-		$check = new CheckModel();
 		$openid = input("param.openid");//用户openid
-		return json_encode($check->ShowYearMoneyData($openid));
+		return json_encode($this->check->ShowYearMoneyData($openid));
 	}
 }
