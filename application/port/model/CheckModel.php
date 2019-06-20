@@ -203,9 +203,9 @@ class CheckModel extends Model
 			return array(
 					"start"=>1,
 					"data"=>$TimeDataArr,
-					"MonthBalance"=>$MonthBalance,
-					"MonthIncome"=>$MonthIncome,
-					"MonthExpend"=>$MonthExpend
+					"MonthBalance"=>number_format($MonthBalance),
+					"MonthIncome"=>number_format($MonthIncome),
+					"MonthExpend"=>number_format($MonthExpend)
 				);
 		}
 
@@ -226,6 +226,7 @@ class CheckModel extends Model
 		//查询每日收入与支出总金额
 		foreach ($TimeDataArr as $key => $val) {
 			$TimeDataArr[$key]['time'] = date("Y-m-d",$val['time']);
+			// $TimeDataArr[$key]['money'] = number_format($val['money']);
 			//查询日收入总金额
 			$IncomeTimeDataArr = DB::query("
 									SELECT
@@ -242,7 +243,7 @@ class CheckModel extends Model
 										time
 							");
 				foreach ($IncomeTimeDataArr as $kk => $vv) {
-					$TimeDataArr[$key]['IncomeTimeDataArrSum'] = $vv['money'];
+					$TimeDataArr[$key]['IncomeTimeDataArrSum'] = number_format($vv['money']);
 				}
 				//查出日支出总金额
 				$ExpendTimeDataArr = DB::query("
@@ -260,7 +261,7 @@ class CheckModel extends Model
 											time
 									");
 				foreach ($ExpendTimeDataArr as $kk => $vv) {
-					$TimeDataArr[$key]['ExpendTimeDataArrSum'] = $vv['money'];
+					$TimeDataArr[$key]['ExpendTimeDataArrSum'] = number_format($vv['money']);
 				}
 				$TimeDataArr[$key]['array'] = DB::name("charge")
 											->alias("c")
@@ -269,6 +270,9 @@ class CheckModel extends Model
 											->where("c.user_id",$uid)
 											->order("c.a_id desc")
 											->select();
+				foreach ($TimeDataArr[$key]['array'] as $k => $v) {
+					$TimeDataArr[$key]['array'][$k]['money'] = number_format($v['money']);
+				}
 			}
 		// p($TimeDataArr);
 		if($TimeDataArr)
@@ -276,9 +280,9 @@ class CheckModel extends Model
 			return array(
 				"start"=>1,
 				"data"=>$TimeDataArr,
-				"MonthBalance"=>$MonthBalance,
-				"MonthIncome"=>$MonthIncome,
-				"MonthExpend"=>$MonthExpend,
+				"MonthBalance"=>number_format($MonthBalance),
+				"MonthIncome"=>number_format($MonthIncome),
+				"MonthExpend"=>number_format($MonthExpend),
 				"TimeDataArrCount"=>$TimeDataArrCount
 			);
 		}
