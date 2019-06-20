@@ -64,6 +64,6 @@ class Set extends Controller
 	}
 
 	public function test() {
-		
+		return json(array('status'=>1,'msg'=>'OK'));
 	} 
 }
