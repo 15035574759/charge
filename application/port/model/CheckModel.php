@@ -369,6 +369,7 @@ class CheckModel extends Model
 			foreach ($IncomeData as $key => $val)
 			{
 				$IncomeData[$key]['probability'] = ROUND($val['money'] / $IncomeTotalMoney[0]['money'] * 100,2)."%";
+				$IncomeData[$key]['money'] = number_format($val['money']);
 				$IncomeMonerArray[] = $val['money'];//收入金额
 				$IncomeColorArray[] = $val['color'];//收入颜色
 			}
@@ -419,12 +420,13 @@ class CheckModel extends Model
 				if($ExpendTotalMoney[0]['money'] !== 0) {
 					$ExpendData[$key]['probability'] = ROUND($val['money'] / $ExpendTotalMoney[0]['money'] * 100,2)."%";
 				}
+				$ExpendData[$key]['money'] = number_format($val['money']);
 				$ExpendMonerArray[] = $val['money'];//支出金额
 				$ExpendColorArray[] = $val['color'];//支出颜色
 			}
 
-		$ExpendTotalMoney = $ExpendTotalMoney[0]['money'];//支出总金额
-		$IncomeTotalMoney = $IncomeTotalMoney[0]['money'];//收入总金额
+		$ExpendTotalMoney = number_format($ExpendTotalMoney[0]['money']);//支出总金额
+		$IncomeTotalMoney = number_format($IncomeTotalMoney[0]['money']);//收入总金额
 
 		// print_r($ExpendColorArray);die;
 
@@ -466,7 +468,7 @@ class CheckModel extends Model
 							AND `time` <= unix_timestamp('".$end."')
 							AND `user_id` = ".$uid."
 						");
-			$ResidueMoney = $res['butged'] - $ResidueMoney[0]['money'];//计算最终预算支出余额
+			$ResidueMoney = number_format($res['butged'] - $ResidueMoney[0]['money']);//计算最终预算支出余额
 			return array("code"=>1,"data"=>$ResidueMoney,"msg"=>"预算金额已开启");
 		}
 		else
